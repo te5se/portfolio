@@ -1,0 +1,15 @@
+<div class="h-[30px]"></div>
+<section class="relative">
+    <div *ngIf="isLeft" class="white-box -top-[28px] -left-[26px]"></div>
+    <div *ngIf="!isLeft" class="white-box -top-[28px] -right-[26px]"></div>
+    <div *ngFor="let item of items" class="flex flex-row relative min-h-[48px] mb-9">
+        <div *ngIf="isLeft" class="dashed-line -left-4 "></div>
+        <div *ngIf="!isLeft" class="dashed-line -right-4"></div>
+        <p 
+            class="w-full"
+            [ngClass]="isLeft ? 'text-left' : 'text-right'"
+            [innerHTML]="item"> </p>
+        <div *ngIf="isLeft" class=" -left-[26px] white-box -bottom-[28px]"></div>
+        <div *ngIf="!isLeft" class="-right-[26px] white-box -bottom-[28px]"></div>
+    </div>
+</section>

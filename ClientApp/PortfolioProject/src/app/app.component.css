@@ -1,0 +1,42 @@
+@import "./../styles/onScroll.css";
+::ng-deep .p-button {
+    background-color: #4F46E5;
+}
+
+
+::ng-deep *{
+    box-sizing: border-box;
+    color: var(--main-font);
+    transition: background 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+:host{
+    --accent-color: rgb(55 65 81);
+    --accent-font: white;
+    --main-color: rgb(229 231 235);
+    --main-font: black;
+    --background-degrees: 45deg;
+    --x-position: 0;
+    --y-position: 0;
+}
+::ng-deep .bg-main {
+    background-color: var(--main-color);
+    transition: all 1s ease-in-out;
+}
+::ng-deep .bg-accent {
+    background-color: var(--accent-color);
+    transition: all 1s ease-in-out;
+}
+::ng-deep .font-main {
+    transition: all 1s ease-in-out;
+    background-color: var(--main-font);
+}
+::ng-deep .font-accent {
+    background-color: var(--accent-font);
+    transition: all 1s ease-in-out;
+}
+::ng-deep #bg-div{
+    background-color: var(--main-color);
+    transition: all 1s ease-in-out;
+}
+
+

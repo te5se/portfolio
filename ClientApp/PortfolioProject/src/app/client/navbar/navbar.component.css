@@ -1,0 +1,22 @@
+
+nav{
+    height: 6rem;
+}
+#signature{
+    stroke: var(--accent-font);
+    stroke-dasharray: 1854.5665283203125;
+    stroke-dashoffset: 1854.5665283203125;
+    animation: sign-in 5000ms ease-in forwards;    
+}
+@keyframes sign-in{
+    20%{
+        stroke-dashoffset: 0;
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+*{
+    color: var(--accent-font);
+    transition: all 1s ease-in;
+}

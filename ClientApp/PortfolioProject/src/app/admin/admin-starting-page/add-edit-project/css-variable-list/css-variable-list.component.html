@@ -1,0 +1,11 @@
+<div id="main-div">
+    <div class="flex flex-row" *ngFor="let variable of cssVariables; let i = index" >
+        <span class="p-float-label">
+            <input id="{{'float-input' + i}}" class="w-full ng-dirty" type="text" pInputText [(ngModel)] = "variable.value"> 
+            <label for="{{'float-input' + i}}">{{variable.name}}</label>
+        </span>
+        <button class="rounded-full bg-red-500 w-12 h-10 my-auto ml-2" (click)="removeItem(i)">
+            <i class="rotate-45 pi pi-plus text-white"></i>
+        </button>
+    </div>
+</div>

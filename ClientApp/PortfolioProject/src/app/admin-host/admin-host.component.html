@@ -1,0 +1,32 @@
+<div 
+    class="adminHost h-screen"
+    id="adminHost">
+
+    <div class="toolbar bg-slate-200 shadow-xl col-span-2 h-12 ">
+        <div class="font-bold h-8 ml-3 row-start-2 text-xl cursor-default">
+            ADMIN PANEL
+        </div>
+    </div>
+
+    <nav class="flex justify-between bg-slate-100 shadow-2xl flex-col row-start-2">
+        <div class="flex flex-col w-64">
+            <a [routerLink]="['/admin']" class="flex h-16 w-full  hover:bg-slate-400 transition-all">
+                <div class="my-auto ml-3">
+                    Projects
+                </div>
+            </a>   
+        </div>
+        <!-- <div class="flex flex-col w-64  hover:cursor-pointer">
+            <div class="flex h-16 w-full  hover:bg-slate-400 transition-all">
+                1234
+            </div>
+        </div> -->
+        
+    </nav>
+
+    <div id="routerHost" class="row-start-2 p-2 col-start-2">
+        <router-outlet></router-outlet>
+
+    </div>
+
+</div>

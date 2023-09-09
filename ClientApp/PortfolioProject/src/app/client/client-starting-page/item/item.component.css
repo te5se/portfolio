@@ -1,0 +1,71 @@
+
+div{
+    border-color: var(--divider-color);
+}
+.main-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 4fr 2fr;
+}
+.image-container{
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.nav-button:hover:before{
+    opacity: 10%;
+}
+.nav-button:active:before{
+    opacity: 20%;
+}
+.nav-button{
+    position: relative;
+}
+.left-icon-wrapper, .right-icon-wrapper{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-out;
+}
+.nav-button:hover .left-icon-wrapper{
+    margin: 0 10% 0 0;
+}
+
+.nav-button:hover .right-icon-wrapper{
+    margin: 0 0 0 10%;
+}
+.nav-button:before{
+    position: absolute;
+    color: black;
+    content: '1@#';
+    opacity: 0%;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.15s ease-in-out;
+}
+#title-caption, #show-project{
+    transition: all 0.5s ease-in-out;
+}
+#title-caption{
+    top: 0;
+}
+
+#inner-title-container:hover #show-project{
+    transition-delay: 0ms;
+    top: 0;
+}
+#show-project{
+    transition-delay: 250ms;
+    top: 100%;
+}
+#inner-title-container:hover #title-caption{
+    transition-delay: 250ms;
+    top: -100%;
+}
+#rotate-cross {
+    transition: 600ms all;
+}
+#inner-title-container:hover #rotate-cross{
+    rotate: 90deg;
+}

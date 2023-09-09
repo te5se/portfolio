@@ -1,0 +1,14 @@
+.input-container{
+    @apply my-6
+}
+/* .p-float-label > .ng-invalid.ng-dirty + label {
+    @apply text-red-600
+}
+.p-inputtext.ng-dirty.ng-invalid {
+    @apply border-red-600
+} */
+::ng-deep .p-dialog-content{
+    overflow-y: hidden;
+    padding : 0 !important;
+    @apply flex flex-col 
+}

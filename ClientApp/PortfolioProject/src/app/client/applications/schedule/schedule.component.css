@@ -1,0 +1,41 @@
+
+a{
+    @apply border-transparent
+    hover:border-white focus:border-white rounded-2xl
+    active:bg-white active:text-black
+}
+.local-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+#image-section{
+    grid-template-columns: 1fr 1fr;
+}
+#shadow-effect{
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(white 1%, transparent 50%, transparent) ;
+    @apply  rounded-full bottom-[80px] right-[-100px] -z-10 opacity-20
+}
+#mobile-section{
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 200px;
+    grid-template-rows: 120px 1fr  200px;
+}
+#admin-section{
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 200px;
+    grid-template-rows: 120px 1fr  200px 200px;
+}
+#local-floating-point{
+    opacity: 25%;
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    transform: translate3d(0px, 500px, 0px);
+    background: radial-gradient(white 1%, transparent 50%, transparent) ;
+    /* background: green; */
+    transition: transform 500ms ease-out;
+    will-change: transform; 
+    transform-style: preserve-3d;
+}

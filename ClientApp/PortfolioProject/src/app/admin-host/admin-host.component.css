@@ -1,0 +1,14 @@
+.adminHost{
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: auto 1fr;
+}
+.toolbar{
+    display: grid;
+    grid-template-rows:  1fr auto 1fr;
+    grid-template-columns: auto 1fr auto;
+}
+:host ::ng-deep .p-dialog-header {
+    @apply bg-slate-200
+    
+}

@@ -1,0 +1,19 @@
+#main-container{
+    height: calc(100vh - 6rem);   ;   
+}
+app-item{
+    transition: transform 0.5s ease-in-out
+}
+/* app-item:hover{
+    transform: translateX(-100%);
+} */
+app-item[data-status="hidden-before"]{
+    transform: translateX(-100%);
+}
+app-item[data-status="hidden-after"]{
+    transform: translateX(100%);
+}
+
+::ng-deep .nav-button{
+    /* background-color: var(--main-color); */
+}

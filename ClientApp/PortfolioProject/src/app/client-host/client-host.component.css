@@ -1,0 +1,24 @@
+#point-container{
+    height: calc(100vh);   
+}
+#router{
+    height: calc(100vh);   
+}
+.bg-main{
+    background-color: var(--main-color);
+    height: calc(100vh);   
+    /* background-color: white; */
+    
+}
+#floating-point{
+    opacity: 25%;
+    position: absolute;
+    width: var(--pointer-width);
+    height: var(--pointer-height);
+    transform: translate3d(var(--x-position), var(--y-position), 0px);
+    background: radial-gradient(var(--lamp-color) 1%, transparent 50%, transparent) ;
+    /* background: green; */
+    transition: transform 500ms ease-out;
+    will-change: transform; 
+    transform-style: preserve-3d;
+}

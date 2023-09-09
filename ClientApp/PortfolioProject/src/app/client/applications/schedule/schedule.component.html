@@ -1,0 +1,33 @@
+<div id="local-floating-point" class="absolute -z-10 -top-[1000px] -left-[1000px]">asdf</div>
+<app-home-button class="fixed bottom-8 right-8 z-50"></app-home-button>
+<section class="h-screen flex">
+    <div class="flex m-auto flex-col text-center">
+        <p class="text-5xl font-bold text-[60px]">{{'schedule' | uppercase}}</p>
+        <p class="opacity-40 mt-4 text-[16px]">for my home university</p>
+    </div>
+</section>
+<section id="mobile-section" class="h-screen ">
+    <p class="local-title col-start-2 mt-[5%]">MOBILE APP</p>
+    <div class="col-start-2 relative flex">
+        <app-schedule-list class="my-auto ml-8 max-w-[300px]" [items]="mobileList"></app-schedule-list>
+        <div class=" w-[1px] h-full bg-red-300 absolute -left-8 top-0"></div>
+    </div>
+    <div class="group flex col-start-3 col-span-2 row-span-2 relative overflow-hidden">
+        <img class="ml-auto mr-[200px] h-[500px] transition-all duration-500 hover:rotate-[3deg] " src="../../../../assets/schedule-phone.png" />
+        <div id="shadow-effect" class="group-hover:scale-[1.5]
+        scroll-hidden  absolute rotate-[-30deg]"></div>
+    </div>
+    <app-external-link 
+        href="https://play.google.com/store/apps/details?id=com.phoenix.schedule&hl=ru"
+        class="col-start-2 mt-auto mb-16">phoenix@schedule</app-external-link>
+</section>
+<section id="admin-section" class="h-screen relative">
+    <p class="local-title col-start-3 mt-[5%] text-right">ADMIN APP</p>
+    <div class="col-start-3 relative flex ml-auto">
+        <app-schedule-list [isLeft]="false" class="my-auto mr-8 max-w-[300px]" [items]="adminList"></app-schedule-list>
+        <div class=" h-[1px] w-full bg-white opacity-20 absolute -bottom-8"></div>
+    </div>
+    <app-external-link 
+        href="https://play.google.com/store/apps/details?id=com.phoenix.schedule&hl=ru"
+        class="col-start-3 ml-auto mt-16">te5se@github.com</app-external-link>
+</section>

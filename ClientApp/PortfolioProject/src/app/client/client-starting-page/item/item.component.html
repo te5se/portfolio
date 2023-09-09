@@ -1,0 +1,48 @@
+<main 
+    class="main-grid h-full">
+        
+        <button 
+            class="transition-all duration-300 delay-75 image-container hover:scale-[1.01]" 
+            style="background-image: url({{project.imageLink}})"
+            (click)="goToProjectLink()">
+        </button>
+        
+        <button id="title" (click)="goToProjectLink()" class="p-default  border-slate-500 border-t-2">
+    
+            <div id="inner-title-container" class="flex flex-row h-full cursor-pointer justify-between">
+                <div
+                    class="h-full w-full font-bold text-3xl relative overflow-hidden">
+
+                    <div id="title-caption" class="h-full my-auto absolute flex">
+                        <p class="my-auto">
+                            {{project.name | uppercase}}
+                        </p>
+                    </div>
+                    <div id="show-project" class="h-full my-auto absolute flex">
+                        <p class="my-auto">
+                            SHOW PROJECT
+                        </p>
+                    </div>
+                </div>
+
+                <i id="rotate-cross" class="fa fa-bars text-5xl my-auto" ></i>
+    
+            </div>
+            
+        </button>
+        <div id="nav-buttons" class="flex col-start-2 row-start-2 w-full border-slate-500 border-2">
+            <button class="nav-button relative flex basis-1/2 " (click)="buttonClick('left')">    
+                <div class="left-icon-wrapper">
+                    <i id="left-icon" class=" pi pi-arrow-left text-2xl m-auto" ></i>                    
+                </div>
+            </button>
+            <button class="nav-button relative flex basis-1/2 " (click)="buttonClick('right')">
+                <div class="right-icon-wrapper">
+                    <i id="right-icon" class="pi pi-arrow-right text-2xl m-auto"></i>
+                </div>
+            </button>
+        </div>
+        <div class="row-start-1 col-start-2 overflow-hidden p-2 border-slate-500 border-x-2">
+            {{project.shortDescription}}
+        </div>
+    </main>

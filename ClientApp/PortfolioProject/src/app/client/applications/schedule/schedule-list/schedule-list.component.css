@@ -1,0 +1,7 @@
+.dashed-line {
+    border-style: dashed;
+    @apply top-1 bottom-1 border-[1px]  absolute border-white
+  }
+  .white-box{
+    @apply border-2 border-white h-5 w-5 absolute  rounded
+  }

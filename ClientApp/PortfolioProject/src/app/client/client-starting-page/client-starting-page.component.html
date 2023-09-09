@@ -1,0 +1,14 @@
+<app-navbar class="bg-accent z-20 block w-full top-0"></app-navbar>
+<div id="main-container" class="flex flex-col overflow-hidden">
+    <div id="carousel" class="relative flex-grow overflow-hidden" >
+        
+        <app-item 
+            *ngFor="let projectItem of projectItems"
+            [attr.data-index]="projectItem.dataIndex"
+            [attr.data-status]="projectItem.status" 
+            [project]="projectItem.project!" 
+            class="absolute h-full w-full z-20" 
+            (onNavigate)="navigate($event, projectItem.dataIndex)"></app-item>
+
+    </div>
+</div>
