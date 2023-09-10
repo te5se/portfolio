@@ -1,1 +1,17 @@
-<p>schedule-image-carousel works!</p>
+<section id="wrapper" class="w-full  bg-white  relative">
+    <mat-tab-group #tabs [(selectedIndex)]="selectedIndex" [animationDuration]="animationDuration">
+        <mat-tab label="One">
+            <h1>Some 1 content</h1>
+            <p>...</p>
+        </mat-tab>
+        <mat-tab label="Two">
+            <h1>Some 1 content</h1>
+            <p>...</p>
+        </mat-tab>
+        <mat-tab label="Three">
+            <h1>Some 2 content</h1>
+            <p>...</p>
+        </mat-tab>
+    </mat-tab-group>
+    <button (click)="rightClick()" id="right-arrow" class="h-12 w-12 bg-blue-400 rounded-full absolute"></button>
+</section>

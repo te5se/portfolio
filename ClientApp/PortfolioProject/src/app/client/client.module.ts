@@ -14,6 +14,7 @@ import { ItemComponent } from './client-starting-page/item/item.component';
 import { ClientStartingPageComponent } from './client-starting-page/client-starting-page.component';
 import { ScheduleComponent } from './applications/schedule/schedule.component';
 import { AppModule } from '../app.module';
+import { MatTabsModule} from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeButtonComponent } from './applications/schedule/home-button/home-button.component';
 import { ScheduleListComponent } from './applications/schedule/schedule-list/schedule-list.component';
@@ -45,7 +46,8 @@ import { ScheduleImageCarouselComponent } from './applications/schedule/schedule
     ReactiveFormsModule,
     FontAwesomeModule,
     DialogModule,
-    InputTextareaModule
+    InputTextareaModule,
+    MatTabsModule
   ]
 })
 export class ClientModule { }

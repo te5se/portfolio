@@ -39,3 +39,6 @@ a{
     will-change: transform; 
     transform-style: preserve-3d;
 }
+#carousel{
+    @apply relative -left-[50%] hover:left-0 transition-all
+}

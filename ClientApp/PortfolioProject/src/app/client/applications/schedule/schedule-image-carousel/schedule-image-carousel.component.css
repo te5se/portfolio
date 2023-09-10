@@ -1,0 +1,13 @@
+#wrapper{
+    height: calc(100% + 100px);
+}
+*{
+    color: black;
+}
+::ng-deep .mat-tab-header{
+    display: none !important;
+}
+#right-arrow{
+    top: calc(50% - 24px);
+    right: 24px;
+}
