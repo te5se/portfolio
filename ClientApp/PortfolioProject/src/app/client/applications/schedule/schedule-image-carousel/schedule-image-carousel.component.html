@@ -1,17 +1,27 @@
-<section id="wrapper" class="w-full  bg-white  relative">
-    <mat-tab-group #tabs [(selectedIndex)]="selectedIndex" [animationDuration]="animationDuration">
+<section id="wrapper" class="w-full h-full group bg-white  relative opacity-30 hover:opacity-100 duration-500 transition-all">
+    <mat-tab-group #tabs [(selectedIndex)]="selectedPage" [animationDuration]="animationDuration" class="h-full">
         <mat-tab label="One">
-            <h1>Some 1 content</h1>
-            <p>...</p>
+            <div class="background-image w-full h-full transition-none" [style.background-image]="'url(../../../../../assets/' + images[previousImageIndex] + ')'"></div>
+           <!--  <img [src]="'../../../../../assets/' + images[previousImageIndex]"/> -->
         </mat-tab>
         <mat-tab label="Two">
-            <h1>Some 1 content</h1>
-            <p>...</p>
-        </mat-tab>
+            <div class="background-image   w-full h-full  transition-none" [style.background-image]="'url(../../../../../assets/' + images[currentImageIndex] + ')'"></div>
+            <!-- <img [src]="'../../../../../assets/' + images[currentImageIndex]"/>
+      -->   </mat-tab>
         <mat-tab label="Three">
-            <h1>Some 2 content</h1>
-            <p>...</p>
-        </mat-tab>
+            <div class="background-image w-full h-full  transition-none" [style.background-image]="'url(../../../../../assets/' + images[nextImageIndex] + ')'"></div>
+           <!--  <img [src]="'../../../../../assets/' + images[nextImageIndex]"/>
+        --> </mat-tab>
     </mat-tab-group>
-    <button (click)="rightClick()" id="right-arrow" class="h-12 w-12 bg-blue-400 rounded-full absolute"></button>
+    
+    <button 
+        (click)="leftClick()" 
+        id="left-arrow" class=" carousel-button">
+        <i class="active:ml-[2px] ml-1 button-icon material-symbols-outlined">chevron_left</i>
+    </button>
+    <button 
+        (click)="rightClick()" 
+        id="right-arrow" class=" carousel-button">
+        <i class="active:ml-[6px] ml-1 button-icon material-symbols-outlined">chevron_right</i>
+    </button>
 </section>

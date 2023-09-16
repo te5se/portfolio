@@ -1,13 +1,33 @@
-#wrapper{
-    height: calc(100% + 100px);
-}
+
 *{
     color: black;
 }
 ::ng-deep .mat-tab-header{
     display: none !important;
 }
+
+#left-arrow{
+    top: calc(50% - 24px);
+    left: 24px;
+    --tw-bg-opacity: 30%
+}
 #right-arrow{
     top: calc(50% - 24px);
     right: 24px;
+    --tw-bg-opacity: 30%
+}
+.carousel-button{
+    @apply opacity-0 group-hover:opacity-100 bg-transparent hover:bg-slate-200 
+    active:bg-slate-500 transition-all flex h-12 w-12 z-20  rounded-full absolute
+}
+.button-icon{
+    @apply text-[40px] my-auto transition-all !text-slate-500 
+}
+.background-image{
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+::ng-deep .mat-tab-body-wrapper{
+    @apply h-full
 }
