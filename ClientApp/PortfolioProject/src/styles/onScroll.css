@@ -3,10 +3,26 @@
     transition: all 1s;
 }
 ::ng-deep .scroll-show{
+    transform: translateX(0);
     opacity: 1;
 }
 @media(prefers-reduced-motion){
     ::ng-deep  .scroll-hidden{
+        transform: translateX(0);
+        transition: none;
+    }
+}
+::ng-deep .scroll-hidden-repeat{
+    opacity: 0;
+    transition: opacity 1s, transform 500ms;
+}
+::ng-deep .scroll-show-repeat{
+    opacity: 1;
+    transform: translateX(0);
+}
+@media(prefers-reduced-motion){
+    ::ng-deep  .scroll-hidden-repeat{
+        transform: translateX(0);
         transition: none;
     }
 }

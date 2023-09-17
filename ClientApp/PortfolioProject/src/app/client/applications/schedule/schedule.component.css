@@ -42,3 +42,13 @@ a{
 #carousel{
     @apply relative -left-[50%] hover:left-0 transition-all duration-500
 }
+.screen-height-section{
+    height: 100vh;
+    min-height: 700px;
+}
+.subtitle{
+    @apply text-xl
+}
+#footers-footer{
+    background-color: #2B2B2B;
+}

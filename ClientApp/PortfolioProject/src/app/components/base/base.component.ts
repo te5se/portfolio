@@ -12,7 +12,9 @@ export class BaseComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void {
-        this.setupAnimateOnScrollMechanics()
+        setTimeout(()=>{
+            this.setupAnimateOnScrollMechanics()
+        })
     }
     ngOnDestroy() {
         this.subscriptions.forEach((subscription) => {
@@ -24,14 +26,30 @@ export class BaseComponent implements OnInit {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("scroll-show")
-                } else {
+                } 
+                /* else {
                     entry.target.classList.remove("scroll-show")
-                }
+                } */
             })
         })
         let hiddenElements = document.querySelectorAll(".scroll-hidden")
         hiddenElements.forEach((element) => {
             observer.observe(element)
+        })
+
+        let repeatObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("scroll-show-repeat")
+                } 
+                else {
+                    entry.target.classList.remove("scroll-show-repeat")
+                }
+            })
+        })
+        let hiddenElementsRepeat = document.querySelectorAll(".scroll-hidden-repeat")
+        hiddenElementsRepeat.forEach((element) => {
+            repeatObserver.observe(element)
         })
     }
 

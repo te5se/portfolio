@@ -1,15 +1,27 @@
-<div class="h-[30px]"></div>
+<div class="h-[30px]  "></div>
 <section class="relative">
     <div *ngIf="isLeft" class="white-box -top-[28px] -left-[26px]"></div>
     <div *ngIf="!isLeft" class="white-box -top-[28px] -right-[26px]"></div>
-    <div *ngFor="let item of items" class="flex flex-row relative min-h-[48px] mb-9">
-        <div *ngIf="isLeft" class="dashed-line -left-4 "></div>
-        <div *ngIf="!isLeft" class="dashed-line -right-4"></div>
+    <div *ngFor="let item of items; let i = index" class="flex flex-row relative min-h-[48px] mb-9">
+        <div *ngIf="isLeft" 
+            [style.transition-delay]="150*i + 'ms'"
+            class="dashed-line -left-4 scroll-hidden-repeat -translate-y-8"></div>
+        <div 
+            *ngIf="!isLeft" 
+            [style.transition-delay]="150*i + 'ms'"
+            class="dashed-line -right-4 scroll-hidden-repeat -translate-y-8"></div>
         <p 
-            class="w-full"
-            [ngClass]="isLeft ? 'text-left' : 'text-right'"
+            [style.transition-delay]="150*i + 'ms'"
+            class="w-full scroll-hidden-repeat "
+            [ngClass]="isLeft ? 'text-left translate-x-8' : 'text-right -translate-x-8'"
             [innerHTML]="item"> </p>
-        <div *ngIf="isLeft" class=" -left-[26px] white-box -bottom-[28px]"></div>
-        <div *ngIf="!isLeft" class="-right-[26px] white-box -bottom-[28px]"></div>
+        <div 
+            *ngIf="isLeft" 
+            [style.transition-delay]="150*i + 'ms'"
+            class=" -left-[26px] white-box -bottom-[28px] scroll-hidden-repeat -translate-y-8"></div>
+        <div 
+            *ngIf="!isLeft"
+            [style.transition-delay]="150*i + 'ms'"
+            class="-right-[26px] white-box -bottom-[28px] scroll-hidden-repeat -translate-y-8"></div>
     </div>
 </section>
