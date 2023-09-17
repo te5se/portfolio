@@ -1,8 +1,8 @@
 ::ng-deep .scroll-hidden{
     opacity: 0;
-    transition: all 1s;
 }
 ::ng-deep .scroll-show{
+    transition: all 1s;
     transform: translateX(0);
     opacity: 1;
 }
@@ -12,11 +12,13 @@
         transition: none;
     }
 }
+/* transition none on hidden for quick reset after scroll-out */
 ::ng-deep .scroll-hidden-repeat{
+    transition: none;
     opacity: 0;
-    transition: opacity 1s, transform 500ms;
 }
 ::ng-deep .scroll-show-repeat{
+    transition: opacity 1s, transform 500ms;
     opacity: 1;
     transform: translateX(0);
 }

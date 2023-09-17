@@ -9,7 +9,7 @@
 <section id="mobile-section" class="screen-height-section">
     <p class="local-title col-start-2 mt-[5%] scroll-hidden  -translate-y-4">MOBILE APP</p>
     <div class="col-start-2 relative flex">
-        <app-schedule-list class="my-auto ml-8 max-w-[300px]" [items]="mobileList"></app-schedule-list>
+        <app-schedule-list class="ml-8 my-auto max-w-[300px] h-[calc(100%-60px)] pb-4" [items]="mobileList"></app-schedule-list>
         <div class=" w-[1px] h-full bg-red-300 absolute -left-8 top-0 scroll-hidden"></div>
     </div>
     <div class="group flex col-start-3 col-span-2 row-span-2 relative overflow-hidden scroll-hidden">
@@ -24,7 +24,7 @@
 <section id="admin-section" class="screen-height-section max-h-screen relative">
     <p class="local-title col-start-3 mt-[5%] text-right scroll-hidden -translate-y-4">ADMIN APP</p>
     <div class="col-start-3 relative flex ml-auto">
-        <app-schedule-list [isLeft]="false" class="my-auto mr-8 max-w-[300px]" [items]="adminList"></app-schedule-list>
+        <app-schedule-list [isLeft]="false" class="my-auto mr-8 max-w-[300px] h-[calc(100%-60px)] pb-4" [items]="adminList"></app-schedule-list>
         <div class=" h-[1px] w-full bg-white opacity-20 absolute -bottom-8 scroll-hidden"></div>
     </div>
     <app-external-link 
