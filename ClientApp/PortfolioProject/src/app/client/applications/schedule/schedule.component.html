@@ -39,11 +39,23 @@
     <p class="subtitle col-start-3 row-start-3 scroll-hidden  -translate-y-4">THE RESULTS</p>
 
     <p class="row-start-4 col-start-2 pr-[25%] scroll-hidden">{{beginningText}}</p>
-    <div class="flex flex-col row-start-4 col-start-3 scroll-hidden">
+    <section class="flex flex-col row-start-4 col-start-3 scroll-hidden">
         <p class="">{{resultsText}}</p>
         <p>During the production phase application:</p>
         <p>- served over 50.000 distinct schedule queries</p>
         <p>- provided over 15 groups and several teachers with schedules on a daily basis</p>
+    </section>
+
+    <div class="container col-start-4">
+        <div class="cube " [style.transform]="'rotateY(' + this.x + 'deg)'+'rotateX(' + this.y + 'deg)'">
+            <div class="side front">
+            </div>
+            <div class="side back">back</div>
+            <div class="side right">right</div>
+            <div class="side left">left</div>
+            <div class="side top">top</div>
+            <div class="side bottom">bottom</div>
+        </div>
     </div>
 
     <div id="footers-footer" class="row-start-5 col-span-4 scroll-hidden"></div>

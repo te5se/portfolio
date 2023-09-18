@@ -52,3 +52,56 @@ a{
 #footers-footer{
     background-color: #2B2B2B;
 }
+/* #region 3d cube */
+
+.container {
+	position: relative;
+	margin: 200px auto;
+	width: 300px;
+	height: 300px;
+	perspective: 600px;
+}
+
+.cube {
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+    transition: transform;
+    transition-duration: 200ms;
+    transition-timing-function: linear;
+}
+.side {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border: 5px solid #fff;
+	font: normal 70px Arial;
+	text-align: center;
+	line-height: 300px;
+	color: #fff;
+}
+
+.front {
+	transform: translateZ(150px);
+}
+
+.back {
+	transform: rotateY(180deg) translateZ(150px);
+}
+
+.right {
+	transform: rotateY(90deg) translateZ(150px);
+}
+
+.left {
+	transform: rotateY(-90deg) translateZ(150px);
+}
+
+.top {
+	transform: rotateX(90deg) translateZ(150px);
+}
+
+.bottom {
+	transform: rotateX(-90deg) translateZ(150px);
+}
+/* #endregion */
