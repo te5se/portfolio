@@ -20,6 +20,7 @@ import { HomeButtonComponent } from './applications/schedule/home-button/home-bu
 import { ScheduleListComponent } from './applications/schedule/schedule-list/schedule-list.component';
 import { ExternalLinkComponent } from './applications/schedule/external-link/external-link.component';
 import { ScheduleImageCarouselComponent } from './applications/schedule/schedule-image-carousel/schedule-image-carousel.component';
+import { ScheduleCubeItemComponent } from './applications/schedule/schedule-cube-item/schedule-cube-item.component';
 
 
 
@@ -32,7 +33,8 @@ import { ScheduleImageCarouselComponent } from './applications/schedule/schedule
     HomeButtonComponent,
     ScheduleListComponent,
     ExternalLinkComponent,
-    ScheduleImageCarouselComponent
+    ScheduleImageCarouselComponent,
+    ScheduleCubeItemComponent
   ],
   imports: [
     CommonModule,

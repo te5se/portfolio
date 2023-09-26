@@ -71,6 +71,7 @@ a{
     transition-timing-function: linear;
 }
 .side {
+    display: flex;
 	position: absolute;
 	width: inherit;
 	height: inherit;
@@ -104,4 +105,13 @@ a{
 .bottom {
 	transform: rotateX(-90deg) translateZ(150px);
 }
+.side > section{
+    @apply grid grid-rows-[50%_50%]  opacity-0  transition-all duration-500
+}
+.side:hover > section{
+    @apply scale-[1.03] opacity-100 bg-white
+}
 /* #endregion */
+app-schedule-cube-item{
+    @apply h-full w-full flex transition-all duration-500
+}

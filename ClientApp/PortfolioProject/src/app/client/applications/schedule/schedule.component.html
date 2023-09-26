@@ -46,15 +46,44 @@
         <p>- provided over 15 groups and several teachers with schedules on a daily basis</p>
     </section>
 
-    <div class="container col-start-4">
+    <div class="container col-start-4" (click)="cubeClick()">
         <div class="cube " [style.transform]="'rotateY(' + this.x + 'deg)'+'rotateX(' + this.y + 'deg)'">
             <div class="side front">
+                <section class="">
+                    <app-schedule-cube-item class="border-b-2 border-black"></app-schedule-cube-item>
+                    <app-schedule-cube-item class=""></app-schedule-cube-item>
+                </section>
             </div>
-            <div class="side back">back</div>
-            <div class="side right">right</div>
-            <div class="side left">left</div>
-            <div class="side top">top</div>
-            <div class="side bottom">bottom</div>
+            <div class="side back">
+                <section class="">
+                    <app-schedule-cube-item class="border-b-2 border-black"></app-schedule-cube-item>
+                    <app-schedule-cube-item class=""></app-schedule-cube-item>
+                </section>
+            </div>
+            <div class="side right">
+                <section class="">
+                    <app-schedule-cube-item class="border-b-2 border-black"></app-schedule-cube-item>
+                    <app-schedule-cube-item class=""></app-schedule-cube-item>
+                </section>
+            </div>
+            <div class="side left">
+                <section class="">
+                    <app-schedule-cube-item class="border-b-2 border-black"></app-schedule-cube-item>
+                    <app-schedule-cube-item class=""></app-schedule-cube-item>
+                </section>
+            </div>
+            <div class="side top">
+                <section class="">
+                    <app-schedule-cube-item class="border-b-2 border-black"></app-schedule-cube-item>
+                    <app-schedule-cube-item class=""></app-schedule-cube-item>
+                </section>
+            </div>
+            <div class="side bottom">
+                <section class="">
+                    <app-schedule-cube-item class="border-b-2 border-black"></app-schedule-cube-item>
+                    <app-schedule-cube-item class=""></app-schedule-cube-item>
+                </section>
+            </div>
         </div>
     </div>
 
