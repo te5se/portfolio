@@ -1,13 +1,13 @@
 <div class="h-full w-full leading-5 text-base flex flex-row">
-    <section class="flex flex-col justify-center px-4 border-r-2 border-black ">
-        <p class="text-xl font-medium mb-2">8:30</p>
-        <p class="text-xl font-medium mt-2">8:40</p>
+    <section class="flex flex-col justify-center border-r-2 border-black w-[96px]">
+        <p class="text-xl font-medium mb-2">{{lesson.timeStart}}</p>
+        <p class="text-xl font-medium mt-2">{{lesson.timeStart2}}</p>
     </section>
     <section class="grid grid-rows-[1fr_3fr_1fr_1fr_1fr] w-full text-xs">
-        <p class="mx-auto mt-4 font-medium "></p>
-        <p class="mx-auto  font-medium">Иностранный язык в профессиональной деятельности</p>
-        <p class="row-start-4 mx-auto !text-gray-400">Васильев А.И.</p>
-        <p class="row-start-5 mx-auto mb-4">каб. 404</p>
+        <p class="mx-auto mt-4 font-medium ">{{lesson.customTime}}</p>
+        <p class="mx-auto  font-medium">{{lesson.name}}</p>
+        <p class="row-start-4 mx-auto !text-gray-400">{{lesson.teacher}}</p>
+        <p class="row-start-5 mx-auto mb-4">{{lesson.cabinet}}</p>
     </section>
     
 </div>

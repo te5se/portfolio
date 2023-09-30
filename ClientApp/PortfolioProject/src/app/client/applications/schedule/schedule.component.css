@@ -106,7 +106,7 @@ a{
 	transform: rotateX(-90deg) translateZ(150px);
 }
 .side > section{
-    @apply grid grid-rows-[50%_50%]  opacity-0  transition-all duration-500
+    @apply w-full grid grid-rows-[50%_50%]  opacity-0  transition-all duration-500
 }
 .side:hover > section{
     @apply scale-[1.03] opacity-100 bg-white

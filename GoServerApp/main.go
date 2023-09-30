@@ -4,6 +4,8 @@ import (
 	"net/http"
 	"reflect"
 
+	_ "portfolio/server-app/docs"
+
 	"database/sql"
 	"fmt"
 
@@ -15,17 +17,22 @@ import (
 	_ "github.com/lib/pq"
 	_ "github.com/lib/pq/auth/kerberos"
 	"github.com/olivere/dapper"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	"go.uber.org/dig"
 )
 
 var factory connectionFactory.ConnectionFactory
 
+// @title TagService
+// @description asdf
 func main() {
 	router := gin.Default()
 
 	container := SetupDependencyInjection()
 
 	router.Use(CORSMiddleware())
+	router.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	projectController.SetupController(router, container)
 
