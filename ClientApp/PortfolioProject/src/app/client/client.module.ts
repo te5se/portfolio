@@ -21,6 +21,8 @@ import { ScheduleListComponent } from './applications/schedule/schedule-list/sch
 import { ExternalLinkComponent } from './applications/schedule/external-link/external-link.component';
 import { ScheduleImageCarouselComponent } from './applications/schedule/schedule-image-carousel/schedule-image-carousel.component';
 import { ScheduleCubeItemComponent } from './applications/schedule/schedule-cube-item/schedule-cube-item.component';
+import { Pws03Component } from './applications/pws03/pws03.component';
+import { CubeComponent } from './applications/schedule/cube/cube.component';
 
 
 
@@ -34,7 +36,9 @@ import { ScheduleCubeItemComponent } from './applications/schedule/schedule-cube
     ScheduleListComponent,
     ExternalLinkComponent,
     ScheduleImageCarouselComponent,
-    ScheduleCubeItemComponent
+    ScheduleCubeItemComponent,
+    Pws03Component,
+    CubeComponent
   ],
   imports: [
     CommonModule,

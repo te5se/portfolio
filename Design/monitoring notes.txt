@@ -1,0 +1,5 @@
+should copy that design for monitoring - https://www.superlist.com/
+or that part of it - https://www.superlist.com/updates
+example of that design - https://codepen.io/Hyperplexed/pen/BaYXaOx
+
+Эта карусель вечная работает хорошо, потому что там только часть карточек видна. Может быть, стоит туда либо картинок понавставлять, либо рабочих центров
