@@ -1,0 +1,6 @@
+.side{
+    @apply absolute w-full h-screen grid place-items-center overflow-hidden
+}
+.side > h2{
+    @apply w-screen text-center;
+}
