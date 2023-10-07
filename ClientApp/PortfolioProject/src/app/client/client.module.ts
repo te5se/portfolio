@@ -23,6 +23,7 @@ import { ScheduleImageCarouselComponent } from './applications/schedule/schedule
 import { ScheduleCubeItemComponent } from './applications/schedule/schedule-cube-item/schedule-cube-item.component';
 import { Pws03Component } from './applications/pws03/pws03.component';
 import { CubeComponent } from './applications/schedule/cube/cube.component';
+import { VideoLineComponent } from './applications/pws03/video-line/video-line.component';
 
 
 
@@ -38,7 +39,8 @@ import { CubeComponent } from './applications/schedule/cube/cube.component';
     ScheduleImageCarouselComponent,
     ScheduleCubeItemComponent,
     Pws03Component,
-    CubeComponent
+    CubeComponent,
+    VideoLineComponent
   ],
   imports: [
     CommonModule,

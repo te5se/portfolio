@@ -1,6 +1,17 @@
-<div class="side bg-black z-10" [style.width]="leftWidth">
-    <h2 class="text-white">Make your production line run faster</h2>
+<div class="side bg-green-800 z-10 w-full" 
+    [style.transition-duration]="transitionDuration" >
+    <h2 class="text-white absolute scroll-hidden top-[30%]">Make your production line run <span class="font-bold text-[#f55049]">faster</span></h2>
+    <app-video-line class="video-line" 
+        [style.transition]="videoLineTransition"
+        [style.transform]="videoLineLeftTransform"
+        [style.opacity]="videoLineOpacity" 
+        [style.bottom]="videoLineBottom"></app-video-line>
+    <app-video-line class="video-line "
+        [style.transition]="videoLineTransition"
+        [style.transform]="videoLineRightTransform"
+        [style.opacity]="videoLineOpacity" 
+        [style.bottom]="videoLineBottom"></app-video-line>
 </div>
-<div class="side bg-white z-0">
-    <h2 class="test-black">Make your production line run better</h2>
+<div class="side bg-[#f55049] z-0 " [style.transition-duration]="transitionDuration">
+    <h2 class="text-black scroll-hidden ml-1">Make your production line run <span class="font-bold text-white">better</span></h2>
 </div>

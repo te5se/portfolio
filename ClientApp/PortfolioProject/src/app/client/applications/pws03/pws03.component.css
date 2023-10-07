@@ -1,6 +1,9 @@
 .side{
-    @apply absolute w-full h-screen grid place-items-center overflow-hidden
+    @apply absolute w-full h-[120vh] grid  overflow-hidden transition-all ease-out
 }
 .side > h2{
-    @apply w-screen text-center;
+    @apply w-screen text-center text-5xl;
+}
+.video-line{
+    @apply absolute  w-full 
 }
