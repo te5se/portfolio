@@ -1,5 +1,4 @@
 .video-item{
-    height: 40vh;
     width: 60vh;
-    @apply bg-white
+    
 }

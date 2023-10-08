@@ -1,7 +1,23 @@
-<section class="flex flex-row gap-2 w-full min-w-[1300px] justify-around">
 
-    <div class="video-item"></div>
-    <div class="video-item"></div>
-    <div class="video-item"></div>
-
-</section>
+<div class="flex flex-row gap-8">
+    <section class="video-item">
+        <video class="video-item" autoplay loop muted>
+            <source [src]="sources[0]" type="video/mp4" />
+        </video>
+    </section>
+    <section class="video-item">
+        <video class="video-item" autoplay loop muted>
+            <source [src]="sources[1]" type="video/mp4" />
+        </video>
+    </section>
+    <section class="video-item">
+        <video class="video-item"  autoplay loop muted>
+            <source [src]="sources[2]" type="video/mp4" />
+        </video>
+    </section>
+    <section class="video-item">
+        <video  class="video-item" autoplay loop muted>
+            <source [src]="sources[3]" type="video/mp4" />
+        </video>
+    </section>
+</div>

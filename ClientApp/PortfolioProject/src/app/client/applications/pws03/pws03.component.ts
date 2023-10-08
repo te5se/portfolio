@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
 
 @Component({
@@ -12,17 +13,25 @@ export class Pws03Component extends BaseComponent{
     leftWidth : string = '100%'
     updateOnMove = false
     transitionDuration = '1000ms'
-    videoLineBottom = '-50px'
-
+    videoLineTop = '120vh'
+    shouldStartVideos = new BehaviorSubject<boolean>(false)
     videoLineOpacity = 0
 
-    videoLineLeftTransform = "translate3d(0px, 0px, 0px)`"
-    videoLineRightTransform = "translate3d(100%, 0px, 0px)"
-    videoLineTransition =`bottom 500ms,
-                            opacity 500ms,
-                            transform 100ms linear`
+    videoLineTransform = "translate3d(0px, 0px, 0px)`"
+    videoLineTransition =`transform 50ms linear`
 
     currentVideoPosition = -90
+    leftVideoArray : string[] = 
+                ["../../../../../assets/Analytics.mp4", 
+                "../../../../../assets/GraphicRedactor.mp4", 
+                "../../../../../assets/WorkCenterDictionary.mp4", 
+                "../../../../../assets/Users.mp4"]
+    rightVideoArray : string[] = 
+                ["../../../../../assets/GraphicRedactor.mp4", 
+                "../../../../../assets/Users.mp4", 
+                "../../../../../assets/WorkCenterDictionary.mp4", 
+                "../../../../../assets/Analytics.mp4"]
+
 
     override ngOnInit(): void {
         super.ngOnInit()
@@ -36,28 +45,28 @@ export class Pws03Component extends BaseComponent{
         },2000)
         setTimeout(()=>{
             this.videoLineOpacity = 1
-            this.videoLineBottom = '50px'
+            this.videoLineTop = '80vh'
+            this.shouldStartVideos.next(true)
+            setInterval(()=>{
+                this.updateLinePosition()
+             },50)
         },3000)
-        setInterval(()=>{
-            this.currentVideoPosition -= 0.3
-
-            //refreshing position
-            if(this.currentVideoPosition < -100){
-                this.videoLineTransition = `bottom 500ms,
-                                                opacity 500ms`
-                this.currentVideoPosition += 100
-                setTimeout(()=>{
-                    this.videoLineTransition =`bottom 500ms,
-                            opacity 500ms,
-                            transform 100ms linear`
-
-                })
-            }
-
-            this.videoLineLeftTransform = `translate3d(${this.currentVideoPosition}%, 0px, 0px) `
-            this.videoLineRightTransform = `translate3d(${this.currentVideoPosition + 100}%, 0px, 0px) `
-        },50)
+        
         this.setupMouseMoveListener()
+    }
+    updateLinePosition(){
+        console.debug("video debug",this.currentVideoPosition)
+        //refreshing position
+        if(this.currentVideoPosition < -100){
+            this.videoLineTransition = ``
+            this.currentVideoPosition += 102
+            setTimeout(()=>{
+                this.videoLineTransition =`transform 50ms linear`
+            })
+        }
+
+        this.videoLineTransform = `translate3d(${this.currentVideoPosition}%, 0px, 0px) `
+        this.currentVideoPosition -= 0.2
     }
     setupMouseMoveListener() {
        

@@ -4,3 +4,4 @@ example of that design - https://codepen.io/Hyperplexed/pen/BaYXaOx
 
 Эта карусель вечная работает хорошо, потому что там только часть карточек видна. Может быть, стоит туда либо картинок понавставлять, либо рабочих центров
 Нужно придумать, ставить ли карточки туда или делать что другое
+added videos, try to round them, see how that looks

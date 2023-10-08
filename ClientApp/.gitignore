@@ -6,6 +6,7 @@
 /dist
 /tmp
 /out-tsc
+*.mp4
 
 # dependencies
 /node_modules

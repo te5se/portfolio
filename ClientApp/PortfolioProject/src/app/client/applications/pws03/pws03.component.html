@@ -1,17 +1,25 @@
-<div class="side bg-green-800 z-10 w-full" 
-    [style.transition-duration]="transitionDuration" >
-    <h2 class="text-white absolute scroll-hidden top-[30%]">Make your production line run <span class="font-bold text-[#f55049]">faster</span></h2>
-    <app-video-line class="video-line" 
+<section class="side bg-gray-700 z-10" 
+    [style.transition-duration]="transitionDuration" 
+    [style.width]="leftWidth">
+    <h2 class="text-white   scroll-hidden">Make your production line run <span class="distinct-header text-[#f55049]">faster</span></h2> 
+</section>
+<section class="side bg-[#f55049] z-0 " [style.transition-duration]="transitionDuration">
+    <h2 class="text-gray-700 scroll-hidden ">Make your production line run <span class="distinct-header text-white">better</span></h2>
+</section>
+<div 
+    class="video-line w-[calc(100vw-4px)] overflow-hidden"
+    [style.top]="videoLineTop"
+    [style.opacity]="videoLineOpacity">
+    <app-video-line  
+        [sources]="leftVideoArray"
         [style.transition]="videoLineTransition"
-        [style.transform]="videoLineLeftTransform"
-        [style.opacity]="videoLineOpacity" 
-        [style.bottom]="videoLineBottom"></app-video-line>
-    <app-video-line class="video-line "
+        [style.transform]="videoLineTransform"></app-video-line>
+    <app-video-line  
+        [sources]="leftVideoArray"
         [style.transition]="videoLineTransition"
-        [style.transform]="videoLineRightTransform"
-        [style.opacity]="videoLineOpacity" 
-        [style.bottom]="videoLineBottom"></app-video-line>
-</div>
-<div class="side bg-[#f55049] z-0 " [style.transition-duration]="transitionDuration">
-    <h2 class="text-black scroll-hidden ml-1">Make your production line run <span class="font-bold text-white">better</span></h2>
-</div>
+        [style.transform]="videoLineTransform"></app-video-line>
+</div> 
+<!-- second section -->
+<section>
+
+</section>

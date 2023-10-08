@@ -2,8 +2,11 @@
     @apply absolute w-full h-[120vh] grid  overflow-hidden transition-all ease-out
 }
 .side > h2{
-    @apply w-screen text-center text-5xl;
+    @apply w-screen text-center text-6xl absolute top-[30%] font-medium ;
 }
 .video-line{
-    @apply absolute  w-full 
+    @apply absolute flex flex-row gap-8 z-20 transition-all duration-500
+}
+.distinct-header{
+    @apply font-bold  inline-block w-[250px] text-left 
 }

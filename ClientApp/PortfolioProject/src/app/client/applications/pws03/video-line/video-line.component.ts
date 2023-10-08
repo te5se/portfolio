@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-video-line',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./video-line.component.css']
 })
 export class VideoLineComponent implements OnInit {
+
+    @Input() sources : string[] = [] 
 
   constructor() { }
 
