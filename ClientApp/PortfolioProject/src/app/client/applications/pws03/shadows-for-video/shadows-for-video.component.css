@@ -1,0 +1,11 @@
+#wrapper[data-light=true] > .shadow-item{
+    @apply shadow-[#f54f4970]
+}
+#wrapper[data-light=false] > .shadow-item{
+    @apply shadow-[#ffffff6f]
+}
+.shadow-item{
+    width: 60vh;
+    height: 32vh;
+    @apply rounded-lg  shadow-2xl 
+}

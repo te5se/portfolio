@@ -2,12 +2,37 @@
     [style.transition-duration]="transitionDuration" 
     [style.width]="leftWidth">
     <h2 class="text-white   scroll-hidden">Make your production line run <span class="distinct-header text-[#f55049]">faster</span></h2> 
+   
+    <div 
+        class="video-line"
+        [style.top]="videoLineTop"
+        [style.opacity]="videoLineOpacity">
+        <app-shadows-for-video   
+            [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-shadows-for-video >
+        <app-shadows-for-video 
+            [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-shadows-for-video>
+    </div> 
 </section>
 <section class="side bg-[#f55049] z-0 " [style.transition-duration]="transitionDuration">
     <h2 class="text-gray-700 scroll-hidden ">Make your production line run <span class="distinct-header text-white">better</span></h2>
+    <div 
+        class="video-line"
+        [style.top]="videoLineTop"
+        [style.opacity]="videoLineOpacity">
+        <app-shadows-for-video   
+            [isLight]="false"
+            [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-shadows-for-video >
+        <app-shadows-for-video 
+            [isLight]="false"
+            [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-shadows-for-video>
+    </div> 
 </section>
 <div 
-    class="video-line w-[calc(100vw-4px)] overflow-hidden"
+    class="video-line"
     [style.top]="videoLineTop"
     [style.opacity]="videoLineOpacity">
     <app-video-line  

@@ -24,6 +24,7 @@ import { ScheduleCubeItemComponent } from './applications/schedule/schedule-cube
 import { Pws03Component } from './applications/pws03/pws03.component';
 import { CubeComponent } from './applications/schedule/cube/cube.component';
 import { VideoLineComponent } from './applications/pws03/video-line/video-line.component';
+import { ShadowsForVideoComponent } from './applications/pws03/shadows-for-video/shadows-for-video.component';
 
 
 
@@ -40,7 +41,8 @@ import { VideoLineComponent } from './applications/pws03/video-line/video-line.c
     ScheduleCubeItemComponent,
     Pws03Component,
     CubeComponent,
-    VideoLineComponent
+    VideoLineComponent,
+    ShadowsForVideoComponent
   ],
   imports: [
     CommonModule,

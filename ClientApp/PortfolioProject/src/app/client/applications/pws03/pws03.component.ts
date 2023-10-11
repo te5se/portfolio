@@ -55,7 +55,6 @@ export class Pws03Component extends BaseComponent{
         this.setupMouseMoveListener()
     }
     updateLinePosition(){
-        console.debug("video debug",this.currentVideoPosition)
         //refreshing position
         if(this.currentVideoPosition < -100){
             this.videoLineTransition = ``

@@ -5,7 +5,7 @@
     @apply w-screen text-center text-6xl absolute top-[30%] font-medium ;
 }
 .video-line{
-    @apply absolute flex flex-row gap-8 z-20 transition-all duration-500
+    @apply absolute flex flex-row gap-8 z-20 transition-all duration-500 overflow-x-hidden  w-[calc(100vw-4px)]
 }
 .distinct-header{
     @apply font-bold  inline-block w-[250px] text-left 
