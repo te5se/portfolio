@@ -17,16 +17,20 @@
     border-right: 3px solid;
     font-family: monospace;
     @apply my-auto text-[88px] ml-4 mt-[8px] inline-block w-[300px] font-bold
-  }
+}
   
-  @keyframes typing {
+@keyframes typing {
     from {
       width: 0
     }
-  }
+}
       
-  @keyframes blink {
+@keyframes blink {
     50% {
       border-color: transparent
     }
-  }
+}
+.screen-height-section{
+    height: 100vh;
+    min-height: 700px;
+}
