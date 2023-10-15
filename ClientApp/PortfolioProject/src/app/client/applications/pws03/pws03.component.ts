@@ -20,7 +20,7 @@ export class Pws03Component extends BaseComponent{
     videoLineTransform = "translate3d(0px, 0px, 0px)`"
     videoLineTransition =`transform 50ms linear`
 
-    currentVideoPosition = -90
+    currentVideoPosition = 0
     leftVideoArray : string[] = 
                 ["../../../../../assets/Analytics.mp4", 
                 "../../../../../assets/GraphicRedactor.mp4", 
@@ -38,11 +38,11 @@ export class Pws03Component extends BaseComponent{
         setTimeout(()=>{
             this.leftWidth = '67%'
             
-        },1000)
+        },3000)
         setTimeout(()=>{
             this.transitionDuration = '500ms'
             this.updateOnMove = true
-        },2000)
+        },4000)
         setTimeout(()=>{
             this.videoLineOpacity = 1
             this.videoLineTop = '80vh'
@@ -50,7 +50,7 @@ export class Pws03Component extends BaseComponent{
             setInterval(()=>{
                 this.updateLinePosition()
              },50)
-        },3000)
+        },5000)
         
         this.setupMouseMoveListener()
     }

@@ -1,12 +1,32 @@
 .side{
     @apply absolute w-full h-[120vh] grid  overflow-hidden transition-all ease-out
 }
-.side > h2{
-    @apply w-screen text-center text-6xl absolute top-[30%] font-medium ;
+.side > div{
+    @apply text-[88px] w-screen text-center  absolute top-[30%] font-medium ;
 }
 .video-line{
     @apply absolute flex flex-row gap-8 z-20 transition-all duration-500 overflow-x-hidden  w-[calc(100vw-4px)]
 }
-.distinct-header{
-    @apply font-bold  inline-block w-[250px] text-left 
-}
+
+
+
+.typed-part {
+    animation: typing 2s steps(6), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    @apply my-auto text-[88px] ml-4 mt-[8px] inline-block w-[300px] font-bold
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }

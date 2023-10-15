@@ -10,6 +10,7 @@ import { RefreshTestComponent } from './components/refresh-test/refresh-test/ref
 const routes: Routes = [
    
     { path:"refreshTest", component: RefreshTestComponent},
+    { path:"test", component: TestComponent},
     {   
         path: 'admin', 
         loadChildren: ()=>import('./admin/admin.module').then(o=>o.AdminModule)
