@@ -39,23 +39,38 @@
     </div> 
 </section>
 <!-- #endregion first --> 
-<div 
-    class="video-line"
-    [style.top]="videoLineTop"
-    [style.opacity]="videoLineOpacity">
-    <app-video-line  
-        [sources]="leftVideoArray"
-        [style.transition]="videoLineTransition"
-        [style.transform]="videoLineTransform"></app-video-line>
-    <app-video-line  
-        [sources]="leftVideoArray"
-        [style.transition]="videoLineTransition"
-        [style.transform]="videoLineTransform"></app-video-line>
-</div> 
-<div id="first-section-placeholder" class="h-[120vh]">
-
+<div id="first-section-placeholder" class="h-[120vh] max-h-[120vh] overflow-hidden relative">
+    <div 
+        class="video-line"
+        [style.top]="videoLineTop"
+        [style.opacity]="videoLineOpacity">
+        <app-video-line  
+            [sources]="leftVideoArray"
+            [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-video-line>
+        <app-video-line  
+            [sources]="leftVideoArray"
+            [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-video-line>
+    </div> 
 </div>
-<!-- second section -->
-<section class="screen-height-section bg-green-50 w-full">
+<!-- #region second section -->
+<section class="screen-height-section w-full flex">
+    <div class="grid grid-rows-[1fr_2fr] grid-cols-[2fr_1fr] h-full mx-auto min-w-[1000px]">
+        <section class="my-auto">
+            <p class="text-accent underscored text-5xl font-bold my-auto">
+                GLOBE
+            </p>
+            <p class="text-secondary text-3xl font-bold mt-4">Equipment monitoring</p>
+        </section>
+        
+        <app-feature-selector class="my-auto w-full">
 
+        </app-feature-selector>
+
+        <div class="bg-green-400 col-span-2 mx-auto mb-8">
+
+        </div>
+    </div>
 </section>
+<!-- #endregion second section -->

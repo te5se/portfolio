@@ -1,0 +1,20 @@
+.background-line{
+    @apply absolute w-1 -left-1 h-full bg-gray-300 rounded-full
+}
+.selected-line{
+    @apply absolute w-1 -left-1 h-1/3 rounded bg-[var(--pws03-accent-color)]
+}
+p{
+    @apply relative
+}
+p:hover::after{
+    @apply  w-4
+}
+p[data-selected=true]::after{
+    @apply bg-[var(--pws03-accent-color)] w-8
+}
+p::after{
+    content: "";
+    @apply absolute -bottom-1 left-0 w-0 rounded-full h-1 bg-[var(--secondary-text-color)] transition-all
+}
+

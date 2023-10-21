@@ -1,3 +1,5 @@
+
+@tailwind components;
 .side{
     @apply absolute w-full h-[120vh] grid  overflow-hidden transition-all ease-out
 }
@@ -30,7 +32,25 @@
       border-color: transparent
     }
 }
+::ng-deep :root{
+    --pws03-accent-color: #00B00B;
+    --secondary-text-color: #464646;
+}
 .screen-height-section{
     height: 100vh;
     min-height: 700px;
+    background-color: #F6F6F6;
+}
+::ng-deep .text-secondary{
+    color: var(--secondary-text-color);
+}
+::ng-deep .text-accent{
+    color: var(--pws03-accent-color);
+}
+.underscored{
+    @apply relative
+}
+.underscored::after{
+    content: "";
+    @apply absolute -bottom-2 left-[4px] w-14 rounded-full h-[6px] bg-[var(--pws03-accent-color)]
 }

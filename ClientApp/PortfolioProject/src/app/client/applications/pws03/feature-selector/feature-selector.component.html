@@ -1,0 +1,14 @@
+<section class="relative flex flex-col w-full justify-around min-h-[160px]">
+    <button
+        (click)="selectItem(item)"
+        *ngFor="let item of listItems" 
+        class="mr-auto ml-12">
+        <p
+            [attr.data-selected]="item == selectedItem"
+            [ngClass]="item == selectedItem ? 'text-accent' : 'hover:underscored'"
+            class="text-secondary  text-2xl font-bold duration-150">{{item}}</p>
+    </button>
+
+    <div class="background-line"></div>
+    <div class="selected-line transition-all" [style.top]="33.333333 * selectedItemIndex + '%'"></div>
+</section>
