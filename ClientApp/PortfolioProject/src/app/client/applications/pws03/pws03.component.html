@@ -1,76 +1,101 @@
-<!-- #region first --> 
-<section class="side bg-gray-700 z-10" 
-    [style.transition-duration]="transitionDuration" 
-    [style.width]="leftWidth">
+<!-- #region first -->
+<section class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [style.width]="leftWidth">
     <div class="scroll-hidden flex flex-col">
-        <p class="text-white">Make your production line</p> 
-        <div class="flex flex-row mx-auto"> <p class="my-auto text-white ">run</p>  <p class="typed-part text-[#f55049] ">faster</p></div>
+        <p class="text-white">Make your production line</p>
+        <div class="flex flex-row mx-auto">
+            <p class="my-auto text-white">run</p>
+            <p class="typed-part text-[#f55049]">faster</p>
+        </div>
     </div>
-    
-    <div 
-        class="video-line"
-        [style.top]="videoLineTop"
-        [style.opacity]="videoLineOpacity">
-        <app-shadows-for-video   
-            [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-shadows-for-video >
-        <app-shadows-for-video 
-            [style.transition]="videoLineTransition"
+
+    <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
+        <app-shadows-for-video [style.transition]="videoLineTransition"
             [style.transform]="videoLineTransform"></app-shadows-for-video>
-    </div> 
+        <app-shadows-for-video [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-shadows-for-video>
+    </div>
 </section>
-<section class="side bg-[#f55049] z-0 " [style.transition-duration]="transitionDuration">
+<section class="side bg-[#f55049] z-0" [style.transition-duration]="transitionDuration">
     <div class="scroll-hidden flex flex-col">
-        <p class="text-gray-700">Make your production line</p> 
-        <div class=" flex flex-row mx-auto"> <p class="my-auto text-gray-700">run</p>  <p class="typed-part text-white ">better</p></div>
+        <p class="text-gray-700">Make your production line</p>
+        <div class="flex flex-row mx-auto">
+            <p class="my-auto text-gray-700">run</p>
+            <p class="typed-part text-white">better</p>
+        </div>
     </div>
-    <div 
-        class="video-line"
-        [style.top]="videoLineTop"
-        [style.opacity]="videoLineOpacity">
-        <app-shadows-for-video   
-            [isLight]="false"
-            [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-shadows-for-video >
-        <app-shadows-for-video 
-            [isLight]="false"
-            [style.transition]="videoLineTransition"
+    <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
+        <app-shadows-for-video [isLight]="false" [style.transition]="videoLineTransition"
             [style.transform]="videoLineTransform"></app-shadows-for-video>
-    </div> 
+        <app-shadows-for-video [isLight]="false" [style.transition]="videoLineTransition"
+            [style.transform]="videoLineTransform"></app-shadows-for-video>
+    </div>
 </section>
-<!-- #endregion first --> 
+<!-- #endregion first -->
 <div id="first-section-placeholder" class="h-[120vh] max-h-[120vh] overflow-hidden relative">
-    <div 
-        class="video-line"
-        [style.top]="videoLineTop"
-        [style.opacity]="videoLineOpacity">
-        <app-video-line  
-            [sources]="leftVideoArray"
-            [style.transition]="videoLineTransition"
+    <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
+        <app-video-line [sources]="leftVideoArray" [style.transition]="videoLineTransition"
             [style.transform]="videoLineTransform"></app-video-line>
-        <app-video-line  
-            [sources]="leftVideoArray"
-            [style.transition]="videoLineTransition"
+        <app-video-line [sources]="leftVideoArray" [style.transition]="videoLineTransition"
             [style.transform]="videoLineTransform"></app-video-line>
-    </div> 
+    </div>
 </div>
 <!-- #region second section -->
 <section class="screen-height-section w-full flex">
-    <div class="grid grid-rows-[1fr_2fr] grid-cols-[2fr_1fr] h-full mx-auto min-w-[1000px]">
+    <div class="grid grid-rows-[1fr_2fr] grid-cols-[2fr_1fr] h-full mx-auto min-w-[800px]">
         <section class="my-auto">
-            <p class="text-accent underscored text-5xl font-bold my-auto">
+            <p class="text-accent underscored after:left-1 after:w-14 text-5xl font-bold my-auto">
                 GLOBE
             </p>
             <p class="text-secondary text-3xl font-bold mt-4">Equipment monitoring</p>
         </section>
-        
-        <app-feature-selector class="my-auto w-full">
 
+        <app-feature-selector (selectedFeatureChanged)="selectedCaption = $event" class="my-auto ml-auto">
         </app-feature-selector>
 
-        <div class="bg-green-400 col-span-2 mx-auto mb-8">
-
+        <div class="col-span-2 mx-auto mb-8">
+            <video *ngIf="selectedCaption == 'Graphic map'" class="w-[800px]" autoplay loop muted>
+                <source src="../../../../../assets/GraphicRedactor.mp4" type="video/mp4" />
+            </video>
+            <video *ngIf="selectedCaption == 'Analytics'" class="w-[800px]" autoplay loop muted>
+                <source src="../../../../../assets/Analytics.mp4" type="video/mp4" />
+            </video>
+            <video *ngIf="selectedCaption == 'Access control'" class="w-[800px]" autoplay loop muted>
+                <source src="../../../../../assets/Users.mp4" type="video/mp4" />
+            </video>
         </div>
     </div>
 </section>
 <!-- #endregion second section -->
+<!-- #region third section -->
+<section class="bg-[#f6f6f6] flex pt-8">
+    <div class="flex flex-col  min-w-[800px] mx-auto">
+        <article *ngFor="let article of articles" class="flex flex-row w-full mb-8 justify-between">
+            <div class="mb-auto sticky top-4">
+                <p class="text-accent underscored sticky after:left-0 after:w-8 text-3xl font-bold my-auto">
+                    {{article.Title}}
+                </p>
+                <p class="text-secondary text-xl font-bold mt-4">{{article.SecondaryTitle}}</p>
+            </div>
+
+            <section class="flex flex-col col-start-2 w-[400px]">
+                <video class="w-[400px]" autoplay="true" muted="true" loop="true" data-loaded="true">
+                    <source [src]="article.VideoSource" type="video/mp4" />
+                </video>
+
+                <article class="flex relative mt-8 flex-col gap-1 py-2 justify-around">
+                    <div class="rounded-full left-0 absolute h-full w-1 bg-gray-300"></div>
+                    <p *ngFor="let item of article.Items" class="ml-8 font-medium text-lg text-secondary">{{item}}</p>
+                </article>
+            </section>
+        </article>
+
+
+    </div>
+</section>
+<!-- #endregion third section -->
+<section class="screen-height-section pt-[100px] flex relative overflow-hidden">
+    <div class="bg-[#707070]  rounded-[50%] absolute -left-[100px] -bottom-[400px] h-[1000px] w-[2200px]"></div>
+    <div class="w-[500px] h-[300px] rounded-xl z-10 my-auto ml-auto mr-[200px] bg-red-600">
+        <app-work-center></app-work-center>
+    </div>
+</section>

@@ -26,6 +26,7 @@ import { CubeComponent } from './applications/schedule/cube/cube.component';
 import { VideoLineComponent } from './applications/pws03/video-line/video-line.component';
 import { ShadowsForVideoComponent } from './applications/pws03/shadows-for-video/shadows-for-video.component';
 import { FeatureSelectorComponent } from './applications/pws03/feature-selector/feature-selector.component';
+import { WorkCenterComponent } from './applications/pws03/work-center/work-center.component';
 
 
 
@@ -44,7 +45,8 @@ import { FeatureSelectorComponent } from './applications/pws03/feature-selector/
     CubeComponent,
     VideoLineComponent,
     ShadowsForVideoComponent,
-    FeatureSelectorComponent
+    FeatureSelectorComponent,
+    WorkCenterComponent
   ],
   imports: [
     CommonModule,

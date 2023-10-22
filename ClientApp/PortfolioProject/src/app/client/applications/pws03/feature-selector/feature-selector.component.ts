@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
     selector: 'app-feature-selector',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./feature-selector.component.css']
 })
 export class FeatureSelectorComponent implements OnInit {
+
+    @Output() selectedFeatureChanged = new EventEmitter<string>()
 
     listItems: string[] = ["Graphic map", "Analytics", "Access control"]
     selectedItem : string = "Analytics"
@@ -18,6 +20,7 @@ export class FeatureSelectorComponent implements OnInit {
     selectItem(item : string){
         this.selectedItem = item
         this.selectedItemIndex = this.listItems.indexOf(this.selectedItem)
+        this.selectedFeatureChanged.next(item)
     }
 
 }

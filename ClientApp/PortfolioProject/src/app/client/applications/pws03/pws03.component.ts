@@ -32,6 +32,9 @@ export class Pws03Component extends BaseComponent{
                 "../../../../../assets/WorkCenterDictionary.mp4", 
                 "../../../../../assets/Analytics.mp4"]
 
+    selectedCaption : string = 'Analytics'
+
+    articles : Article[] = []
 
     override ngOnInit(): void {
         super.ngOnInit()
@@ -53,6 +56,39 @@ export class Pws03Component extends BaseComponent{
         },5000)
         
         this.setupMouseMoveListener()
+        this.setupArticles()
+    }
+    setupArticles(){
+        /* , 
+                , 
+                "../../../../../assets/WorkCenterDictionary.mp4", 
+                "../../../../../assets/Users.mp4" */
+        this.articles.push({
+            Title: 'Graphic map',
+            SecondaryTitle: 'features',
+            VideoSource: "../../../../../assets/GraphicRedactor.mp4",
+            Items: ["Quick map editing",
+                    "Seamless integration with analytics",
+                    "Real time equipment state updates",
+                    "Support for irregular work center shapes"]
+        })
+        this.articles.push({
+            Title: 'Analytics',
+            SecondaryTitle: 'features',
+            VideoSource: "../../../../../assets/Analytics.mp4",
+            Items: ["Several types of graphics",
+                    "Custom period and scale settings",
+                    "PDF export",
+                    "Data aggregation, side-to-side comparison"]
+        })
+        this.articles.push({
+            Title: 'Customization',
+            SecondaryTitle: 'features',
+            VideoSource: "../../../../../assets/Users.mp4",
+            Items: ["Effortless expansion of equipment pool",
+                    "Limitless equipment types with the help of plugins",
+                    "Fluid access roles"]
+        })
     }
     updateLinePosition(){
         //refreshing position
@@ -87,4 +123,10 @@ export class Pws03Component extends BaseComponent{
         this.leftWidth = `${(e.touches[0].clientX / window.innerWidth * 100) - 1}%`;
     }
 
+}
+export interface Article{
+    Title: string
+    SecondaryTitle : string
+    VideoSource : string
+    Items : string[]
 }
