@@ -1,0 +1,4 @@
+::ng-deep :root {
+  --x-equipment-offset: 86px;
+  --y-equipment-offset: 60px;
+}

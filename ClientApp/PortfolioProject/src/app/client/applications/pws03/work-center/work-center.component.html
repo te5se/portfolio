@@ -1,1 +1,27 @@
-<p>work-center works!</p>
+<section class="flex relative w-full h-full rounded-[36px]  bg-white overflow-hidden">
+    <section class="flex flex-col  absolute w-[1500px] -rotate-45 -left-[650px]">
+        <div *ngFor="let number of numbers" class="bg-gray-500 h-1 mb-1 w-full">
+
+        </div>
+    </section>
+    <!-- 56 y 86 x -->
+    <app-equipment [equipment]="equipments[0]" class="absolute top-[24px] right-[24px]">
+
+    </app-equipment>
+    <app-equipment [equipment]="equipments[1]"
+        class="absolute top-[calc(24px+var(--y-equipment-offset)*1)] right-[calc(24px+var(--x-equipment-offset)*1)]">
+
+    </app-equipment>
+    <app-equipment [equipment]="equipments[2]"
+        class="absolute top-[calc(24px+var(--y-equipment-offset)*2)] right-[calc(24px+var(--x-equipment-offset)*2)]">
+
+    </app-equipment>
+    <app-equipment [equipment]="equipments[3]"
+        class="absolute top-[calc(24px+var(--y-equipment-offset)*3)] right-[calc(24px+var(--x-equipment-offset)*3)]">
+
+    </app-equipment>
+    <app-equipment [equipment]="equipments[4]"
+        class="absolute top-[calc(24px+var(--y-equipment-offset)*4)] right-[calc(24px+var(--x-equipment-offset)*4)]">
+
+    </app-equipment>
+</section>

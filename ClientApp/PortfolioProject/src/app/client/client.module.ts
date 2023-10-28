@@ -27,6 +27,7 @@ import { VideoLineComponent } from './applications/pws03/video-line/video-line.c
 import { ShadowsForVideoComponent } from './applications/pws03/shadows-for-video/shadows-for-video.component';
 import { FeatureSelectorComponent } from './applications/pws03/feature-selector/feature-selector.component';
 import { WorkCenterComponent } from './applications/pws03/work-center/work-center.component';
+import { EquipmentComponent } from './applications/pws03/work-center/equipment/equipment.component';
 
 
 
@@ -46,7 +47,8 @@ import { WorkCenterComponent } from './applications/pws03/work-center/work-cente
     VideoLineComponent,
     ShadowsForVideoComponent,
     FeatureSelectorComponent,
-    WorkCenterComponent
+    WorkCenterComponent,
+    EquipmentComponent
   ],
   imports: [
     CommonModule,
