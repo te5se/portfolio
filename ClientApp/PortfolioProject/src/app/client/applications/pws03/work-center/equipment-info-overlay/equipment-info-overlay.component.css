@@ -1,0 +1,17 @@
+/* ::ng-deep .p-overlaypanel-content {
+  bottom: 32px;
+  position: absolute;
+  background-color: white;
+}
+::ng-deep .p-overlaypanel:after {
+  position: absolute;
+  rotate: 180deg;
+  bottom: 14px !important;
+}
+
+::ng-deep .p-overlaypanel:before {
+  position: absolute;
+  rotate: 180deg;
+  bottom: 14px !important;
+}
+ */

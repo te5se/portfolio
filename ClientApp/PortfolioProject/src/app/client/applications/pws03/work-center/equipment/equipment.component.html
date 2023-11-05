@@ -1,7 +1,9 @@
-<div [style.background-color]="currentState.backgroundColor" class="flex flex-col h-20 w-20  rounded-2xl">
+<button (click)="onClickMethod($event)" [style.background-color]="currentState.backgroundColor"
+    class="flex flex-col h-20 w-20  rounded-2xl">
     <section class="m-auto flex flex-col">
         <p [style.color]="currentState.color" class="mx-auto">№ {{equipment.inventoryNumber}}</p>
         <p [style.color]="currentState.color" class="mx-auto text-xs">{{equipment.model}}</p>
 
     </section>
-</div>
+</button>
+<app-equipment-info-overlay></app-equipment-info-overlay>

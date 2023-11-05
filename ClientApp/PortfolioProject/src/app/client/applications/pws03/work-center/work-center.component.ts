@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { Equipment } from './equipment/equipment.component';
+import { OverlayPanel } from 'primeng/overlaypanel';
 
 @Component({
     selector: 'app-work-center',

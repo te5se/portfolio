@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { BaseComponent } from 'src/app/components/base/base.component';
+import { Pws03UiService } from '../../pws03-ui-service/pws03-ui.service';
 
 @Component({
     selector: 'app-equipment',
@@ -8,10 +9,13 @@ import { BaseComponent } from 'src/app/components/base/base.component';
 })
 export class EquipmentComponent extends BaseComponent {
 
+    pws03UIService = inject(Pws03UiService)
+
     states: EquipmentState[] = []
     currentState: EquipmentState = {}
 
     @Input() equipment: Equipment = {}
+    //@Output() onClick = new EventEmitter<MouseEvent>()
 
     constructor() {
         super()
@@ -51,11 +55,22 @@ export class EquipmentComponent extends BaseComponent {
             color: "black"
         })
     }
+    onClickMethod(event: MouseEvent) {
+        //this.onClick.next(event)
+        this.pws03UIService.equipmentSelected.next({
+            event: event,
+            equipment: this.equipment
+        })
+    }
 }
 export interface EquipmentState {
     backgroundColor?: string
     color?: string
     caption?: string
+}
+export interface EquipmentSelectedDTO {
+    equipment?: Equipment
+    event?: MouseEvent
 }
 export interface Equipment {
     inventoryNumber?: string
