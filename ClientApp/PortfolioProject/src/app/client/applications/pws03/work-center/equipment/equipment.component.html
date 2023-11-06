@@ -1,4 +1,4 @@
-<button (click)="onClickMethod($event)" [style.background-color]="currentState.backgroundColor"
+<button #wrapper (click)="onClickMethod($event)" [style.backgroundColor]="currentState.backgroundColor"
     class="flex flex-col h-20 w-20  rounded-2xl">
     <section class="m-auto flex flex-col">
         <p [style.color]="currentState.color" class="mx-auto">№ {{equipment.inventoryNumber}}</p>
@@ -6,4 +6,3 @@
 
     </section>
 </button>
-<app-equipment-info-overlay></app-equipment-info-overlay>

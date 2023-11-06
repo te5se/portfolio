@@ -30,6 +30,7 @@ import { FeatureSelectorComponent } from './applications/pws03/feature-selector/
 import { WorkCenterComponent } from './applications/pws03/work-center/work-center.component';
 import { EquipmentComponent } from './applications/pws03/work-center/equipment/equipment.component';
 import { EquipmentInfoOverlayComponent } from './applications/pws03/work-center/equipment-info-overlay/equipment-info-overlay.component';
+import { NgxPopperjsModule } from 'ngx-popperjs';
 
 
 
@@ -67,7 +68,8 @@ import { EquipmentInfoOverlayComponent } from './applications/pws03/work-center/
         DialogModule,
         InputTextareaModule,
         MatTabsModule,
-        OverlayPanelModule
+        OverlayPanelModule,
+        NgxPopperjsModule
     ]
 })
 export class ClientModule { }

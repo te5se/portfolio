@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { Equipment } from './equipment/equipment.component';
 import { OverlayPanel } from 'primeng/overlaypanel';
+import { NgxPopperjsPlacements, NgxPopperjsTriggers } from 'ngx-popperjs';
 
 @Component({
     selector: 'app-work-center',

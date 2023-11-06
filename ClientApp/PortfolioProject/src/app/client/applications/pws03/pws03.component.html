@@ -31,7 +31,8 @@
     </div>
 </section>
 <!-- #endregion first -->
-<div id="first-section-placeholder" class="h-[120vh] max-h-[120vh] overflow-hidden relative">
+<!-- 4px for auto scroll result not to have a line on top -->
+<div id="first-section-placeholder" class="h-[calc(120vh+4px)] max-h-[calc(120vh+4px)] overflow-hidden relative">
     <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
         <app-video-line [sources]="leftVideoArray" [style.transition]="videoLineTransition"
             [style.transform]="videoLineTransform"></app-video-line>
@@ -40,7 +41,7 @@
     </div>
 </div>
 <!-- #region second section -->
-<section class="screen-height-section w-full flex">
+<section class="screen-height-section w-full flex" #secondSection>
     <div class="grid grid-rows-[1fr_2fr] grid-cols-[2fr_1fr] h-full mx-auto min-w-[800px]">
         <section class="my-auto">
             <p class="text-accent underscored after:left-1 after:w-14 text-5xl font-bold my-auto">
@@ -49,17 +50,17 @@
             <p class="text-secondary text-3xl font-bold mt-4">Equipment monitoring</p>
         </section>
 
-        <app-feature-selector (selectedFeatureChanged)="selectedCaption = $event" class="my-auto ml-auto">
+        <app-feature-selector #featureSelector (selectedFeatureChanged)="selectedCaption = $event" class="my-auto ml-auto">
         </app-feature-selector>
 
-        <div class="col-span-2 mx-auto mb-8">
-            <video *ngIf="selectedCaption == 'Graphic map'" class="w-[800px]" autoplay loop muted>
+        <div class="col-span-2 mx-auto mb-8"  >
+            <video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow w-[800px]" autoplay loop muted>
                 <source src="../../../../../assets/GraphicRedactor.mp4" type="video/mp4" />
             </video>
-            <video *ngIf="selectedCaption == 'Analytics'" class="w-[800px]" autoplay loop muted>
+            <video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow w-[800px]" autoplay loop muted>
                 <source src="../../../../../assets/Analytics.mp4" type="video/mp4" />
             </video>
-            <video *ngIf="selectedCaption == 'Access control'" class="w-[800px]" autoplay loop muted>
+            <video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow w-[800px]" autoplay loop muted>
                 <source src="../../../../../assets/Users.mp4" type="video/mp4" />
             </video>
         </div>
@@ -67,7 +68,7 @@
 </section>
 <!-- #endregion second section -->
 <!-- #region third section -->
-<section class="bg-[#f6f6f6] flex pt-8">
+<section class="bg-[#f6f6f6] flex pt-8 ">
     <div class="flex flex-col  min-w-[800px] mx-auto">
         <article *ngFor="let article of articles" class="flex flex-row w-full mb-8 justify-between">
             <div class="mb-auto sticky top-4">
@@ -78,7 +79,7 @@
             </div>
 
             <section class="flex flex-col col-start-2 w-[400px]">
-                <video class="w-[400px]" autoplay="true" muted="true" loop="true" data-loaded="true">
+                <video class="w-[400px] local-video-shadow" autoplay="true" muted="true" loop="true" data-loaded="true">
                     <source [src]="article.VideoSource" type="video/mp4" />
                 </video>
 
@@ -93,9 +94,21 @@
     </div>
 </section>
 <!-- #endregion third section -->
-<section class="screen-height-section pt-[100px] flex relative overflow-hidden">
+<section class="screen-height-section pt-[100px] flex relative overflow-hidden" (click)="hidePopover()">
     <div class="bg-[#707070]  rounded-[50%] absolute -left-[100px] -bottom-[400px] h-[1000px] w-[2200px]"></div>
     <div class="w-[550px] h-[300px] z-10 my-auto ml-auto mr-[200px]">
         <app-work-center></app-work-center>
     </div>
+    <div class="absolute" [popper]="myPopperContent" 
+        [popperPlacement]="placement" 
+        [style.top]="popoverTop"
+        [style.left]="popoverLeft"
+        [style.width]="popoverSrcElementWidth"
+        [style.height]="popoverSrcElementHeight"
+        #virtualElement>
+    </div>
 </section>
+
+<popper-content #myPopperContent>
+        <app-equipment-info-overlay (goToAnalyticsChange)="goToAnalytics()"></app-equipment-info-overlay>
+</popper-content>

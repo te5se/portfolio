@@ -1,3 +1,19 @@
-<p-overlayPanel #overlayPanel>
-    <p>overlay</p>
-</p-overlayPanel>
+<section class="flex relative h-[300px] w-[400px] rounded-3xl">
+    <header class="absolute flex -top-[1px] -left-0.5 -right-[1px] h-12  rounded-full
+            bg-[var(--chosen-equipment-background)] brightness-125">
+        <p class="my-auto ml-6 text-white"> {{selectedEquipmentDTO?.equipment?.model}}</p>
+    </header>
+    <div class="h-full grid grid-rows-[48px_auto_auto_auto_1fr_auto_16px]">
+        <button id="goToAnalytics" 
+            (click)="goToAnalyticsChange.next(true)"
+            class="flex flex-row 
+            brightness-125 hover:brightness-100 hover:duration-150  
+            active:duration-150 duration-500 active:brightness-75
+            transition-all
+            group
+            ml-6 rounded-xl h-12 px-4 bg-[var(--chosen-equipment-background)] row-start-6"> 
+            <p class="my-auto">Go to analytics</p>    
+            <i class="pi pi-arrow-right my-auto ml-2 mr-4 transition-all group-hover:translate-x-2"></i>
+            </button>
+    </div>
+</section>

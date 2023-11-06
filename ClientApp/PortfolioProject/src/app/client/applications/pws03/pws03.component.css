@@ -53,3 +53,20 @@
   content: "";
   @apply absolute -bottom-2 rounded-full h-[6px] bg-[var(--pws03-accent-color)];
 }
+
+.hero-video-shadow{
+    -webkit-box-shadow: 4px 4px 38px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 38px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 38px 10px rgba(0, 0, 0, 0.2);
+}
+.local-video-shadow{
+    -webkit-box-shadow: 4px 4px 24px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 4px 4px 24px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 24px 10px rgba(0, 0, 0, 0.2);
+}
+@keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+  
