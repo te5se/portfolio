@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, HostListener, OnInit, ViewChild, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild, inject } from '@angular/core';
 import { NgxPopperjsTriggers, NgxPopperjsPlacements, NgxPopperjsContentComponent } from 'ngx-popperjs';
 import { BehaviorSubject } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
@@ -11,7 +11,6 @@ import { FeatureSelectorComponent } from './feature-selector/feature-selector.co
     selector: 'app-pws03',
     templateUrl: './pws03.component.html',
     styleUrls: ['./pws03.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Pws03Component extends BaseComponent {
 
@@ -22,6 +21,7 @@ export class Pws03Component extends BaseComponent {
     
     pws03UIService = inject(Pws03UiService)
 
+    changeDetection = inject(ChangeDetectorRef)
     placement: NgxPopperjsPlacements = NgxPopperjsPlacements.TOP
 
     leftWidth: string = '100%'
@@ -59,12 +59,8 @@ export class Pws03Component extends BaseComponent {
 
     override ngOnInit(): void {
         super.ngOnInit()
-        setTimeout(()=>{
-            console.debug("virtual element", this.virtualElement)
-        })
         setTimeout(() => {
             this.leftWidth = '67%'
-
         }, 3000)
         setTimeout(() => {
             this.transitionDuration = '500ms'
@@ -74,9 +70,6 @@ export class Pws03Component extends BaseComponent {
             this.videoLineOpacity = 1
             this.videoLineTop = '80vh'
             this.shouldStartVideos.next(true)
-            setInterval(() => {
-                this.updateLinePosition()
-            }, 50)
         }, 5000)
 
         this.setupArticles()
@@ -138,19 +131,7 @@ export class Pws03Component extends BaseComponent {
                 "Fluid access roles"]
         })
     }
-    updateLinePosition() {
-        //refreshing position
-        if (this.currentVideoPosition < -100) {
-            this.videoLineTransition = ``
-            this.currentVideoPosition += 102
-            setTimeout(() => {
-                this.videoLineTransition = `transform 50ms linear`
-            })
-        }
-
-        this.videoLineTransform = `translate3d(${this.currentVideoPosition}%, 0px, 0px) `
-        this.currentVideoPosition -= 0.2
-    }
+    
     @HostListener('document:mousemove', ['$event'])
     onMouseMove(e: MouseEvent) {
         if (this.updateOnMove == false) {

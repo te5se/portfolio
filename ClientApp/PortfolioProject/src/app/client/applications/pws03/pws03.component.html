@@ -9,10 +9,8 @@
     </div>
 
     <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
-        <app-shadows-for-video [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-shadows-for-video>
-        <app-shadows-for-video [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-shadows-for-video>
+        <app-shadows-for-video class="moving-line"></app-shadows-for-video>
+        <app-shadows-for-video class="moving-line"></app-shadows-for-video>
     </div>
 </section>
 <section class="side bg-[#f55049] z-0" [style.transition-duration]="transitionDuration">
@@ -24,20 +22,18 @@
         </div>
     </div>
     <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
-        <app-shadows-for-video [isLight]="false" [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-shadows-for-video>
-        <app-shadows-for-video [isLight]="false" [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-shadows-for-video>
+        <app-shadows-for-video class="moving-line" [isLight]="false" ></app-shadows-for-video>
+        <app-shadows-for-video class="moving-line" [isLight]="false" ></app-shadows-for-video>
     </div>
 </section>
 <!-- #endregion first -->
 <!-- 4px for auto scroll result not to have a line on top -->
 <div id="first-section-placeholder" class="h-[calc(120vh+4px)] max-h-[calc(120vh+4px)] overflow-hidden relative">
     <div class="video-line" [style.top]="videoLineTop" [style.opacity]="videoLineOpacity">
-        <app-video-line [sources]="leftVideoArray" [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-video-line>
-        <app-video-line [sources]="leftVideoArray" [style.transition]="videoLineTransition"
-            [style.transform]="videoLineTransform"></app-video-line>
+        <app-video-line class="moving-line"  [sources]="leftVideoArray" 
+            ></app-video-line>
+        <app-video-line class="moving-line" [sources]="leftVideoArray" 
+            ></app-video-line>
     </div>
 </div>
 <!-- #region second section -->
