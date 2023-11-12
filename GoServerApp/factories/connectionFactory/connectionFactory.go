@@ -17,7 +17,7 @@ func ProvideConnectionFactory() ConnectionFactory {
 }
 
 func (c ConnectionFactory) InitializeConnection() {
-	connStr := "host=localhost user=postgres  port=5434 password=postgres dbname=postgres sslmode=disable"
+	connStr := "host=localhost user=postgres  port=5432 password=postgres dbname=postgres sslmode=disable"
 	dbLocal, err := sqlx.Open("postgres", connStr)
 
 	db = dbLocal.Unsafe()
