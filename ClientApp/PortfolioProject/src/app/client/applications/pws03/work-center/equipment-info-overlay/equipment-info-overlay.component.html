@@ -1,19 +1,30 @@
-<section class="flex relative h-[300px] w-[400px] rounded-3xl">
+<section class="flex flex-col relative h-[300px] w-[400px] rounded-3xl">
     <header class="absolute flex -top-[1px] -left-0.5 -right-[1px] h-12  rounded-full
             bg-[var(--chosen-equipment-background)] brightness-125">
-        <p class="my-auto ml-6 text-white"> {{selectedEquipmentDTO?.equipment?.model}}</p>
+        <p class="chosen-equipment-color my-auto ml-6 "> {{selectedEquipmentDTO?.equipment?.model}} ({{selectedEquipmentDTO?.equipment?.inventoryNumber}})</p>
     </header>
-    <div class="h-full grid grid-rows-[48px_auto_auto_auto_1fr_auto_16px]">
+
+    <div class="h-full pl-2 pt-14 grid grid-rows-[auto_auto_auto_1fr_auto_16px] grid-cols-[auto_1fr] ">
+        
+        <p class="text-right">Model: </p>
+        <p class="ml-2">{{(pws03UIService.equipmentSelected | async)?.equipment?.model}}</p>
+        <p class="text-right">State: </p>
+        <p class="ml-2">{{(pws03UIService.equipmentSelected | async)?.state?.caption | titlecase}}</p>
+        <p class="text-right">Controller: </p>
+        <p class="ml-2">{{(pws03UIService.equipmentSelected | async)?.equipment?.controller}}</p>
+        <p class="text-right">State length: </p>
+        <p class="ml-2">{{stateLength}}</p>
+
         <button id="goToAnalytics" 
             (click)="goToAnalyticsChange.next(true)"
-            class="flex flex-row 
+            class="flex flex-row col-span-2 mr-auto
             brightness-125 hover:brightness-100 hover:duration-150  
             active:duration-150 duration-500 active:brightness-75
             transition-all
             group
-            ml-6 rounded-xl h-12 px-4 bg-[var(--chosen-equipment-background)] row-start-6"> 
-            <p class="my-auto">Go to analytics</p>    
-            <i class="pi pi-arrow-right my-auto ml-2 mr-4 transition-all group-hover:translate-x-2"></i>
-            </button>
+             rounded-xl h-12 px-4 bg-[var(--chosen-equipment-background)] row-start-5"> 
+            <p class="chosen-equipment-color my-auto">Go to analytics</p>    
+            <i class="chosen-equipment-color pi pi-arrow-right my-auto ml-2 mr-4 transition-all group-hover:translate-x-2"></i>
+        </button>
     </div>
 </section>

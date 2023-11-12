@@ -22,23 +22,28 @@ export class WorkCenterComponent extends BaseComponent {
     setupEquipments() {
         this.equipments.push({
             inventoryNumber: '1171',
-            model: "BRDGe 4"
+            model: "BRDGe 4",
+            controller: 'Foreman'
         })
         this.equipments.push({
             inventoryNumber: '2553',
-            model: "GalR 25053"
+            model: "GalR 25053",
+            controller: 'Foreman'
         })
         this.equipments.push({
             inventoryNumber: '341',
-            model: "CTC ENDR 1"
+            model: "CTC ENDR 1",
+            controller: 'Heidenhain'
         })
         this.equipments.push({
             inventoryNumber: '998',
-            model: "EoW 998"
+            model: "EoW 998",
+            controller: 'Heidenhain'
         })
         this.equipments.push({
             inventoryNumber: '1147',
-            model: "MSK 1076"
+            model: "MSK 1076",
+            controller: 'Heidenhain'
         })
     }
 }

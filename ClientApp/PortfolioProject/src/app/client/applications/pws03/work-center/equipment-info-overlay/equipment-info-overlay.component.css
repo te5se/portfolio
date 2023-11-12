@@ -1,3 +1,6 @@
-*{
+.chosen-equipment-color{
     color: var(--chosen-equipment-color);
+}
+p{
+    color:black;
 }

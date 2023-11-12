@@ -21,9 +21,10 @@ export class EquipmentComponent extends BaseComponent {
 
     states: EquipmentState[] = []
     currentState: EquipmentState = {}
+    lastStateChangeDate : Date = new Date()
+
 
     @Input() equipment: Equipment = {}
-    //@Output() onClick = new EventEmitter<MouseEvent>()
 
     constructor() {
         super()
@@ -35,13 +36,6 @@ export class EquipmentComponent extends BaseComponent {
         })
 
         this.setRandomStateWithDelay(5 + Math.random() * 5)
-
-        /* setInterval(()=>{
-            if(this.equipment.inventoryNumber != null && this.equipment.inventoryNumber == "2553"){
-                console.debug("debug bg color check", this.currentState.backgroundColor)
-
-            }
-        },1000) */
     }
 
     setRandomStateWithDelay(delay: number) {
@@ -53,13 +47,17 @@ export class EquipmentComponent extends BaseComponent {
 
     async setRandomState() {
         let index = Math.floor(Math.random() * this.states.length)
+        // refresh state change date
+        if(this.states[index].caption != this.currentState.caption){
+            this.lastStateChangeDate = new Date()
+        }
         this.currentState = this.states[index]
         this.changeDetector.detectChanges()
-        //this.wrapper?.nativeElement.setAttribute('style', `background-color: ${this.currentState.backgroundColor}`)
 
         let selectedEquipmentDTO = this.pws03UIService.equipmentSelected.value 
         if(selectedEquipmentDTO.equipment?.inventoryNumber == this.equipment.inventoryNumber){
             selectedEquipmentDTO.state = this.currentState
+            selectedEquipmentDTO.lastStateChangeDate = this.lastStateChangeDate
             this.pws03UIService.equipmentSelected.next(selectedEquipmentDTO)
         }
     }
@@ -89,7 +87,8 @@ export class EquipmentComponent extends BaseComponent {
             targetElement: this.wrapper?.nativeElement,
             event: event,
             equipment: this.equipment,
-            state: this.currentState
+            state: this.currentState,
+            lastStateChangeDate: this.lastStateChangeDate
         })
     }
 }
@@ -97,14 +96,17 @@ export interface EquipmentState {
     backgroundColor?: string
     color?: string
     caption?: string
+    lastStateChange? : Date
 }
 export interface EquipmentSelectedDTO {
     targetElement? : HTMLElement
     equipment?: Equipment
     event?: MouseEvent
     state? : EquipmentState
+    lastStateChangeDate? : Date
 }
 export interface Equipment {
     inventoryNumber?: string
     model?: string
+    controller? : string
 }
