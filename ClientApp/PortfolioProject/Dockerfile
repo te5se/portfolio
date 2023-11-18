@@ -3,24 +3,26 @@
 # Use official node image as the base image
 FROM node:latest as build
 
-# Set the working directory
 WORKDIR /usr/local/app
+
+# Install app dependencies
+COPY package.json /usr/local/app/
+
+RUN npm install
+# Set the working directory
 
 # Add the source code to app
 COPY ./ /usr/local/app/
 
-# Install all the dependencies
-RUN npm install
-
-# Generate the build of the application
 RUN npm run build
-
 
 # Stage 2: Serve app with nginx server
 
 # Use official nginx image as the base image
 FROM nginx:latest
 
+# Not /etc/nginx/nginx.conf
+COPY ./nginx_conf/nginx.conf /etc/nginx/conf.d/default.conf 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /usr/local/app/dist/portfolio-project /usr/share/nginx/html
 
