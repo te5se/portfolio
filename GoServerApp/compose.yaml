@@ -11,9 +11,11 @@ services:
   server:
     build:
       context: .
-      target: final
     ports:
       - 8090:8090
+    # extra_hosts:
+    #  - "host.docker.internal:host-gateway"
+    network_mode: "host"
 
 # The commented out section below is an example of how to define a PostgreSQL
 # database that your application can use. `depends_on` tells Docker Compose to
