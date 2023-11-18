@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { random } from 'cypress/types/lodash';
 import { timer } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { Lesson } from 'src/app/models/lesson';

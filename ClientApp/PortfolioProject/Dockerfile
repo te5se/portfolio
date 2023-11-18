@@ -1,13 +1,14 @@
+
 # Stage 1: Compile and Build angular codebase
 
 # Use official node image as the base image
-FROM node:latest as build
+FROM node:20-alpine as build
 
 WORKDIR /usr/local/app
 
 # Install app dependencies
 COPY package.json /usr/local/app/
-
+run npm uninstall cypress
 RUN npm install
 # Set the working directory
 
