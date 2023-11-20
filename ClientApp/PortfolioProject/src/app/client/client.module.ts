@@ -33,6 +33,7 @@ import { EquipmentInfoOverlayComponent } from './applications/pws03/work-center/
 import { NgxPopperjsModule } from 'ngx-popperjs';
 import { WcTitleComponent } from './applications/pws03/work-center/wc-title/wc-title.component';
 import { BackgroundBallComponent } from './applications/pws03/background-ball/background-ball.component';
+import { NeonButtonComponent } from './applications/schedule/neon-button/neon-button.component';
 
 
 
@@ -56,7 +57,8 @@ import { BackgroundBallComponent } from './applications/pws03/background-ball/ba
         EquipmentComponent,
         EquipmentInfoOverlayComponent,
         WcTitleComponent,
-        BackgroundBallComponent
+        BackgroundBallComponent,
+        NeonButtonComponent
     ],
     imports: [
         CommonModule,

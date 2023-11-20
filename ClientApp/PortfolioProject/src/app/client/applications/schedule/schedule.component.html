@@ -17,9 +17,11 @@
         <div id="shadow-effect" class="group-hover:scale-[1.5]
         scroll-hidden  absolute rotate-[-30deg]"></div>
     </div>
-    <app-external-link 
-        href="https://play.google.com/store/apps/details?id=com.phoenix.schedule&hl=ru"
-        class="col-start-2 mt-auto mb-16 scroll-hidden">phoenix@schedule</app-external-link>
+    <app-neon-button 
+        class="col-start-2 mt-auto mb-16 scroll-hidden"
+        href="https://play.google.com/store/apps/details?id=com.phoenix.schedule&hl=ru">
+        phoenix@schedule
+    </app-neon-button>
 </section>
 <section id="admin-section" class="screen-height-section max-h-screen relative">
     <p class="local-title col-start-3 mt-[5%] text-right scroll-hidden -translate-y-4">ADMIN APP</p>
@@ -27,10 +29,13 @@
         <app-schedule-list [isLeft]="false" class="my-auto mr-8 max-w-[300px] h-[calc(100%-60px)] pb-4" [items]="adminList"></app-schedule-list>
         <div class=" h-[1px] w-full bg-white opacity-20 absolute -bottom-8 scroll-hidden"></div>
     </div>
-    <app-external-link 
-        href="https://github.com/te5se/schedule"
-        class="col-start-3 ml-auto mt-16 scroll-hidden">te5se@github.com</app-external-link>
+    <app-neon-button 
+        class="col-start-3 ml-auto mt-16 scroll-hidden"
+        href="https://github.com/te5se/schedule">
+        te5se@github.com
+    </app-neon-button>
     <app-schedule-image-carousel class="row-start-2 col-span-2 h-full scroll-hidden" id="carousel"></app-schedule-image-carousel>
+
 </section>
 <footer id="footer-section" class="screen-height-section grid grid-cols-[115px_7fr_5fr_10fr] grid-rows-[50px_auto_80px_1fr_120px]">
     <p class="local-title col-start-2 row-start-2 mb-4 scroll-hidden  -translate-y-4">THE STORY</p>
