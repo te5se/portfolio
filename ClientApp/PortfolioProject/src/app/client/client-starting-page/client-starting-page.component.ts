@@ -23,10 +23,18 @@ export class ClientStartingPageComponent extends BaseComponent {
     projectService : ProjectService = inject(ProjectService)
     cssVariableService : CssVariablesService = inject(CssVariablesService)
 
+    currentURL : string = ''
+
     override async ngOnInit() {
         this.setupSubscriptions();
+        await this.loadProjects();
+
+        let indexes = this.projectItems.map((value) => value.dataIndex);
+        this.maxIndex = Math.max(...indexes);
+        this.minIndex = Math.min(...indexes);
+    }
+    async loadProjects() : Promise<void>{
         let projects = await this.projectService.getProjects();
-        console.debug(projects)
         this.projectItems = [];
         let i = 0;
         projects.forEach((project) => {
@@ -43,12 +51,6 @@ export class ClientStartingPageComponent extends BaseComponent {
             this.projectItems.push(projectItem)
             i++;
         })
-        let indexes = this.projectItems.map((value) => value.dataIndex);
-        this.maxIndex = Math.max(...indexes);
-        this.minIndex = Math.min(...indexes);
-    
-        
-
     }
     
     setupSubscriptions(){

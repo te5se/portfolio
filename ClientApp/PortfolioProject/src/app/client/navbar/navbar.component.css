@@ -20,3 +20,34 @@ nav{
     color: var(--accent-font);
     transition: all 1s ease-in;
 }
+.lato{
+}
+.underscored {
+    position: relative;
+    display: flex;
+}
+.underscored::after {
+    transition: all 0.3s ease-out;
+    position: absolute;
+    bottom: 0px;
+    border-radius: 100px;
+    background-color: var(--accent-font);
+    content: "";
+    height: 2px;
+    left: 50%;
+    transform: translate(-50%,0);
+    margin-left: auto;
+    width: 0px;
+}
+.menu-item{
+    font-family: 'Lato', sans-serif;
+    @apply text-lg font-bold my-auto
+}
+.menu-item:hover:after{
+    width: 50%;
+    transform: translate(-50%,0) scaleY(2);
+}
+.menu-item:active:after{
+    width: 100%;
+}
+

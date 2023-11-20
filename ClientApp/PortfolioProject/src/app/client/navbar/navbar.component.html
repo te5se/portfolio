@@ -2,7 +2,7 @@
     <div
         id="main-button" class="basis-1/3 flex  p-default">
 
-        <i class="fa fa-bars text-2xl my-auto" ></i>
+        <i class="material-symbols-outlined text-2xl my-auto" >home</i>
 
     </div>
 
@@ -10,13 +10,17 @@
         id="links" class="basis-1/3 flex flex-row col-start-2  justify-center">
 
         <a
-            class="my-auto mr-8">
-            About
+            [ngClass]="isOnAboutPage ? 'after:!w-full' : ''"
+            routerLink="/client/about"
+            class="menu-item  mr-12 underscored ">
+            ABOUT
         </a>
         
         <a 
-            class="my-auto">
-            Projects
+            [ngClass]="isOnProjectsPage ? 'after:!w-full' : ''"
+            routerLink="/client/projects"
+            class="menu-item underscored ">
+            PROJECTS
         </a>
 
     </div>

@@ -149,8 +149,8 @@ export class Pws03Component extends BaseComponent {
     }
 
     goToAnalytics(){
-        this.secondSection?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
         this.myPopperContent?.hide()
+        this.secondSection?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
         console.debug("scroll into view", )
         this.featureSelector?.selectItem("Analytics")
     }
