@@ -34,6 +34,12 @@ import { NgxPopperjsModule } from 'ngx-popperjs';
 import { WcTitleComponent } from './applications/pws03/work-center/wc-title/wc-title.component';
 import { BackgroundBallComponent } from './applications/pws03/background-ball/background-ball.component';
 import { NeonButtonComponent } from './applications/schedule/neon-button/neon-button.component';
+import { Pad77Component } from './applications/pad77/pad77.component';
+import { TestReportComponent } from './applications/pad77/reports/test-report/test-report.component';
+import { ReportTableComponent } from './applications/pad77/reports/report-table/report-table.component';
+import { ReportsComponent } from './applications/pad77/reports/reports.component';
+import { GraphicalReportComponent } from './applications/pad77/reports/graphical-report/graphical-report.component';
+import { ReportPieChartComponent } from './applications/pad77/reports/graphical-report/report-pie-chart/report-pie-chart.component';
 
 
 
@@ -58,7 +64,13 @@ import { NeonButtonComponent } from './applications/schedule/neon-button/neon-bu
         EquipmentInfoOverlayComponent,
         WcTitleComponent,
         BackgroundBallComponent,
-        NeonButtonComponent
+        NeonButtonComponent,
+        Pad77Component,
+        TestReportComponent,
+        ReportTableComponent,
+        ReportsComponent,
+        GraphicalReportComponent,
+        ReportPieChartComponent
     ],
     imports: [
         CommonModule,

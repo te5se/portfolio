@@ -1,0 +1,7 @@
+#wrapper{
+    --showup-duration:800ms;
+    --showup-easing: ease-out;
+}
+#wrapper *{
+    border-radius: 9999px;
+}

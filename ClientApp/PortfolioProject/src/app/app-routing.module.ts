@@ -6,6 +6,8 @@ import { AdminStartingPageComponent } from './admin/admin-starting-page/admin-st
 import { AppComponent } from './app.component';
 import { TestComponent } from './test/test.component';
 import { RefreshTestComponent } from './components/refresh-test/refresh-test/refresh-test.component';
+import { AdminHostComponent } from './admin-host/admin-host.component';
+import { ClientHostComponent } from './client-host/client-host.component';
 
 const routes: Routes = [
    
@@ -13,17 +15,24 @@ const routes: Routes = [
     { path:"test", component: TestComponent},
     {   
         path: 'admin', 
-        loadChildren: ()=>import('./admin/admin.module').then(o=>o.AdminModule)
+        component: AdminHostComponent,
+        children:[
+            {
+                path: '',
+                loadChildren: ()=>import('./admin/admin.module').then(o=>o.AdminModule)
+            }
+        ]
     },
-    {
+    {   
         path: 'client', 
-        loadChildren: ()=>import('./client/client.module').then(o=>o.ClientModule)
+        component: ClientHostComponent,
+        children:[
+            {
+                path: '',
+                loadChildren: ()=>import('./client/client.module').then(o=>o.ClientModule)
+            }
+        ]
     },
-   /*  {
-        path: '/', 
-        redirectTo: 'client'
-    }, */
-   
 ];
 
 @NgModule({

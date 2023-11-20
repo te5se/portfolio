@@ -1,8 +1,9 @@
+
 ::ng-deep .scroll-hidden{
     opacity: 0;
 }
 ::ng-deep .scroll-show{
-    transition: all 1s;
+    transition: all var(--showup-duration) var(--showup-easing);
     transform: translateX(0);
     opacity: 1;
 }
@@ -18,7 +19,7 @@
     opacity: 0;
 }
 ::ng-deep .scroll-show-repeat{
-    transition: opacity 1s, transform 500ms;
+    transition: opacity var(--showup-duration) ease-in, transform 500ms;
     opacity: 1;
     transform: translateX(0);
 }

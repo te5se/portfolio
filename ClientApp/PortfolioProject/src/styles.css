@@ -32,3 +32,8 @@
 * {
   font-family: "Noto Sans", sans-serif;
 }
+
+:root{
+  --showup-duration: 800ms;
+  --showup-easing: ease-in;
+}

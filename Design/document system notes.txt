@@ -1,2 +1,7 @@
 может я смогу использовать тот веер карточек для журналов
 some weird breadcrumbs can be good for document route
+
+DESIGN: 
+	https://lpmotor.ru/primer-landing-page -- стартовая позиция может быть
+	moving stuff - https://nopaper.ru/
+	LIGHTHOUSE DMS - name

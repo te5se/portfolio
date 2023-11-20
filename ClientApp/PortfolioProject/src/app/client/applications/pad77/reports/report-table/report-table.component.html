@@ -1,0 +1,12 @@
+<section 
+    class="grid gap-1 "
+    [style.grid-template-rows]="'repeat(' + rows + ', minmax(0, 1fr))'"
+    [style.grid-template-columns]="'repeat(' + columns + ', minmax(0, 1fr))'">
+    <div 
+        [ngClass]="rounded ? 'rounded-full' : ''"
+        [style.transition-delay]="delay + ((i - (i%columns))/columns) * delayForEachRow + 'ms'"
+        class="h-2  bg-gray-400 w-full scroll-hidden -translate-y-4" *ngFor="let item of array; index as i">
+    
+    </div>
+</section>
+<!-- [style.flex-basis]="100/columns + '%'" -->
