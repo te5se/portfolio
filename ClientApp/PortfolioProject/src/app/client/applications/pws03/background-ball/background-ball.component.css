@@ -1,0 +1,25 @@
+#ball{
+    background-color: #707070;
+    border-radius: 50%;
+    position: absolute;
+    left: -100px;
+    height: 140vh;
+    width: 150vw;
+    animation: moveY infinite 40s, moveX infinite 60s;
+}
+@keyframes moveY {
+    0% { bottom: -55vh;}   
+    20% { bottom: -65vh; }
+    40% { bottom: -60vh; }
+    60% { bottom: -55vh; }
+    80% { bottom: -60vh; }
+    100% { bottom: -55vh; }
+}
+@keyframes moveX {
+    0% { left: -400px;}   
+    20% { left: -200px; }
+    40% { left: -400px; }
+    60% { left: -500px; }
+    80% { left: -100px; }
+    100% { left: -300px; }
+}

@@ -91,10 +91,24 @@
 </section>
 <!-- #endregion third section -->
 <section class="screen-height-section pt-[100px] flex relative overflow-hidden" (click)="hidePopover()">
-    <div class="bg-[#707070]  rounded-[50%] absolute -left-[100px] -bottom-[60vh] h-[140vh] w-[150vw]"></div>
-    <div class="w-[550px] h-[300px] z-10 my-auto ml-auto mx-auto lg:mr-[100px] 2xl:mr-[200px]">
-        <app-work-center></app-work-center>
-    </div>
+    
+    
+    <!-- backgroud ellipse -->
+    <app-background-ball></app-background-ball>
+
+    <!-- content -->
+    
+    <section class="grid grid-cols-[300px_1fr_2fr_100px] grid-rows-[1fr_auto_1fr] w-full">
+        <article class="col-start-2 row-start-2 flex flex-col justify-around z-10  text-5xl font-bold">
+            <div class="scroll-hidden text-white">TRY</div>
+            <div class="scroll-hidden !delay-150 text-white">IT</div>
+            <div class="scroll-hidden !delay-300 text-white">YOURSELF</div>
+        </article>
+        <div class="col-start-3 row-start-2 ml-auto w-[550px] h-[300px] z-10 ">
+            <app-work-center></app-work-center>
+        </div>
+    </section>
+    
     <div class="absolute" [popper]="myPopperContent" 
         [popperPlacement]="placement" 
         [style.top]="popoverTop"

@@ -31,6 +31,8 @@ import { WorkCenterComponent } from './applications/pws03/work-center/work-cente
 import { EquipmentComponent } from './applications/pws03/work-center/equipment/equipment.component';
 import { EquipmentInfoOverlayComponent } from './applications/pws03/work-center/equipment-info-overlay/equipment-info-overlay.component';
 import { NgxPopperjsModule } from 'ngx-popperjs';
+import { WcTitleComponent } from './applications/pws03/work-center/wc-title/wc-title.component';
+import { BackgroundBallComponent } from './applications/pws03/background-ball/background-ball.component';
 
 
 
@@ -52,7 +54,9 @@ import { NgxPopperjsModule } from 'ngx-popperjs';
         FeatureSelectorComponent,
         WorkCenterComponent,
         EquipmentComponent,
-        EquipmentInfoOverlayComponent
+        EquipmentInfoOverlayComponent,
+        WcTitleComponent,
+        BackgroundBallComponent
     ],
     imports: [
         CommonModule,
