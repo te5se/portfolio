@@ -40,6 +40,7 @@ import { ReportTableComponent } from './applications/pad77/reports/report-table/
 import { ReportsComponent } from './applications/pad77/reports/reports.component';
 import { GraphicalReportComponent } from './applications/pad77/reports/graphical-report/graphical-report.component';
 import { ReportPieChartComponent } from './applications/pad77/reports/graphical-report/report-pie-chart/report-pie-chart.component';
+import { ParallaxDocumentComponent } from './applications/pad77/parallax-document/parallax-document.component';
 
 
 
@@ -70,7 +71,8 @@ import { ReportPieChartComponent } from './applications/pad77/reports/graphical-
         ReportTableComponent,
         ReportsComponent,
         GraphicalReportComponent,
-        ReportPieChartComponent
+        ReportPieChartComponent,
+        ParallaxDocumentComponent
     ],
     imports: [
         CommonModule,

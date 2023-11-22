@@ -11,12 +11,34 @@
         <div id="lighthouse"></div> 
         <h1 class="scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing</h1>
     </section>
-    <section id="third-section" class="h-[300vh] bg-green-50 relative">
-        <div class="sticky top-[50vh] mx-auto flex flex-col">
+    <section id="third-section" class="h-[300vh] mt-[30vh] flex  relative">
+        <div class=" animation-test bg-blue-500 h-8 absolute"></div>
+        <div class="animation-test bg-blue-500 h-8 bottom-0 absolute"></div>
+        <div class="sticky top-[40vh] mx-auto flex flex-col">
             <h1 class="mx-auto">THOUSANDS</h1>
             <h2 class="mx-auto">of documents</h2>
-
         </div>
+
+        <app-parallax-document 
+            [style.--parallax-speed]="wrapper.parallaxSpeed"
+            [style.top]="wrapper.topPX + 'px'"
+            [style.left]="wrapper.leftPercent + '%'"
+            [style.opacity]="wrapper.opacity"
+            [style.scale]="wrapper.scale"
+            *ngFor="let wrapper of parallaxWrappers" 
+            [item]="wrapper.parallaxItem"
+            class="test-parallax w-fit flex absolute">
+
+        </app-parallax-document>
+
+        <div *ngFor="let item30 of array30; index as i" class="absolute animation-test h-full left-0 top-0">
+            
+            <div [style.top]="100 * i + 'px'" 
+                class="  absolute h-2 w-full bg-red-400">
+                
+            </div>
+        </div>
+        
     </section>
     <section id="last-section" class="flex screen-height-section relative">
     </section>

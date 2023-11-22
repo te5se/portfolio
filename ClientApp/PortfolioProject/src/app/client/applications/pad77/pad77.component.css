@@ -33,3 +33,24 @@ h2{
     background-size: contain;
     opacity: 0.3;
 }
+.animation-test{
+    animation: full-width-animation linear;
+    animation-timeline: view();
+}
+@keyframes full-width-animation{
+    from{
+        width: 0%
+    }
+    to{
+        width: 100%
+    }
+}
+.test-parallax{
+    animation: parallax linear;
+    animation-timeline: view(block 50% 10%);
+}
+@keyframes parallax{
+    to{
+        transform: translateY(calc( 200px))
+    }
+}
