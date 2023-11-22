@@ -1,5 +1,35 @@
-
+#wrapper{
+    --title-margin: 176px
+}
 .screen-height-section{
     height: 100vh;
     min-height: 700px;
+}
+#first-section{
+    background: linear-gradient(180deg, #B4D8FF 0%,  #B4D8FF 40%, #E8F3FE 100%);
+}
+#second-section{
+    background: linear-gradient(180deg, #E8F3FE 0%, white 100%);
+}
+h1{
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+h2{
+    font-size: 42px;
+    font-weight: 300;
+}
+#lighthouse{
+    position: absolute;
+    top: -150px;
+    bottom: -250px;
+    left: -512px;
+    width: 900px;
+    background-image: url("../../../../assets/Lighthouse.png");
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.3;
 }
