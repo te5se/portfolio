@@ -1,12 +1,18 @@
-<div class="grid grid-cols-[auto_1fr] gap-2 grid-rows-[auto_auto_auto_auto] min-w-[256px] p-2 border-2 rounded-lg border-black relative">
-    <i class="material-symbols-outlined">contract_edit</i>
-    <p>{{item.title}}</p>
-    <div class="col-start-2 row-start-2 rounded-full bg-cyan-500 px-2 w-fit text-white" *ngIf="item.isQEC">Signed with ECP</div>
-    <div class="h-0.5 w-full col-span-2 row-start-3 bg-gray-600"></div>
-    <section class="flex flex-row justify-between col-start-2 row-start-4 ">
-        <p class="text-green-600">Подписано</p>
-        <p class="text-green-600">{{item.time}}</p>
-    </section>
-
-    <p class="absolute top-2 right-2">{{item.tndex == null ? 0 : item.tndex}}</p>
-</div>
+<section class="min-w-[256px] bg-white rounded-lg">
+    <!-- inner div for opacity with solid -->
+    <div 
+        [style.opacity]="item.opacity"
+        class="grid grid-cols-[auto_1fr] gap-2 p-2   grid-rows-[auto_auto_auto_auto] border-2 rounded-lg bg-white border-black relative ">
+        <i class="material-symbols-outlined">contract_edit</i>
+        <p>{{item.title}}</p>
+        <p class="col-start-2 row-start-2 rounded-full bg-cyan-500 px-2 w-fit text-white" *ngIf="item.isQEC">Signed with ECP</p>
+        <div class="h-0.5 w-full col-span-2 row-start-3 bg-gray-600"></div>
+        <section class="flex flex-row justify-between col-start-2 row-start-4 ">
+            <p class="text-green-600">Подписано</p>
+            <p class="text-green-600">{{item.time}}</p>
+        </section>
+    
+        <p class="absolute top-2 right-2">{{item.tndex == null ? 0 : item.tndex}}</p>
+    </div>
+    
+</section>

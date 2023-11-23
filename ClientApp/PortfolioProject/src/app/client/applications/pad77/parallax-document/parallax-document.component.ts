@@ -22,4 +22,5 @@ export interface PAD77ParallaxItem{
     badge? : number
     isQEC? : boolean // qualified electronic signature
     time? : string
+    opacity? : number
 }

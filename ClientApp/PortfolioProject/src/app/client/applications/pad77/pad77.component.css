@@ -1,5 +1,7 @@
 #wrapper{
-    --title-margin: 176px
+    --title-margin: 176px;
+    --parallax-margin-bottom: 0px;
+    --parallax-speed: 1;
 }
 .screen-height-section{
     height: 100vh;
@@ -46,11 +48,17 @@ h2{
     }
 }
 .test-parallax{
-    animation: parallax linear;
-    animation-timeline: view(block 50% 10%);
+    animation: parallax linear forwards;
+    animation-timeline: view();
+    animation-range: contain 0% contain 100%;
+
 }
+
 @keyframes parallax{
+    from{
+        padding-bottom: var(--parallax-margin-bottom); 
+    }
     to{
-        transform: translateY(calc( 200px))
+        padding-bottom: calc(2000px * var(--parallax-speed) + var(--parallax-margin-bottom))
     }
 }
