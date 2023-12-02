@@ -1,11 +1,41 @@
-<div
-    class="w-12 h-12 bg-gray-400">
-</div>
+<section
+    class="image flex w-24 h-24 relative -z-10">
+    <div 
+        *ngIf="user.acceptCount != null"
+        class="bg-green-500 text-white p-1 rounded-lg left-0 bottom-0 m-auto absolute">
+        {{user.acceptCount}}
+    </div>
+    <div 
+        *ngIf="user.rejectCount != null"
+        class="bg-red-500 text-white p-1 rounded-sm right-0 bottom-0 m-auto absolute">
+        {{user.rejectCount}}
+    </div>
+</section>
+<!-- moving document -->
 <div 
-    class="w-12 h-12 bg-red-500 absolute transition-all" 
+    class="flex w-16 h-16 absolute transition-all rounded-lg bg-white" 
     [style.transition-duration]="duration + 'ms'"
-    [style.top]="document.y + 'px'"
-    [style.left]="document.x + 'px'"
+    [style.top]="document.y! + 16 + 'px'"
+    [style.left]="document.x! + 16 + 'px'"
     [ngClass]="showDocument ? 'opacity-100' : 'opacity-0' ">
-
+    <i class="material-symbols-outlined !text-6xl m-auto">
+        {{documentIcon}}
+    </i>
+</div>
+<!-- moving accept/reject animation -->
+<div
+    class="transition-all duration-500 absolute grid"
+    [style.top]="document.y! + 0 + 'px'"
+    [style.left]="document.x! + 0 + 'px'"
+    [ngClass]="animateReject || animateAccept ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
+    <i 
+        [ngClass]="animateAccept ? 'opacity-100' : 'opacity-0'"
+        class="material-symbols-outlined !text-green-400 !text-8xl m-auto transition-all duration-500 col-start-1 row-start-1">
+        done
+    </i>
+    <i 
+        [ngClass]="animateReject ? 'opacity-100' : 'opacity-0'"
+        class="material-symbols-outlined !text-red-400 !text-8xl m-auto transition-all duration-500 col-start-1 row-start-1">
+        close
+    </i>
 </div>

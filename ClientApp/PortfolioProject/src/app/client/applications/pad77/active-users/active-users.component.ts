@@ -9,11 +9,36 @@ export class ActiveUsersComponent implements OnInit {
 
   users : ActiveUser[] = []
 
+  totalAcceptedCount = 0
+  totalRejectedCount = 0
+
   constructor() { 
     this.setupUsers()
+  }
 
-   
-    
+  ngOnInit() {
+    setTimeout(()=>{
+      this.setupUserCoordinates()
+
+    })
+    setInterval(()=>{
+      this.setupUserCoordinates()
+    },50)
+    setInterval(()=>{
+      this.refreshGlobalCounts()
+    },100)
+  }
+  refreshGlobalCounts(){
+      this.totalAcceptedCount = 0
+      this.totalRejectedCount = 0
+      this.users.forEach((user)=>{
+      if(user.acceptCount != null){
+        this.totalAcceptedCount += user.acceptCount
+      }
+      if(user.rejectCount != null){
+        this.totalRejectedCount += user.rejectCount
+      }
+    })
   }
   setupUserCoordinates(){
     for(let i = 0; i < 12; i++){
@@ -35,15 +60,6 @@ export class ActiveUsersComponent implements OnInit {
       })
     }
   }
-  ngOnInit() {
-    setTimeout(()=>{
-      this.setupUserCoordinates()
-
-    })
-    setInterval(()=>{
-      this.setupUserCoordinates()
-    },50)
-  }
   getRow(index : number){
     return Math.floor(index/6) 
   }
@@ -59,5 +75,7 @@ export class ActiveUsersComponent implements OnInit {
 export interface ActiveUser{
   index? : number,
   x? : number, 
-  y? : number
+  y? : number,
+  acceptCount? : number,
+  rejectCount? : number
 }
