@@ -26,8 +26,6 @@ export class ReportTableComponent extends BaseComponent {
 
   setupArray(){
     this.array = (new Array(this.rows * this.columns)).fill(1)
-
-    console.debug("count", this.array)
   }
 
 }

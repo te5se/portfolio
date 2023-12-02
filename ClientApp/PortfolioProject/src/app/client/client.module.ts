@@ -41,6 +41,8 @@ import { ReportsComponent } from './applications/pad77/reports/reports.component
 import { GraphicalReportComponent } from './applications/pad77/reports/graphical-report/graphical-report.component';
 import { ReportPieChartComponent } from './applications/pad77/reports/graphical-report/report-pie-chart/report-pie-chart.component';
 import { ParallaxDocumentComponent } from './applications/pad77/parallax-document/parallax-document.component';
+import { ActiveUsersComponent } from './applications/pad77/active-users/active-users.component';
+import { ActiveUserComponent } from './applications/pad77/active-users/active-user/active-user.component';
 
 
 
@@ -72,7 +74,9 @@ import { ParallaxDocumentComponent } from './applications/pad77/parallax-documen
         ReportsComponent,
         GraphicalReportComponent,
         ReportPieChartComponent,
-        ParallaxDocumentComponent
+        ParallaxDocumentComponent,
+        ActiveUsersComponent,
+        ActiveUserComponent
     ],
     imports: [
         CommonModule,

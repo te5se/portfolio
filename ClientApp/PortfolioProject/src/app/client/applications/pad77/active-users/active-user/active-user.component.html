@@ -1,0 +1,11 @@
+<div
+    class="w-12 h-12 bg-gray-400">
+</div>
+<div 
+    class="w-12 h-12 bg-red-500 absolute transition-all" 
+    [style.transition-duration]="duration + 'ms'"
+    [style.top]="document.y + 'px'"
+    [style.left]="document.x + 'px'"
+    [ngClass]="showDocument ? 'opacity-100' : 'opacity-0' ">
+
+</div>

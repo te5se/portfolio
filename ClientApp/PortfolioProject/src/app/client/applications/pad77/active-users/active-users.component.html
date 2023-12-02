@@ -1,0 +1,10 @@
+<section class="grid grid-cols-6  grid-rows-2 justify-around h-full">
+    <div
+        [id]="'user'+i"
+        [style.grid-row-start]="getRow(i)"
+        class="m-auto"
+        *ngFor="let user of users; let i = index">
+        <app-active-user [users]="users" [user]="users[i]"></app-active-user>
+    </div>
+
+</section>
