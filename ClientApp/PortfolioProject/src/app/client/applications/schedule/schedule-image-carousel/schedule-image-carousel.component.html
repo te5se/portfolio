@@ -1,16 +1,13 @@
 <section id="wrapper" class="w-full h-full group bg-white  relative opacity-30 hover:opacity-100 duration-500 transition-all">
     <mat-tab-group #tabs [(selectedIndex)]="selectedPage" [animationDuration]="animationDuration" class="h-full">
         <mat-tab label="One">
-            <div class="background-image w-full h-full transition-none" [style.background-image]="'url(../../../../../assets/' + images[previousImageIndex] + ')'"></div>
-           <!--  <img [src]="'../../../../../assets/' + images[previousImageIndex]"/> -->
+            <div class="background-image w-full h-full transition-none" [style.background-image]="'url(assets/' + images[previousImageIndex] + ')'"></div>
         </mat-tab>
         <mat-tab label="Two">
-            <div class="background-image   w-full h-full  transition-none" [style.background-image]="'url(../../../../../assets/' + images[currentImageIndex] + ')'"></div>
-            <!-- <img [src]="'../../../../../assets/' + images[currentImageIndex]"/>
+            <div class="background-image   w-full h-full  transition-none" [style.background-image]="'url(assets/' + images[currentImageIndex] + ')'"></div>
       -->   </mat-tab>
         <mat-tab label="Three">
-            <div class="background-image w-full h-full  transition-none" [style.background-image]="'url(../../../../../assets/' + images[nextImageIndex] + ')'"></div>
-           <!--  <img [src]="'../../../../../assets/' + images[nextImageIndex]"/>
+            <div class="background-image w-full h-full  transition-none" [style.background-image]="'url(assets/' + images[nextImageIndex] + ')'"></div>
         --> </mat-tab>
     </mat-tab-group>
     

@@ -36,15 +36,15 @@ export class Pws03Component extends BaseComponent {
 
     currentVideoPosition = 0
     leftVideoArray: string[] =
-        ["../../../../../assets/Analytics.mp4",
-            "../../../../../assets/GraphicRedactor.mp4",
-            "../../../../../assets/WorkCenterDictionary.mp4",
-            "../../../../../assets/Users.mp4"]
+        ["assets/Analytics.mp4",
+            "assets/GraphicRedactor.mp4",
+            "assets/WorkCenterDictionary.mp4",
+            "assets/Users.mp4"]
     rightVideoArray: string[] =
-        ["../../../../../assets/GraphicRedactor.mp4",
-            "../../../../../assets/Users.mp4",
-            "../../../../../assets/WorkCenterDictionary.mp4",
-            "../../../../../assets/Analytics.mp4"]
+        ["assets/GraphicRedactor.mp4",
+            "assets/Users.mp4",
+            "assets/WorkCenterDictionary.mp4",
+            "assets/Analytics.mp4"]
 
     selectedCaption: string = 'Analytics'
 
@@ -102,12 +102,12 @@ export class Pws03Component extends BaseComponent {
     setupArticles() {
         /* , 
                 , 
-                "../../../../../assets/WorkCenterDictionary.mp4", 
-                "../../../../../assets/Users.mp4" */
+                "assets/WorkCenterDictionary.mp4", 
+                "assets/Users.mp4" */
         this.articles.push({
             Title: 'Graphic map',
             SecondaryTitle: 'features',
-            VideoSource: "../../../../../assets/GraphicRedactor.mp4",
+            VideoSource: "assets/GraphicRedactor.mp4",
             Items: ["Quick map editing",
                 "Seamless integration with analytics",
                 "Real time equipment state updates",
@@ -116,7 +116,7 @@ export class Pws03Component extends BaseComponent {
         this.articles.push({
             Title: 'Analytics',
             SecondaryTitle: 'features',
-            VideoSource: "../../../../../assets/Analytics.mp4",
+            VideoSource: "assets/Analytics.mp4",
             Items: ["Several types of graphics",
                 "Custom period and scale settings",
                 "PDF export",
@@ -125,7 +125,7 @@ export class Pws03Component extends BaseComponent {
         this.articles.push({
             Title: 'Customization',
             SecondaryTitle: 'features',
-            VideoSource: "../../../../../assets/Users.mp4",
+            VideoSource: "assets/Users.mp4",
             Items: ["Effortless expansion of equipment pool",
                 "Limitless equipment types with the help of plugins",
                 "Fluid access roles"]
