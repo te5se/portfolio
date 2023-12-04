@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BaseComponent } from './components/base/base.component';
 import { NavbarComponent } from './client/navbar/navbar.component';
 import { RefreshTestComponent } from './components/refresh-test/refresh-test/refresh-test.component';
+import { PlatformLocation } from '@angular/common';
+import {APP_BASE_HREF} from "@angular/common"
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,10 +45,17 @@ import { RefreshTestComponent } from './components/refresh-test/refresh-test/ref
     FontAwesomeModule,
     ButtonModule
   ],
-  providers: [MessageService, ValidationService, ProjectService],
+  providers: [MessageService, ValidationService, ProjectService,
+    {
+      provide: APP_BASE_HREF,
+      useFactory: getBaseHref,
+      deps: [PlatformLocation]
+    }],
   bootstrap: [AppComponent],
 })
 export class AppModule { 
     
 }
-
+export function getBaseHref(platformLocation: PlatformLocation): string {
+  return platformLocation.getBaseHrefFromDOM();
+}

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { PAD77ParallaxItem } from './parallax-document/parallax-document.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-pad77',
@@ -8,6 +9,8 @@ import { PAD77ParallaxItem } from './parallax-document/parallax-document.compone
   styleUrls: ['./pad77.component.css']
 })
 export class Pad77Component extends BaseComponent {
+
+  baseHref = inject(APP_BASE_HREF)
 
   array30 = (new Array(30)).fill(0)
 

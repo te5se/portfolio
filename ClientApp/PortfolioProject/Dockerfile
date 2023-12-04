@@ -15,7 +15,7 @@ RUN npm install
 # Add the source code to app
 COPY ./ /usr/local/app/
 
-RUN npm run build
+RUN npx ng build --base-href=/portfolio/front/
 
 # Stage 2: Serve app with nginx server
 

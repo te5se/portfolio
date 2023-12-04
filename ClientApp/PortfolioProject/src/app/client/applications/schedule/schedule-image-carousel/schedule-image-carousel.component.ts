@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { APP_BASE_HREF } from '@angular/common';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { MatTab, MatTabGroup } from '@angular/material/tabs';
 
 @Component({
@@ -7,6 +8,8 @@ import { MatTab, MatTabGroup } from '@angular/material/tabs';
     styleUrls: ['./schedule-image-carousel.component.css']
 })
 export class ScheduleImageCarouselComponent implements OnInit {
+
+    baseHref = inject(APP_BASE_HREF)
 
     selectedPage = 1
 

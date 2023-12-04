@@ -1,24 +1,24 @@
-<section id="wrapper" class="w-full h-full group bg-white  relative opacity-30 hover:opacity-100 duration-500 transition-all">
+<section id="wrapper"
+    class="w-full h-full group bg-white  relative opacity-30 hover:opacity-100 duration-500 transition-all">
     <mat-tab-group #tabs [(selectedIndex)]="selectedPage" [animationDuration]="animationDuration" class="h-full">
         <mat-tab label="One">
-            <div class="background-image w-full h-full transition-none" [style.background-image]="'url(assets/' + images[previousImageIndex] + ')'"></div>
+            <div class="background-image w-full h-full transition-none"
+                [style.background-image]="'url(' + baseHref + 'assets/' + images[previousImageIndex] + ')'"></div>
         </mat-tab>
         <mat-tab label="Two">
-            <div class="background-image   w-full h-full  transition-none" [style.background-image]="'url(assets/' + images[currentImageIndex] + ')'"></div>
-      -->   </mat-tab>
+            <div class="background-image   w-full h-full  transition-none"
+                [style.background-image]="'url(' + baseHref + 'assets/' + images[currentImageIndex] + ')'"></div>
+        </mat-tab>
         <mat-tab label="Three">
-            <div class="background-image w-full h-full  transition-none" [style.background-image]="'url(assets/' + images[nextImageIndex] + ')'"></div>
-        --> </mat-tab>
+            <div class="background-image w-full h-full  transition-none"
+                [style.background-image]="'url(' + baseHref + 'assets/' + images[nextImageIndex] + ')'"></div>
+        </mat-tab>
     </mat-tab-group>
-    
-    <button 
-        (click)="leftClick()" 
-        id="left-arrow" class=" carousel-button">
+
+    <button (click)="leftClick()" id="left-arrow" class=" carousel-button">
         <i class="active:ml-[2px] ml-1 button-icon material-symbols-outlined">chevron_left</i>
     </button>
-    <button 
-        (click)="rightClick()" 
-        id="right-arrow" class=" carousel-button">
+    <button (click)="rightClick()" id="right-arrow" class=" carousel-button">
         <i class="active:ml-[6px] ml-1 button-icon material-symbols-outlined">chevron_right</i>
     </button>
 </section>

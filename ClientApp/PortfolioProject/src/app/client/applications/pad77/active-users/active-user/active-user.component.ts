@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, inject } from '@angular/core';
 import { ActiveUser } from '../active-users.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
   selector: 'app-active-user',
@@ -10,6 +11,8 @@ export class ActiveUserComponent implements OnInit {
 
   @Input() users: ActiveUser[] = []
   @Input() user: ActiveUser = {}
+
+  baseHref = inject(APP_BASE_HREF)
 
   DURATION = 500
 

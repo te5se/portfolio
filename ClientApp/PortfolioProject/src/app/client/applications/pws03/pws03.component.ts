@@ -6,6 +6,7 @@ import { Pws03UiService } from './pws03-ui-service/pws03-ui.service';
 import { VirtualElement, createPopper } from '@popperjs/core/lib/popper-lite';
 import { EquipmentSelectedDTO } from './work-center/equipment/equipment.component';
 import { FeatureSelectorComponent } from './feature-selector/feature-selector.component';
+import { APP_BASE_HREF } from '@angular/common';
 
 @Component({
     selector: 'app-pws03',
@@ -15,13 +16,14 @@ import { FeatureSelectorComponent } from './feature-selector/feature-selector.co
 export class Pws03Component extends BaseComponent {
 
     @ViewChild('myPopperContent') myPopperContent: NgxPopperjsContentComponent | undefined
-    @ViewChild("virtualElement") virtualElement : any
-    @ViewChild("secondSection") secondSection : ElementRef<HTMLElement> | undefined
-    @ViewChild("featureSelector") featureSelector : FeatureSelectorComponent | undefined
-    
-    pws03UIService = inject(Pws03UiService)
+    @ViewChild("virtualElement") virtualElement: any
+    @ViewChild("secondSection") secondSection: ElementRef<HTMLElement> | undefined
+    @ViewChild("featureSelector") featureSelector: FeatureSelectorComponent | undefined
 
+    pws03UIService = inject(Pws03UiService)
+    baseHref = inject(APP_BASE_HREF)
     changeDetection = inject(ChangeDetectorRef)
+
     placement: NgxPopperjsPlacements = NgxPopperjsPlacements.TOP
 
     leftWidth: string = '100%'
@@ -36,15 +38,15 @@ export class Pws03Component extends BaseComponent {
 
     currentVideoPosition = 0
     leftVideoArray: string[] =
-        ["assets/Analytics.mp4",
-            "assets/GraphicRedactor.mp4",
-            "assets/WorkCenterDictionary.mp4",
-            "assets/Users.mp4"]
+        [this.baseHref + "assets/Analytics.mp4",
+        this.baseHref + "assets/GraphicRedactor.mp4",
+        this.baseHref + "assets/WorkCenterDictionary.mp4",
+        this.baseHref + "assets/Users.mp4"]
     rightVideoArray: string[] =
-        ["assets/GraphicRedactor.mp4",
-            "assets/Users.mp4",
-            "assets/WorkCenterDictionary.mp4",
-            "assets/Analytics.mp4"]
+        [this.baseHref + "assets/GraphicRedactor.mp4",
+        this.baseHref + "assets/Users.mp4",
+        this.baseHref + "assets/WorkCenterDictionary.mp4",
+        this.baseHref + "assets/Analytics.mp4"]
 
     selectedCaption: string = 'Analytics'
 
@@ -55,10 +57,12 @@ export class Pws03Component extends BaseComponent {
     popoverSrcElementWidth = ""
     popoverSrcElementHeight = ""
 
-    lastSelectedEquipmentDTO : EquipmentSelectedDTO | undefined
+    lastSelectedEquipmentDTO: EquipmentSelectedDTO | undefined
+
 
     override ngOnInit(): void {
         super.ngOnInit()
+        console.debug("base href", this.baseHref)
         setTimeout(() => {
             this.leftWidth = '67%'
         }, 3000)
@@ -75,9 +79,9 @@ export class Pws03Component extends BaseComponent {
         this.setupArticles()
         this.setupPopover()
     }
-    setupPopover(){
-        this.pws03UIService.equipmentSelected.subscribe((selectedDTO)=>{
-            if(selectedDTO.equipment == null){
+    setupPopover() {
+        this.pws03UIService.equipmentSelected.subscribe((selectedDTO) => {
+            if (selectedDTO.equipment == null) {
                 return
             }
 
@@ -90,24 +94,20 @@ export class Pws03Component extends BaseComponent {
             this.popoverSrcElementHeight = `${rect?.height}px`
             this.myPopperContent?.hide()
             let i = 0
-            let interval = setInterval(()=>{
+            let interval = setInterval(() => {
                 this.myPopperContent?.show()
                 i++
-                if (i > 10){
+                if (i > 10) {
                     clearInterval(interval)
                 }
-            },10)
+            }, 10)
         })
     }
     setupArticles() {
-        /* , 
-                , 
-                "assets/WorkCenterDictionary.mp4", 
-                "assets/Users.mp4" */
         this.articles.push({
             Title: 'Graphic map',
             SecondaryTitle: 'features',
-            VideoSource: "assets/GraphicRedactor.mp4",
+            VideoSource: this.baseHref + "assets/GraphicRedactor.mp4",
             Items: ["Quick map editing",
                 "Seamless integration with analytics",
                 "Real time equipment state updates",
@@ -116,7 +116,7 @@ export class Pws03Component extends BaseComponent {
         this.articles.push({
             Title: 'Analytics',
             SecondaryTitle: 'features',
-            VideoSource: "assets/Analytics.mp4",
+            VideoSource: this.baseHref + "assets/Analytics.mp4",
             Items: ["Several types of graphics",
                 "Custom period and scale settings",
                 "PDF export",
@@ -125,13 +125,13 @@ export class Pws03Component extends BaseComponent {
         this.articles.push({
             Title: 'Customization',
             SecondaryTitle: 'features',
-            VideoSource: "assets/Users.mp4",
+            VideoSource: this.baseHref + "assets/Users.mp4",
             Items: ["Effortless expansion of equipment pool",
                 "Limitless equipment types with the help of plugins",
                 "Fluid access roles"]
         })
     }
-    
+
     @HostListener('document:mousemove', ['$event'])
     onMouseMove(e: MouseEvent) {
         if (this.updateOnMove == false) {
@@ -148,13 +148,13 @@ export class Pws03Component extends BaseComponent {
         this.leftWidth = `${(e.touches[0].clientX / window.innerWidth * 100) - 1}%`;
     }
 
-    goToAnalytics(){
+    goToAnalytics() {
         this.myPopperContent?.hide()
         this.secondSection?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        console.debug("scroll into view", )
+        console.debug("scroll into view",)
         this.featureSelector?.selectItem("Analytics")
     }
-    hidePopover(){
+    hidePopover() {
         this.myPopperContent?.hide()
         console.debug("hide popover")
         this.pws03UIService.equipmentSelected.next({})
