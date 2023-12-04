@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActiveUser } from '../active-users.component';
-import { is } from 'cypress/types/bluebird';
 
 @Component({
   selector: 'app-active-user',
