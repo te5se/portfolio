@@ -1,5 +1,6 @@
 <!-- #region first -->
 <section class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [style.width]="leftWidth">
+    <p *ngIf="videosPlayed == 0 && videoLineOpacity != 0" class="absolute text-white top-0 left-0 whitespace-nowrap">Click on screen to start videos</p>
     <div class="scroll-hidden flex flex-col">
         <p class="text-white">Make your production line</p>
         <div class="flex flex-row mx-auto">
@@ -14,6 +15,7 @@
     </div>
 </section>
 <section class="side bg-[#f55049] z-0" [style.transition-duration]="transitionDuration">
+    <p *ngIf="videosPlayed == 0 && videoLineOpacity != 0" class="absolute top-0 left-0 whitespace-nowrap">Click on screen to start videos</p>
     <div class="scroll-hidden flex flex-col">
         <p class="text-gray-700">Make your production line</p>
         <div class="flex flex-row mx-auto">
