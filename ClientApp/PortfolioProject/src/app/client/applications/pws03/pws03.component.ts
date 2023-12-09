@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren, inject } from '@angular/core';
 import { NgxPopperjsTriggers, NgxPopperjsPlacements, NgxPopperjsContentComponent } from 'ngx-popperjs';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, interval } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { Pws03UiService } from './pws03-ui-service/pws03-ui.service';
 import { VirtualElement, createPopper } from '@popperjs/core/lib/popper-lite';
@@ -19,8 +19,8 @@ export class Pws03Component extends BaseComponent {
     @ViewChild("virtualElement") virtualElement: any
     @ViewChild("secondSection") secondSection: ElementRef<HTMLElement> | undefined
     @ViewChild("featureSelector") featureSelector: FeatureSelectorComponent | undefined
-    @ViewChildren('video') videos:QueryList<any> | undefined;
-    
+    @ViewChildren('video') videos: QueryList<any> | undefined;
+
     pws03UIService = inject(Pws03UiService)
     baseHref = inject(APP_BASE_HREF)
     changeDetection = inject(ChangeDetectorRef)
@@ -60,6 +60,7 @@ export class Pws03Component extends BaseComponent {
 
     lastSelectedEquipmentDTO: EquipmentSelectedDTO | undefined
 
+    videosPlayed = 0
 
     override ngOnInit(): void {
         super.ngOnInit()
@@ -77,20 +78,34 @@ export class Pws03Component extends BaseComponent {
             this.shouldStartVideos.next(true)
         }, 5000)
 
-        setTimeout(()=>{
-            console.debug("videos",this.videos)
-            if(this.videos == undefined){
-                return
-            }
-            for(let i = 0; i< this.videos?.length; i++){
-                let video = this.videos.get(i)
-                console.debug("video", video)
-                video.nativeElement.play()
-            }
-        })
 
+        this.setupVideoStart()
         this.setupArticles()
         this.setupPopover()
+    }
+    setupVideoStart() {
+        let intervalTimer = interval(100).subscribe(async () => {
+            if (this.videos == undefined) {
+                return
+            }
+            if (this.videos?.length <= this.videosPlayed) {
+                intervalTimer?.unsubscribe()
+                return
+            }
+            try {
+                for (let i = 0; i < this.videos?.length; i++) {
+                    let video = this.videos.get(i).nativeElement as HTMLVideoElement
+                    if (video.classList.contains("playing")) {
+                        continue
+                    }
+                    await video.play()
+                    video.classList.add("playing")
+                    this.videosPlayed += 1
+                }
+            }
+            catch {
+            }
+        })
     }
     setupPopover() {
         this.pws03UIService.equipmentSelected.subscribe((selectedDTO) => {
