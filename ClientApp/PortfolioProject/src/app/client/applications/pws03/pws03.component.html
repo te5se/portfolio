@@ -50,13 +50,13 @@
         </app-feature-selector>
 
         <div class="col-span-2 mx-auto mb-8"  >
-            <video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow w-[800px]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow w-[800px]" autoplay loop muted>
                 <source [src]="baseHref + 'assets/GraphicRedactor.mp4'" type="video/mp4" />
             </video>
-            <video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow w-[800px]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow w-[800px]" autoplay loop muted>
                 <source  [src]="baseHref + 'assets/Analytics.mp4'" type="video/mp4" />
             </video>
-            <video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow w-[800px]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow w-[800px]" autoplay loop muted>
                 <source [src]="baseHref + 'assets/Users.mp4'" type="video/mp4" />
             </video>
         </div>
@@ -75,7 +75,7 @@
             </div>
 
             <section class="flex flex-col col-start-2 w-[400px]">
-                <video class="w-[400px] local-video-shadow" autoplay="true" muted="true" loop="true" data-loaded="true">
+                <video #video class="w-[400px] local-video-shadow" autoplay="true" muted="true" loop="true" data-loaded="true">
                     <source [src]="article.VideoSource" type="video/mp4" />
                 </video>
 

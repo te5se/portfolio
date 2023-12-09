@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, ViewChild, inject } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, HostListener, OnInit, QueryList, ViewChild, ViewChildren, inject } from '@angular/core';
 import { NgxPopperjsTriggers, NgxPopperjsPlacements, NgxPopperjsContentComponent } from 'ngx-popperjs';
 import { BehaviorSubject } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
@@ -19,7 +19,8 @@ export class Pws03Component extends BaseComponent {
     @ViewChild("virtualElement") virtualElement: any
     @ViewChild("secondSection") secondSection: ElementRef<HTMLElement> | undefined
     @ViewChild("featureSelector") featureSelector: FeatureSelectorComponent | undefined
-
+    @ViewChildren('video') videos:QueryList<any> | undefined;
+    
     pws03UIService = inject(Pws03UiService)
     baseHref = inject(APP_BASE_HREF)
     changeDetection = inject(ChangeDetectorRef)
@@ -75,6 +76,18 @@ export class Pws03Component extends BaseComponent {
             this.videoLineTop = '80vh'
             this.shouldStartVideos.next(true)
         }, 5000)
+
+        setTimeout(()=>{
+            console.debug("videos",this.videos)
+            if(this.videos == undefined){
+                return
+            }
+            for(let i = 0; i< this.videos?.length; i++){
+                let video = this.videos.get(i)
+                console.debug("video", video)
+                video.nativeElement.play()
+            }
+        })
 
         this.setupArticles()
         this.setupPopover()
