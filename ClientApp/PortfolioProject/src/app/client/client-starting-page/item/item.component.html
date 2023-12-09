@@ -2,7 +2,7 @@
     <!-- image wrapper -->
     <div class="w-full h-full flex overflow-hidden">
         <button class="image-container hover:scale-[1.05] w-full h-full transition-all duration-500  "
-            style="background-image: url({{project.imageLink}})" (click)="goToProjectLink()">
+            [style.background-image]="'url(' + getURL(project) + ')'" (click)="goToProjectLink()">
         </button>
     </div>
 

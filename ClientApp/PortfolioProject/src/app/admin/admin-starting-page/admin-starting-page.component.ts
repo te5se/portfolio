@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { Table } from 'primeng/table'
 import { Project } from 'src/app/models/project';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
 import { ProjectService } from 'src/app/services/project.service';
 import { AddEditProjectComponent } from './add-edit-project/add-edit-project.component';
+import { APP_BASE_HREF } from '@angular/common';
 @Component({
     selector: 'app-admin-starting-page',
     templateUrl: './admin-starting-page.component.html',
@@ -12,6 +13,8 @@ import { AddEditProjectComponent } from './add-edit-project/add-edit-project.com
 export class AdminStartingPageComponent implements OnInit {
 
     @ViewChild('addEditProject') addEditComponent : AddEditProjectComponent | undefined
+
+    baseHref = inject(APP_BASE_HREF)
 
     projects: Project[] = [];
     testValue: string = "";
@@ -89,5 +92,15 @@ export class AdminStartingPageComponent implements OnInit {
         this.showImageDialog = true;
     }
 
+    getURL(source : string | undefined){
+        if(source== null){
+            return
+        }
 
+        if(source.includes("assets")){
+            return `${this.baseHref + source}`
+        }
+
+        return source
+    }
 }
