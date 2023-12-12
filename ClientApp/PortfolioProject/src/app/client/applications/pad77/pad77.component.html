@@ -7,9 +7,12 @@
         <app-reports class="absolute right-[56px] bottom-[40px] scale-125 origin-bottom-right" ></app-reports>
     
     </section>
-    <section id="second-section" class="flex screen-height-section relative">
+    <section id="second-section" class="flex flex-col screen-height-section relative">
         <div id="lighthouse" [style.background-image]="'url(' + baseHref + 'assets/Lighthouse.png)'"></div> 
         <h1 class="scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing</h1>
+        <app-customizable-routing class="w-full h-full">
+
+        </app-customizable-routing>
     </section>
     <section id="third-section" class="h-[2000px] mt-[30vh] relative pt-[50vh]">
         <div class="sticky top-[40vh] mx-auto flex flex-col">

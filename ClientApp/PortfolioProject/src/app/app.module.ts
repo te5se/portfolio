@@ -24,7 +24,8 @@ import { BaseComponent } from './components/base/base.component';
 import { NavbarComponent } from './client/navbar/navbar.component';
 import { RefreshTestComponent } from './components/refresh-test/refresh-test/refresh-test.component';
 import { PlatformLocation } from '@angular/common';
-import {APP_BASE_HREF} from "@angular/common"
+import {APP_BASE_HREF} from "@angular/common";
+import { CustomizableRoutingComponent } from './applications/pad77/customizable-routing/customizable-routing.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import {APP_BASE_HREF} from "@angular/common"
     TestComponent,
     SimpleHostComponent,
     BaseComponent,
-    RefreshTestComponent
+    RefreshTestComponent,
+    CustomizableRoutingComponent
   ],
   imports: [
     RouterModule,

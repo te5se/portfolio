@@ -64,9 +64,6 @@ export class Pws03Component extends BaseComponent {
 
     override ngOnInit(): void {
         super.ngOnInit()
-        setInterval(()=>{
-            document.body.click()
-        },100)
         console.debug("base href", this.baseHref)
         setTimeout(() => {
             this.leftWidth = '67%'

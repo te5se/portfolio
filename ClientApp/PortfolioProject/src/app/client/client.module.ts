@@ -43,6 +43,7 @@ import { ReportPieChartComponent } from './applications/pad77/reports/graphical-
 import { ParallaxDocumentComponent } from './applications/pad77/parallax-document/parallax-document.component';
 import { ActiveUsersComponent } from './applications/pad77/active-users/active-users.component';
 import { ActiveUserComponent } from './applications/pad77/active-users/active-user/active-user.component';
+import { CustomizableRoutingComponent } from './applications/pad77/customizable-routing/customizable-routing.component';
 
 
 
@@ -76,7 +77,8 @@ import { ActiveUserComponent } from './applications/pad77/active-users/active-us
         ReportPieChartComponent,
         ParallaxDocumentComponent,
         ActiveUsersComponent,
-        ActiveUserComponent
+        ActiveUserComponent,
+        CustomizableRoutingComponent
     ],
     imports: [
         CommonModule,
