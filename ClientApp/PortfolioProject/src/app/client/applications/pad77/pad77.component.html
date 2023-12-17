@@ -9,8 +9,11 @@
     </section>
     <section id="second-section" class="flex flex-col screen-height-section relative">
         <div id="lighthouse" [style.background-image]="'url(' + baseHref + 'assets/Lighthouse.png)'"></div> 
-        <h1 class="scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing</h1>
-        <app-customizable-routing class="w-full h-full">
+        <h1 class="flex scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing
+            <button (click)="customizableRouting.runDocument()" class="hover:bg-[#00000060] active:bg-black active:text-white duration-150 text-base ml-4 mb-4 
+                my-auto relative border-black border-2 rounded-full p-2 px-4 mr-auto">run the document</button>
+        </h1>
+        <app-customizable-routing #customizableRouting class="w-full h-full">
 
         </app-customizable-routing>
     </section>
