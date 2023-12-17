@@ -10,10 +10,13 @@
     <section id="second-section" class="flex flex-col screen-height-section relative">
         <div id="lighthouse" [style.background-image]="'url(' + baseHref + 'assets/Lighthouse.png)'"></div> 
         <h1 class="flex scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing
-            <button (click)="customizableRouting.runDocument()" class="hover:bg-[#00000060] active:bg-black active:text-white duration-150 text-base ml-4 mb-4 
-                my-auto relative border-black border-2 rounded-full p-2 px-4 mr-auto">run the document</button>
+            <button [disabled]="isRoutingInProgress" (click)="runDocument()" class="hover:bg-[#00000060] min-w-[150px] active:bg-black active:text-white duration-150 text-base ml-4 mb-4 
+                my-auto relative border-black border-2 rounded-full p-2 px-4 mr-auto text-left">
+                {{runDocumentCaption}}
+            </button>
         </h1>
-        <app-customizable-routing #customizableRouting class="w-full h-full">
+        <h2 class=" ml-[var(--title-margin)]">{{customizableRouting.status | async}}</h2>
+        <app-customizable-routing #customizableRouting (isInProgress)="this.isRoutingInProgress = $event" class="w-full h-full -mt-20">
 
         </app-customizable-routing>
     </section>
