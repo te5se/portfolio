@@ -61,3 +61,7 @@ h2{
         padding-bottom: calc(2000px * var(--parallax-speed) + var(--parallax-margin-bottom))
     }
 }
+.local-button{
+    @apply hover:bg-[#00000060] active:bg-black active:text-white duration-150 text-base 
+    my-auto relative border-black border-2 rounded-full p-2 px-4 text-left
+}

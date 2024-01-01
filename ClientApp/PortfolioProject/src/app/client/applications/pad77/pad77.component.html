@@ -4,19 +4,63 @@
             <h1 class="scroll-hidden">Lighthouse <br> DMS</h1>
             <h2 class="scroll-hidden !delay-100">Electronic document management <br> system</h2>
         </div>
-        <app-reports class="absolute right-[56px] bottom-[40px] scale-125 origin-bottom-right" ></app-reports>
-    
+        <app-reports class="absolute right-[56px] bottom-[40px] scale-125 origin-bottom-right"></app-reports>
+
     </section>
     <section id="second-section" class="flex flex-col screen-height-section relative">
-        <div id="lighthouse" [style.background-image]="'url(' + baseHref + 'assets/Lighthouse.png)'"></div> 
+        <div id="lighthouse" [style.background-image]="'url(' + baseHref + 'assets/Lighthouse.png)'"></div>
         <h1 class="flex scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing
-            <button [disabled]="isRoutingInProgress" (click)="runDocument()" class="hover:bg-[#00000060] min-w-[150px] active:bg-black active:text-white duration-150 text-base ml-4 mb-4 
-                my-auto relative border-black border-2 rounded-full p-2 px-4 mr-auto text-left">
+
+        </h1>
+        <h2 class=" ml-[var(--title-margin)]" [innerHTML]="customizableRouting.status | async"></h2>
+        <div *ngIf="isEditingRoute == false" class="ml-[var(--title-margin)]  flex gap-4 justify-start mt-8">
+            <button [disabled]="isRoutingInProgress" (click)="runDocument()" 
+                class="local-button min-w-[150px]">
                 {{runDocumentCaption}}
             </button>
-        </h1>
-        <h2 class=" ml-[var(--title-margin)]">{{customizableRouting.status | async}}</h2>
-        <app-customizable-routing #customizableRouting (isInProgress)="this.isRoutingInProgress = $event" class="w-full h-full -mt-20">
+            <button (click)="isEditingRoute = true"  [disabled]="isRoutingInProgress" 
+                class=" local-button">
+                change route
+            </button>
+        </div>
+        <div *ngIf="isEditingRoute" class="ml-[var(--title-margin)]  flex gap-4 justify-start mt-8">
+            <p class="my-auto text-lg">number of coordinators</p>
+            <button 
+                (click)="removeCoordinator()"
+                class="local-button">
+                -
+            </button>
+            <P class="my-auto  text-lg">{{numberOfCoordinators}}</P>
+            <button 
+                (click)="addCoordinator()"
+                class="local-button">
+                +
+            </button>
+
+            <div class="w-[1px] h-full bg-black mx-8"></div>
+
+            <button
+                (click)="isTaskSectionActive = !isTaskSectionActive"
+                class="flex flex-row gap-2 local-button">
+                
+                {{isTaskSectionActive ? 'don\'t track task progress' : 'track task progress'}}
+            </button>
+
+            <div
+                class="w-[1px] h-full bg-black mx-8"></div>
+
+            <button 
+                class="flex flex-row gap-2 local-button"
+                (click)="isEditingRoute = false">
+                <i class="material-symbols-outlined">save</i>
+                save
+            </button>   
+        </div>
+
+        <app-customizable-routing 
+            [trackTaskProgress]="isTaskSectionActive"
+            [numberOfCoordinators]="numberOfCoordinators" #customizableRouting (isInProgress)="this.isRoutingInProgress = $event"
+            class="w-full h-full -mt-20">
 
         </app-customizable-routing>
     </section>
@@ -26,29 +70,14 @@
             <h2 class="mx-auto">of documents</h2>
         </div>
 
-        <div 
-            *ngFor="let wrapper of parallaxWrappers"
-            [style.--parallax-speed]="wrapper.parallaxSpeed"
+        <div *ngFor="let wrapper of parallaxWrappers" [style.--parallax-speed]="wrapper.parallaxSpeed"
             [style.--parallax-margin-bottom]="wrapper.bottomMarginPX + 'px'"
             [style.padding-left]="wrapper.leftPercent + '%'"
             class="test-parallax pb-[var(--parallax-margin-bottom)] -z-10 absolute bottom-0 top-0 left-0 right-0 flex justify-end flex-col overflow-hidden">
-            <app-parallax-document 
-                [style.scale]="wrapper.scale"
-                [item]="wrapper.parallaxItem"
-                class="w-fit">
+            <app-parallax-document [style.scale]="wrapper.scale" [item]="wrapper.parallaxItem" class="w-fit">
             </app-parallax-document>
         </div>
-        
 
-
-        <!-- <div *ngFor="let item30 of array30; index as i" class="absolute w-24 h-full left-0 top-0">
-            
-            <div [style.top]="50 * i + 'vh'" *ngIf="i < 5" 
-                class="absolute h-2 w-full bg-red-400">
-                
-            </div>
-        </div> -->
-        
     </section>
     <section id="last-section" class="flex flex-col screen-height-section relative mt-[50vh]">
         <h1 class="mx-auto mt-40">Over 1000 active users</h1>

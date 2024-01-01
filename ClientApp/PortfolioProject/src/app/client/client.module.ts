@@ -44,6 +44,7 @@ import { ParallaxDocumentComponent } from './applications/pad77/parallax-documen
 import { ActiveUsersComponent } from './applications/pad77/active-users/active-users.component';
 import { ActiveUserComponent } from './applications/pad77/active-users/active-user/active-user.component';
 import { CustomizableRoutingComponent } from './applications/pad77/customizable-routing/customizable-routing.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 
 
@@ -95,7 +96,9 @@ import { CustomizableRoutingComponent } from './applications/pad77/customizable-
         InputTextareaModule,
         MatTabsModule,
         OverlayPanelModule,
-        NgxPopperjsModule
+        NgxPopperjsModule,
+        TooltipModule
+
     ]
 })
 export class ClientModule { }

@@ -8,17 +8,28 @@
     </div>
     
     <!-- coordinators -->
-    <div class="border-2 border-black w-[350px] h-[300px] my-auto relative">
-        <p class="text-2xl">Coordinators</p>
-        <svg id="coordinator0" class="absolute top-[50px] left-[50px]" xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
-            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
-        </svg>
-        <svg id="coordinator1" class="absolute top-[135px] left-[160px]" xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
-            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
-        </svg>
-        <svg id="coordinator2" class="absolute top-[220px] left-[270px]" xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
-            <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
-        </svg>
+    <div class="flex border-2 border-black w-[350px] h-[300px] my-auto relative">
+        <p class="absolute text-2xl">Coordinators</p>
+
+        <div class="grid mt-8 ml-8  grid-cols-3 grid-rows-3 w-full">
+            <!-- outer div for tooltip -->
+            <div
+
+                tooltipPosition="top"
+                [pTooltip]="getNameForIndex(i)" 
+                *ngFor="let coordinator of coordinatorArray; let i = index"
+                [style.grid-column-start]="getColumn(i + 1)"
+                [style.grid-row-start]="getRow(i + 1)">
+                <svg id="coordinator{{i}}" 
+                        class="m-auto " xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
+                <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
+            </svg>
+            
+
+        </div>
+            
+        </div>
+       
     </div>
     <div class="flex flex-col my-auto ">
         <svg   id="supervisor1" class="mx-auto" xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
@@ -26,16 +37,18 @@
         </svg>
         <p class="text-gray-800 text-2xl mx-auto">Supervisor</p>
     </div>
-    <div class="flex py-40 h-full">
+    <div 
+        *ngIf="trackTaskProgress"
+        class="flex py-40 h-full">
         <div class="h-full w-1 bg-black"></div>
     </div>
-    <div  class="flex flex-col my-auto ">
+    <div *ngIf="trackTaskProgress" class="flex flex-col my-auto ">
         <svg id="initiator2" class="mx-auto" xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
             <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
         </svg>
         <p class="text-gray-800 text-2xl mx-auto">Initiator</p>
     </div>
-    <div class="flex flex-col my-auto ">
+    <div *ngIf="trackTaskProgress" class="flex flex-col my-auto ">
         <svg id="supervisor2"  class="mx-auto" xmlns="http://www.w3.org/2000/svg" height="80" viewBox="0 -960 960 960" width="80">
             <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
         </svg>

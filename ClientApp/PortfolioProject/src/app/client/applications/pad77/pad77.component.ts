@@ -11,7 +11,6 @@ import { TimeHelper } from 'src/app/helpers/timehelper';
     styleUrls: ['./pad77.component.css']
 })
 export class Pad77Component extends BaseComponent {
-
     @ViewChild("customizableRouting") customizableRouting: CustomizableRoutingComponent | undefined
 
     baseHref = inject(APP_BASE_HREF)
@@ -22,11 +21,17 @@ export class Pad77Component extends BaseComponent {
 
     runDocumentCaption = "run the document"
     isRoutingInProgress = false
+    isEditingRoute = false
+    isTaskSectionActive = true
+    numberOfCoordinators = 3
 
     constructor() {
         super()
 
         this.createParallaxWrappers()
+
+        
+
     }
 
     async runDocument() {
@@ -216,6 +221,19 @@ export class Pad77Component extends BaseComponent {
         })
     }
 
+
+    removeCoordinator() {
+        if (this.numberOfCoordinators == 1) {
+            return
+        }
+        this.numberOfCoordinators--
+    }
+    addCoordinator() {
+        if (this.numberOfCoordinators == 5) {
+            return
+        }
+        this.numberOfCoordinators++
+    }
 }
 export class ParallaxWrapper {
     parallaxItem: PAD77ParallaxItem = {}
