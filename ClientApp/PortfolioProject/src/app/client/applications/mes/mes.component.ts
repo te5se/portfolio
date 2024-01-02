@@ -1,22 +1,24 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import * as THREE from 'three';
 @Component({
-  selector: 'app-mes',
-  templateUrl: './mes.component.html',
-  styleUrls: ['./mes.component.css']
+    selector: 'app-mes',
+    templateUrl: './mes.component.html',
+    styleUrls: ['./mes.component.css']
 })
 export class MESComponent implements OnInit {
 
-  baseHref = inject(APP_BASE_HREF)
+    @ViewChild("wrapper") wrapper: ElementRef<HTMLElement> | undefined
 
-  constructor() { }
 
-  async ngOnInit() {
-    const loader = new GLTFLoader();
+    constructor() { }
 
-    const loadedData = await loader.loadAsync(this.baseHref + 'assets/gears.glb');
-    console.debug("data", loadedData)
-  }
+    async ngOnInit() {
+       
+
+        
+    }
+    
 
 }

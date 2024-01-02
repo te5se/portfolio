@@ -17,7 +17,7 @@ export class CssVariablesService {
             return;
         }
         console.debug("variable", project)
-        project.cssVariables.forEach((variable)=>{
+        project?.cssVariables?.forEach((variable)=>{
             if(variable.name != null && variable.value != null){
                 this.styleHost?.style.setProperty(variable.name, variable.value)
             }

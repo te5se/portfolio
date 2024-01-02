@@ -45,6 +45,8 @@ import { ActiveUserComponent } from './applications/pad77/active-users/active-us
 import { CustomizableRoutingComponent } from './applications/pad77/customizable-routing/customizable-routing.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { MESComponent } from './applications/mes/mes.component';
+import { D3ExampleComponent } from './applications/mes/d3-example/d3-example.component';
+import { GearsComponent } from './applications/mes/gears/gears.component';
 
 
 
@@ -81,6 +83,8 @@ import { MESComponent } from './applications/mes/mes.component';
         ActiveUserComponent,
         CustomizableRoutingComponent,
         MESComponent,
+        D3ExampleComponent,
+        GearsComponent
     ],
     imports: [
         CommonModule,
