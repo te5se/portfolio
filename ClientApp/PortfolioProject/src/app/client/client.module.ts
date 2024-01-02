@@ -45,6 +45,7 @@ import { ActiveUsersComponent } from './applications/pad77/active-users/active-u
 import { ActiveUserComponent } from './applications/pad77/active-users/active-user/active-user.component';
 import { CustomizableRoutingComponent } from './applications/pad77/customizable-routing/customizable-routing.component';
 import { TooltipModule } from 'primeng/tooltip';
+import { MESComponent } from './applications/mes/mes.component';
 
 
 
@@ -79,7 +80,8 @@ import { TooltipModule } from 'primeng/tooltip';
         ParallaxDocumentComponent,
         ActiveUsersComponent,
         ActiveUserComponent,
-        CustomizableRoutingComponent
+        CustomizableRoutingComponent,
+        MESComponent,
     ],
     imports: [
         CommonModule,

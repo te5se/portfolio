@@ -4,12 +4,14 @@ import { ClientStartingPageComponent } from './client-starting-page/client-start
 import { ScheduleComponent } from './applications/schedule/schedule.component';
 import { Pws03Component } from './applications/pws03/pws03.component';
 import { Pad77Component } from './applications/pad77/pad77.component';
+import { MESComponent } from './applications/mes/mes.component';
 
 const routes: Routes = [
     { path: 'projects', component: ClientStartingPageComponent},
     { path: 'schedule', component: ScheduleComponent},
     { path: 'pws03', component: Pws03Component},
-    { path: 'pad77', component: Pad77Component}
+    { path: 'pad77', component: Pad77Component},
+    { path: 'mes', component: MESComponent}
 ];
 
 @NgModule({
