@@ -1,6 +1,5 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
-import { MatTab, MatTabGroup } from '@angular/material/tabs';
 
 @Component({
     selector: 'app-schedule-image-carousel',

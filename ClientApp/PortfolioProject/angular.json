@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "PortfolioProject:build:production"
+              "buildTarget": "PortfolioProject:build:production"
             },
             "development": {
-              "browserTarget": "PortfolioProject:build:development"
+              "buildTarget": "PortfolioProject:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "PortfolioProject:build"
+            "buildTarget": "PortfolioProject:build"
           }
         },
         "test": {
@@ -158,10 +158,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "AdminApp:build:production"
+              "buildTarget": "AdminApp:build:production"
             },
             "development": {
-              "browserTarget": "AdminApp:build:development"
+              "buildTarget": "AdminApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -169,7 +169,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "AdminApp:build"
+            "buildTarget": "AdminApp:build"
           }
         },
         "test": {
@@ -252,10 +252,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ClientApp:build:production"
+              "buildTarget": "ClientApp:build:production"
             },
             "development": {
-              "browserTarget": "ClientApp:build:development"
+              "buildTarget": "ClientApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -263,7 +263,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ClientApp:build"
+            "buildTarget": "ClientApp:build"
           }
         },
         "test": {

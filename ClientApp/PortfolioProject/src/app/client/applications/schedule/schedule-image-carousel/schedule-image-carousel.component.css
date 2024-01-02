@@ -26,8 +26,8 @@
 .background-image{
     background-repeat:no-repeat;
     background-position: center center;
-    background-size: cover;
+    background-size: contain;
 }
-::ng-deep .mat-tab-body-wrapper{
+::ng-deep .mat-mdc-tab-body-wrapper{
     @apply h-full
 }

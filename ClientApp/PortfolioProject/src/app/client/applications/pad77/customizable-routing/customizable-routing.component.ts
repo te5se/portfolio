@@ -36,7 +36,6 @@ export class CustomizableRoutingComponent implements OnInit {
 
     constructor() { }
     ngOnInit(): void {
-
         setTimeout(() => {
             this.setupOffsets()
         })

@@ -1,6 +1,6 @@
 <section id="wrapper"
-    class="w-full h-full group bg-white  relative opacity-30 hover:opacity-100 duration-500 transition-all">
-    <mat-tab-group #tabs [(selectedIndex)]="selectedPage" [animationDuration]="animationDuration" class="h-full">
+    class="flex w-full h-full group bg-white  relative opacity-30 hover:opacity-100 duration-500 transition-all">
+    <mat-tab-group #tabs [(selectedIndex)]="selectedPage" [animationDuration]="animationDuration" class="h-full w-full">
         <mat-tab label="One">
             <div class="background-image w-full h-full transition-none"
                 [style.background-image]="'url(' + baseHref + 'assets/' + images[previousImageIndex] + ')'"></div>

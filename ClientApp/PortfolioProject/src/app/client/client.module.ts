@@ -8,14 +8,13 @@ import { ButtonModule } from 'primeng/button';
 import { HttpClientModule } from '@angular/common/http';
 import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DialogModule } from 'primeng/dialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ItemComponent } from './client-starting-page/item/item.component';
 import { ClientStartingPageComponent } from './client-starting-page/client-starting-page.component';
 import { ScheduleComponent } from './applications/schedule/schedule.component';
 import { AppModule } from '../app.module';
-import { MatTabsModule } from '@angular/material/tabs';
+import {MatTabsModule} from '@angular/material/tabs';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeButtonComponent } from './applications/schedule/home-button/home-button.component';
 import { ScheduleListComponent } from './applications/schedule/schedule-list/schedule-list.component';
@@ -93,7 +92,6 @@ import { MESComponent } from './applications/mes/mes.component';
         HttpClientModule,
         InputTextModule,
         ReactiveFormsModule,
-        FontAwesomeModule,
         DialogModule,
         InputTextareaModule,
         MatTabsModule,

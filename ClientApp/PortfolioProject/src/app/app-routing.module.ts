@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClientSharedModule } from 'projects/client-app/src/app/client-shared-module.module';
 import { AdminRoutingModule } from './admin/admin-routing.module';
 import { AdminStartingPageComponent } from './admin/admin-starting-page/admin-starting-page.component';
 import { AppComponent } from './app.component';
