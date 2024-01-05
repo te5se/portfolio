@@ -1,5 +1,6 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild, inject } from '@angular/core';
+import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
@@ -10,12 +11,14 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 })
 export class GearsComponent {
   @ViewChild("wrapper") wrapper: ElementRef<HTMLElement> | undefined
+  @Input() size = 1000
   
   baseHref = inject(APP_BASE_HREF)
 
-  x = 0
-  y = 0
-  z = 5
+  x = 2
+  y = 0 
+  z = 4
+
 
   defaultSpeed = 0.005
 
@@ -38,7 +41,8 @@ export class GearsComponent {
   }
 
   async setupGears() {
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    let aspectRatio = 1920/1080
+    const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
 
     const loader = new GLTFLoader();
 
@@ -47,10 +51,10 @@ export class GearsComponent {
     console.debug("data", loadedData.scene)
 
     const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
     this.wrapper?.nativeElement.appendChild(renderer.domElement)
 
     scene.rotateX(3.14 / 4)
+    scene.rotateY(0.5)
 
     // remove background
     scene.remove(scene.children[0])
@@ -64,25 +68,34 @@ export class GearsComponent {
     // const cube = new THREE.Mesh(geometry, material);
     // scene.add(cube);
 
-    const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444, 0.4 );
+    const hemiLight = new THREE.HemisphereLight( 0xffffff, 0x444444, 1.2);
     hemiLight.position.set( 0, 20, 0 );
     scene.add( hemiLight );
     
-    const dirLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
-    dirLight.position.set( - 3, 10, - 10 );
+    const dirLight = new THREE.DirectionalLight( 0xffffff, 1 );
+    dirLight.position.set( -0, 9, - 10 );
     scene.add( dirLight );
 
     renderer.setClearColor( THREE.Color.NAMES.skyblue, 0 );
-    let i = 0
+    let i = 0;
+
+    let mat = (mediumGear as THREE.Mesh).material as THREE.MeshStandardMaterial
+
+    console.debug("material",mat)
+
+    mat.color.set("#909090")
+
     const animate = () => {
       requestAnimationFrame(animate)
+
+      renderer.setSize(this.size, this.size / aspectRatio);
 
       camera.position.z = 50;
 
       camera.position.set( this.x, this.y, this.z );
       i++
 
-      if(i%60 - 45 > 0){
+      if(i%60 - 30 > 0){
         mediumGear.rotateY(-this.defaultSpeed*2)
         largeGear.rotateY(this.defaultSpeed)
         smallGear.rotateY(this.defaultSpeed*4)

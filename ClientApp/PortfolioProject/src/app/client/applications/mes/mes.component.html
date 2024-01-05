@@ -1,3 +1,17 @@
-<div #wrapper class="flex h-screen w-full">
-    <app-gears></app-gears>
+<!-- first section -->
+<div #wrapper class="absolute flex h-screen w-full overflow-hidden">
+    <section class="ml-[var(--left-margin)] mt-[var(--left-margin)] flex flex-row gap-8">
+        <span class="text-[var(--accent-color)] text-6xl lg:text-8xl  font-bold">MES</span>
+        <span class="text-white text-5xl lg:text-8xl  font-bold">Coordinator</span>
+    </section>
+    <app-gears
+        [style.bottom]="'-' + (size()/6 - 100) + 'px'"
+        [style.right]="'-' + (size()/3 - 200) + 'px'"
+        class="overflow-hidden absolute " [size]="size()"></app-gears>
+</div>
+<!-- first section -->
+<div #wrapper class="-z-10 absolute flex h-[150vh] w-full overflow-hidden">
+    <div id="main-title-ellipse" class=""></div>
+    <div id="secondary-title-ellipse" class=""></div>
+    
 </div>

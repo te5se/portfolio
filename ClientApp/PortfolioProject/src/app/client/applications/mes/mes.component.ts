@@ -1,5 +1,5 @@
 import { APP_BASE_HREF } from '@angular/common';
-import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, OnInit, Signal, ViewChild, inject, signal } from '@angular/core';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import * as THREE from 'three';
 @Component({
@@ -11,13 +11,24 @@ export class MESComponent implements OnInit {
 
     @ViewChild("wrapper") wrapper: ElementRef<HTMLElement> | undefined
 
+    size = signal(2000)
 
     constructor() { }
 
     async ngOnInit() {
        
-
+        setInterval(()=>{
+            this.calculateGearTitleSize()
+        },100)
         
+    }
+
+    calculateGearTitleSize(){
+        if(this.wrapper == null){
+            return
+        }
+        this.size.set(this.wrapper?.nativeElement.clientWidth)
+        console.debug(this.wrapper?.nativeElement.clientWidth)
     }
     
 
