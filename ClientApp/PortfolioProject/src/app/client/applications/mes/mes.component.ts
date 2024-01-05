@@ -13,14 +13,16 @@ export class MESComponent implements OnInit {
 
     size = signal(2000)
 
-    constructor() { }
+    constructor() { 
+
+    }
 
     async ngOnInit() {
-       
-        setInterval(()=>{
+       setTimeout(()=>{
             this.calculateGearTitleSize()
-        },100)
-        
+
+       })
+       
     }
 
     calculateGearTitleSize(){
@@ -28,8 +30,9 @@ export class MESComponent implements OnInit {
             return
         }
         this.size.set(this.wrapper?.nativeElement.clientWidth)
-        console.debug(this.wrapper?.nativeElement.clientWidth)
     }
     
-
+    onResize(event : any){
+        this.calculateGearTitleSize()
+    }
 }

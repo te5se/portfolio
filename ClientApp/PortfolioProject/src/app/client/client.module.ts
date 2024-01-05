@@ -47,6 +47,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { MESComponent } from './applications/mes/mes.component';
 import { D3ExampleComponent } from './applications/mes/d3-example/d3-example.component';
 import { GearsComponent } from './applications/mes/gears/gears.component';
+import { SubsystemListComponent } from './applications/mes/subsystem-list/subsystem-list.component';
 
 
 
@@ -84,7 +85,8 @@ import { GearsComponent } from './applications/mes/gears/gears.component';
         CustomizableRoutingComponent,
         MESComponent,
         D3ExampleComponent,
-        GearsComponent
+        GearsComponent,
+        SubsystemListComponent
     ],
     imports: [
         CommonModule,

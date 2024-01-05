@@ -1,0 +1,14 @@
+button{
+    position: relative;
+    transition: all 300ms;
+}
+button::before{
+    content: "";
+    transition: all 300ms;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    height: 18px;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='15' viewBox='0 0 8 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.60656 6.19636L2.29894 0.611731C2.00579 0.311395 1.67406 0.197754 1.35776 0.197754C1.1649 0.197754 0.987455 0.238341 0.833163 0.311396C0.432006 0.489974 0 0.920184 0 1.61826V12.7794C0 13.4775 0.432006 13.9158 0.833163 14.0863C1.23432 14.2649 1.82835 14.273 2.29894 13.7778L7.60656 8.19319C8.13115 7.64122 8.13115 6.74021 7.60656 6.18824V6.19636Z' fill='%23528bff'/%3E%3C/svg%3E")
+}

@@ -1,5 +1,16 @@
+
 *{
-    --left-margin: 80px
+    --left-margin: 40px
+}
+@media (min-width: 768px) {
+    *{
+        --left-margin: 80px
+    }
+}
+@media (min-width: 1024px) {
+    *{
+        --left-margin: 120px
+    }
 }
 #main-title-ellipse{
     position: absolute;
@@ -14,7 +25,7 @@
 #secondary-title-ellipse{
     position: absolute;
     background-color: white;
-    width: 620px;
+    width: calc(var(--left-margin) + 540px);
     height: 332px;
     border-radius: 50%;
     left: -400px;
@@ -25,7 +36,7 @@
     #secondary-title-ellipse{
         position: absolute;
         background-color: white;
-        width: 696px;
+        width: calc(var(--left-margin) + 612px);
         height: 360px;
         border-radius: 50%;
         left: -400px;
@@ -34,4 +45,21 @@
 }
 body{
     overflow-x: hidden;
+}
+.button{
+    @apply py-2 border-2 border-transparent rounded-full hover:border-white
+      text-white transition-all cursor-pointer active:bg-white active:text-[var(--accent-color)]
+}
+.screen-height-section {
+    height: 100vh;
+    min-height: 700px;
+}
+#second-section-main-ellipse{
+    position: absolute;
+    background-color: white;
+    width: calc(var(--left-margin) + 718px);
+    height: 540px;
+    border-radius: 50%;
+    left: -438px;
+    top: -268px;
 }
