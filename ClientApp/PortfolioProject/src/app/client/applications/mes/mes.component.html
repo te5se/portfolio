@@ -1,38 +1,50 @@
 <!-- first section -->
-<div (window:resize)="onResize($event)" #wrapper class="z-20 absolute flex h-screen w-full overflow-hidden">
-    <section class="ml-[var(--left-margin)] mt-[80px] flex flex-col justify-between">
-        <div class="flex flex-row gap-8">
+<div (window:resize)="onResize($event)" #wrapper class=" screen-height-section z-20 absolute flex w-full overflow-hidden">
+    <section class="ml-[var(--left-margin)] mt-[40px] sm:mt-[80px] flex flex-col justify-between">
+        <div class="flex flex-col sm:flex-row gap-8 ">
             <span class="text-[var(--accent-color)] text-6xl lg:text-8xl  font-bold">MES</span>
-            <span class="text-white text-6xl lg:text-8xl my-auto font-bold">Coordinator</span>
+            <span class="text-white text-4xl sm:text-6xl lg:text-8xl my-auto font-bold">Coordinator</span>
         </div>
         <a
             href="https://github.com/te5se/portfolio/tree/develop/ProjectDescriptions/MES"
-            class="button z-10 px-8 mb-8 lg:mb-32 mx-auto md:-ml-8 text-3xl mr-auto
+            class="button z-10 px-8 mb-8 lg:mb-32 md:-ml-8 text-3xl lg:mr-auto
             ">see the details</a>
     </section>
     
     <app-gears
-        [style.bottom]="'-' + (size()/6 - 100) + 'px'"
-        [style.right]="'-' + (size()/3 - 200) + 'px'"
+        [style.bottom]="gearBottom() + 'px'"
+        [style.right]="gearRight() + 'px'"
         class="overflow-hidden absolute" [size]="size()"></app-gears>
 </div>
 <!-- first section -->
-<section #wrapper class="z-10 relative flex h-[114vh] w-full overflow-hidden">
+<section #wrapper class="z-10 relative flex h-[114svh] w-full overflow-hidden">
     <div id="main-title-ellipse" class=""></div>
     <div id="secondary-title-ellipse" class=""></div>
     
 </section>
 
 <!-- second section -->
-<section class="screen-height-section relative flex flex-row " >
+<section class="screen-height-section relative 
+    grid grid-rows-[80px_1fr_auto_1fr_80px] lg:grid-rows-[80px_1fr_auto_80px] 
+    grid-cols-[1fr_20px] lg:grid-cols-[5fr_1fr_10fr] xl:grid-cols-[2fr_1fr_4fr]  
+    ml-[var(--left-margin)]" >
+
     <div id="second-section-main-ellipse" class="-z-10"></div>
 
-    <div class="grid grid-rows-[80px_auto_auto_1fr_auto_5fr_auto] basis-1/3 h-full w-full ml-[var(--left-margin)] ">
+    <div class="row-start-2 grid grid-rows-[auto_auto_2fr_auto_8fr_auto] h-full w-full ">
         <span class="row-start-2 text-[var(--accent-color)] text-6xl lg:text-7xl font-bold">MES</span>
         <span class="row-start-3 text-[var(--accent-color)] ml-1 text-2xl">manufacturing execution system</span>
 
-        <app-subsystem-list class="row-start-5">
+        <app-subsystem-list class="row-start-5 mt-8 lg:mt-0">
 
         </app-subsystem-list>
     </div>
+
+    <div id="image-wrapper" class="mt-16 lg:mt-0 lg:col-start-3 row-start-4 lg:row-span-2 lg:row-start-2">
+        <div id="second-section-image" [style.background-image]="'url(' + this.baseHref + 'assets/example-mes-image.png)'">
+
+        </div>
+    </div>
+
+    <div id="second-section-underline-ellipse"></div>
 </section>

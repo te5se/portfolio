@@ -1,10 +1,10 @@
 
 *{
-    --left-margin: 40px
+    --left-margin: 20px
 }
 @media (min-width: 768px) {
     *{
-        --left-margin: 80px
+        --left-margin: 60px
     }
 }
 @media (min-width: 1024px) {
@@ -16,10 +16,10 @@
     position: absolute;
     background-color: var(--accent-color);
     width: 170vw;
-    height: 140vh;
+    height: 140svh;
     border-radius: 50%;
     left: -50vw;
-    top: -30vh;
+    top: -30svh;
 }
 
 #secondary-title-ellipse{
@@ -28,10 +28,18 @@
     width: calc(var(--left-margin) + 540px);
     height: 332px;
     border-radius: 50%;
-    left: -400px;
-    top: -56px;
+    left: -320px;
+    top: -196px;
 }
-
+@media (min-width: 678px) {
+    #secondary-title-ellipse{
+        width: calc(var(--left-margin) + 540px);
+        height: 332px;
+        border-radius: 50%;
+        left: -400px;
+        top: -56px;
+    }
+}
 @media (min-width: 1024px) {
     #secondary-title-ellipse{
         position: absolute;
@@ -51,15 +59,55 @@ body{
       text-white transition-all cursor-pointer active:bg-white active:text-[var(--accent-color)]
 }
 .screen-height-section {
-    height: 100vh;
-    min-height: 700px;
+    min-height: max(100svh, var(--screen-height));
 }
 #second-section-main-ellipse{
     position: absolute;
     background-color: white;
-    width: calc(var(--left-margin) + 718px);
+    width: calc(var(--left-margin) + 600px);
     height: 540px;
     border-radius: 50%;
     left: -438px;
     top: -268px;
 }
+#second-section-underline-ellipse{
+    position: absolute;
+    left: -300px;
+    bottom: 100px;
+    width: 600px;
+    border-radius: 9999px;
+    height: 52px;
+    background-color: var(--accent-color);
+    opacity: 50%;
+}
+
+#image-wrapper{
+    height: var(--image-width);
+}
+@media (min-width: 1024px) {
+    #image-wrapper{
+        --image-width: 800px;
+        height: var(--image-width);
+        margin: auto 0 auto 0;
+        border-radius: 24px 0 0 24px;
+        overflow: hidden;
+    
+        box-shadow: 0px 0px 24px 20px rgba(34, 60, 80, 0.2);
+    }    
+}
+
+#second-section-image{
+    aspect-ratio: 16/9;
+    border-radius: 24px;
+    background-image: contain;
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;
+}  
+@media (min-width: 1024px) {
+    #second-section-image{
+        height: var(--image-width);
+    }  
+}
+
+ 

@@ -11,7 +11,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 })
 export class GearsComponent {
   @ViewChild("wrapper") wrapper: ElementRef<HTMLElement> | undefined
-  @Input() size = 1000
+  @Input() size = 500
   
   baseHref = inject(APP_BASE_HREF)
 
@@ -39,9 +39,8 @@ export class GearsComponent {
 
     return radiansOfOneCogPerSecond * cogsPerSecond
   }
-
   async setupGears() {
-    let aspectRatio = 1920/1080
+    let aspectRatio = 16/9
     const camera = new THREE.PerspectiveCamera(75, aspectRatio, 0.1, 1000);
 
     const loader = new GLTFLoader();
@@ -81,8 +80,6 @@ export class GearsComponent {
 
     let mat = (mediumGear as THREE.Mesh).material as THREE.MeshStandardMaterial
 
-    console.debug("material",mat)
-
     mat.color.set("#909090")
 
     const animate = () => {
@@ -104,7 +101,6 @@ export class GearsComponent {
 
       renderer.render(loadedData.scene, camera)
     }
-    console.debug("large gear", largeGear)
     animate()
   }
 }
