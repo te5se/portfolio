@@ -31,7 +31,7 @@
     left: -320px;
     top: -196px;
 }
-@media (min-width: 678px) {
+@media (min-width: 640px) {
     #secondary-title-ellipse{
         width: calc(var(--left-margin) + 540px);
         height: 332px;

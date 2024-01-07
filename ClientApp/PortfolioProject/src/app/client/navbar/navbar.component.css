@@ -51,3 +51,12 @@ nav{
     width: 100%;
 }
 
+::ng-deep .p-overlaypanel-content{
+    padding: 0px !important;
+}
+::ng-deep .p-overlaypanel:after {
+    display: none;
+}
+::ng-deep .p-overlaypanel:after {
+    border-bottom-color: var(--accent-font);
+}

@@ -1,13 +1,31 @@
-<nav class="bg-accent bg-transparent flex flex-row w-full ">
+<nav #nav class="bg-accent bg-transparent flex flex-row w-full ">
     <div
         id="main-button" class="basis-1/3 flex  p-default">
 
-        <i class="material-symbols-outlined text-2xl my-auto" >home</i>
-
+        <button (click)="overlayPanel.toggle($event)">
+            <i class="material-symbols-outlined text-2xl my-auto" >menu</i>
+        </button>
+        <p-overlayPanel #overlayPanel [appendTo]="htmlElement">
+            <div class="flex flex-col bg-[var(--accent-color)] p-4 gap-4 border-[var(--accent-font)] border-2 rounded-md">
+                <a
+                    [ngClass]="isOnAboutPage ? 'after:!w-full' : ''"
+                    routerLink="/client/about"
+                    class="menu-item  mr-auto underscored ">
+                    ABOUT
+                </a>
+                
+                <a 
+                    [ngClass]="isOnProjectsPage ? 'after:!w-full' : ''"
+                    routerLink="/client/projects"
+                    class="menu-item mr-auto underscored ">
+                    PROJECTS
+                </a>
+            </div>
+        </p-overlayPanel>
     </div>
 
     <div
-        id="links" class="basis-1/3 flex flex-row col-start-2  justify-center">
+        id="links" class="hidden  basis-1/3 md:flex flex-row col-start-2  justify-center">
 
         <a
             [ngClass]="isOnAboutPage ? 'after:!w-full' : ''"

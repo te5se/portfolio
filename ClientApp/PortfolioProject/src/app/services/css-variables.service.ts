@@ -18,12 +18,12 @@ export class CssVariablesService {
             return;
         }
 
-        console.debug("project id to set", project.id)
         localStorage.setItem(Keys.LAST_APPLICATION_KEY, project.id)
 
         project?.cssVariables?.forEach((variable)=>{
             if(variable.name != null && variable.value != null){
                 this.styleHost?.style.setProperty(variable.name, variable.value)
+                //document.body.style.setProperty(variable.name, variable.value)
             }
         
         })}
