@@ -1,14 +1,14 @@
 
-*{
+::ng-deep :root{
     --left-margin: 20px
 }
 @media (min-width: 768px) {
-    *{
+    ::ng-deep :root{
         --left-margin: 60px
     }
 }
 @media (min-width: 1024px) {
-    *{
+    ::ng-deep :root{
         --left-margin: 120px
     }
 }

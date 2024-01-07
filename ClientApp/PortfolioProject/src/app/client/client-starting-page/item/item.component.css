@@ -1,11 +1,24 @@
-
+::ng-deep :root{
+    --padding-default: 1rem;
+}
+@media (min-width: 768px){
+    ::ng-deep :root{
+        --padding-default: 2rem;
+    }
+}
 div{
     border-color: var(--divider-color);
 }
 .main-grid{
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 4fr 2fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 3fr 3fr 3fr;
+}
+@media (min-width: 768px) {
+    .main-grid{
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 4fr 2fr;
+    }    
 }
 .image-container{
     background-repeat:no-repeat;
