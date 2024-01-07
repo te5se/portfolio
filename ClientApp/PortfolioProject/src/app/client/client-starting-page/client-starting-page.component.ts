@@ -1,6 +1,8 @@
 import { Component, HostListener, Inject, OnInit, inject } from '@angular/core';
+import { lastIndexOf } from 'cypress/types/lodash';
 import { BehaviorSubject, timer } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
+import { Keys } from 'src/app/helpers/keys';
 import { Project } from 'src/app/models/project';
 import { CssVariablesService } from 'src/app/services/css-variables.service';
 import { ProjectService } from 'src/app/services/project.service';
@@ -18,7 +20,6 @@ export class ClientStartingPageComponent extends BaseComponent {
     
     currentProject = new BehaviorSubject<Project>({
         cssVariables : [],
-        id : '1234'
     });
     projectService : ProjectService = inject(ProjectService)
     cssVariableService : CssVariablesService = inject(CssVariablesService)
@@ -34,14 +35,33 @@ export class ClientStartingPageComponent extends BaseComponent {
         this.minIndex = Math.min(...indexes);
     }
     async loadProjects() : Promise<void>{
+        let lastProjectID = localStorage.getItem(Keys.LAST_APPLICATION_KEY)
         let projects = await this.projectService.getProjects();
         this.projectItems = [];
         let i = 0;
+
+        let projectToMakeActive : Project = {cssVariables:[]}
+
+
+        // searching for active project
         projects.forEach((project) => {
-            let status = "hidden-after"
-            if(i==0){
+            if(lastProjectID != null && lastProjectID == project.id){
+                projectToMakeActive = project
+            }
+        })
+        if(projectToMakeActive.id == null && projects.length > 0){
+            projectToMakeActive = projects[0]
+        }
+
+        let hasFoundDefaultItem = false
+
+        // creating items for display
+        projects.forEach((project) => {
+            let status = hasFoundDefaultItem ? 'hidden-after' : "hidden-before"
+
+            if(projectToMakeActive.id == project.id){
                 status="active"
-                this.currentProject.next(project)
+                hasFoundDefaultItem = true
             }
             let projectItem: ProjectItem = {
                 dataIndex: i,
@@ -51,6 +71,10 @@ export class ClientStartingPageComponent extends BaseComponent {
             this.projectItems.push(projectItem)
             i++;
         })
+
+        console.debug("project items", this.projectItems)
+       
+        this.currentProject.next(projectToMakeActive)
     }
     
     setupSubscriptions(){
