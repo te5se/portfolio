@@ -62,6 +62,8 @@ export class Pws03Component extends BaseComponent {
 
     videosPlayed = 0
 
+    isPopperHidden = false
+
     override ngOnInit(): void {
         super.ngOnInit()
         console.debug("base href", this.baseHref)
@@ -113,7 +115,6 @@ export class Pws03Component extends BaseComponent {
                 return
             }
 
-            this.lastSelectedEquipmentDTO = selectedDTO
 
             let rect = selectedDTO.targetElement?.getBoundingClientRect()
             this.popoverLeft = `${rect?.x}px`
@@ -121,14 +122,23 @@ export class Pws03Component extends BaseComponent {
             this.popoverSrcElementWidth = `${rect?.width}px`
             this.popoverSrcElementHeight = `${rect?.height}px`
             this.myPopperContent?.hide()
+            console.debug("selected dto", selectedDTO)
             let i = 0
-            let interval = setInterval(() => {
-                this.myPopperContent?.show()
-                i++
-                if (i > 10) {
-                    clearInterval(interval)
-                }
-            }, 10)
+            
+            if(selectedDTO.equipment == this.lastSelectedEquipmentDTO && this.isPopperHidden){
+                // if refresh goes from the same equipment that has been before, but the window is closed then don't open the dialog
+            } else{
+                let interval = setInterval(() => {
+                    this.myPopperContent?.show()
+                    i++
+                    if (i > 10) {
+                        clearInterval(interval)
+                    }
+                }, 10)
+                this.isPopperHidden = false            
+            }
+
+            this.lastSelectedEquipmentDTO = selectedDTO
         })
     }
     setupArticles() {
@@ -177,13 +187,17 @@ export class Pws03Component extends BaseComponent {
     }
 
     goToAnalytics() {
-        this.myPopperContent?.hide()
+        let i = 0
+        this.isPopperHidden = true
+       
         this.secondSection?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
         console.debug("scroll into view",)
         this.featureSelector?.selectItem("Analytics")
     }
     hidePopover() {
-        this.myPopperContent?.hide()
+        let i = 0
+        this.isPopperHidden = true
+        
         console.debug("hide popover")
         this.pws03UIService.equipmentSelected.next({})
     }

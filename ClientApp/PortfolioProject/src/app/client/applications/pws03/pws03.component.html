@@ -111,7 +111,9 @@
         </div>
     </section>
     
-    <div class="absolute" [popper]="myPopperContent" 
+    <div class="absolute"
+        *ngIf="isPopperHidden == false"
+        [popper]="myPopperContent" 
         [popperPlacement]="placement" 
         [style.top]="popoverTop"
         [style.left]="popoverLeft"
@@ -121,6 +123,8 @@
     </div>
 </section>
 
-<popper-content #myPopperContent>
-        <app-equipment-info-overlay (goToAnalyticsChange)="goToAnalytics()"></app-equipment-info-overlay>
+<popper-content #myPopperContent >
+    <app-equipment-info-overlay  
+        *ngIf="isPopperHidden == false"
+        (goToAnalyticsChange)="goToAnalytics()"></app-equipment-info-overlay>
 </popper-content>
