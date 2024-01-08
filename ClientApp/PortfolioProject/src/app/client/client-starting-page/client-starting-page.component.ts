@@ -1,5 +1,4 @@
 import { Component, HostListener, Inject, OnInit, inject } from '@angular/core';
-import { lastIndexOf } from 'cypress/types/lodash';
 import { BehaviorSubject, timer } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
 import { Keys } from 'src/app/helpers/keys';
