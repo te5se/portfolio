@@ -24,6 +24,7 @@ export class Pad77Component extends BaseComponent {
     isEditingRoute = false
     isTaskSectionActive = true
     numberOfCoordinators = 3
+    isMobile = false
 
     constructor() {
         super()
@@ -31,7 +32,6 @@ export class Pad77Component extends BaseComponent {
         this.createParallaxWrappers()
 
         
-
     }
 
     async runDocument() {
@@ -233,6 +233,11 @@ export class Pad77Component extends BaseComponent {
             return
         }
         this.numberOfCoordinators++
+    }
+
+    onResize() {
+        this.isMobile = document.body.clientWidth <= 768
+        
     }
 }
 export class ParallaxWrapper {

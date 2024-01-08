@@ -1,27 +1,28 @@
 <section
-    class="image flex w-24 h-24 relative -z-10">
+    (window:resize)="onResize($event)" 
+    class="image flex w-16 h-16 md:w-24 md:h-24 relative -z-10">
     <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 -960 960 960" width="64">
         <path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-160v-112q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v112H160Z"/>
     </svg>
     <div 
         *ngIf="user.acceptCount != null"
-        class="bg-green-500 text-white p-1 rounded-lg left-0 bottom-0 m-auto absolute">
+        class="bg-green-500 text-white p-1 rounded-sm left-1 bottom-0 m-auto absolute">
         {{user.acceptCount}}
     </div>
     <div 
         *ngIf="user.rejectCount != null"
-        class="bg-red-500 text-white p-1 rounded-sm right-0 bottom-0 m-auto absolute">
+        class="bg-red-500 text-white p-1 rounded-sm right-1 bottom-0 m-auto absolute">
         {{user.rejectCount}}
     </div>
 </section>
 <!-- moving document -->
 <div 
-    class="flex w-16 h-16 absolute transition-all rounded-lg bg-white" 
+    class="flex  w-12 h-12 md:w-16 md:h-16 absolute transition-all rounded-lg bg-white" 
     [style.transition-duration]="duration + 'ms'"
-    [style.top]="document.y! + 16 + 'px'"
-    [style.left]="document.x! + 16 + 'px'"
+    [style.top]="document.y! + documentMargin() + 'px'"
+    [style.left]="document.x! + documentMargin() + 'px'"
     [ngClass]="showDocument ? 'opacity-100' : 'opacity-0' ">
-    <i class="material-symbols-outlined !text-6xl m-auto">
+    <i class="material-symbols-outlined !text-4xl  md:!text-6xl m-auto">
         {{documentIcon}}
     </i>
 </div>
@@ -33,12 +34,12 @@
     [ngClass]="animateReject || animateAccept ? 'scale-100 opacity-100' : 'scale-50 opacity-0'">
     <i 
         [ngClass]="animateAccept ? 'opacity-100' : 'opacity-0'"
-        class="material-symbols-outlined !text-green-400 !text-8xl m-auto transition-all duration-500 col-start-1 row-start-1">
+        class="material-symbols-outlined !text-green-400 !text-[64px] md:!text-8xl m-auto transition-all duration-500 col-start-1 row-start-1">
         done
     </i>
     <i 
         [ngClass]="animateReject ? 'opacity-100' : 'opacity-0'"
-        class="material-symbols-outlined !text-red-400 !text-8xl m-auto transition-all duration-500 col-start-1 row-start-1">
+        class="material-symbols-outlined !text-red-400 !text-[64px] md:!text-8xl m-auto transition-all duration-500 col-start-1 row-start-1">
         close
     </i>
 </div>

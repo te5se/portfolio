@@ -1,16 +1,20 @@
-<div id="wrapper" class="">
+<div id="wrapper" 
+    (window:resize)="onResize()" 
+    class="">
     <section id="first-section" class="screen-height-section flex w-full relative overflow-hidden">
-        <div class="flex flex-col ml-[var(--title-margin)] mt-[calc(var(--title-margin)-56px)] justify-start">
+        <div class="flex flex-col ml-[var(--title-margin)] mt-[max(calc(var(--title-margin)-56px),40px)] justify-start z-10">
             <h1 class="scroll-hidden">Lighthouse <br> DMS</h1>
             <h2 class="scroll-hidden !delay-100">Electronic document management <br> system</h2>
             <a href="https://github.com/te5se/portfolio/tree/develop/ProjectDescriptions/DMS" class="local-button mt-8 mr-auto">see the details</a>
         </div>
-        <app-reports class="absolute right-[56px] bottom-[40px] scale-125 origin-bottom-right"></app-reports>
+        <app-reports class="absolute -left-[254px] md:right-[56px] bottom-[240px] md:bottom-[40px] 
+            w-[min(250vw,700px)] md:w-[unset]
+            scale-75 md:scale-100 lg:scale-125 origin-bottom-right"></app-reports>
 
     </section>
     <section id="second-section" class="flex flex-col screen-height-section relative">
         <div id="lighthouse" [style.background-image]="'url(' + baseHref + 'assets/Lighthouse.png)'"></div>
-        <h1 class="flex scroll-hidden ml-[var(--title-margin)] mt-24">Customizable routing
+        <h1 class="flex scroll-hidden ml-[var(--title-margin)] mt-24">Tailored routing
 
         </h1>
         <h2 class=" ml-[var(--title-margin)]" [innerHTML]="customizableRouting.status | async"></h2>
@@ -24,7 +28,7 @@
                 change route
             </button>
         </div>
-        <div *ngIf="isEditingRoute" class="ml-[var(--title-margin)]  flex gap-4 justify-start mt-8">
+        <div *ngIf="isEditingRoute" class="ml-[var(--title-margin)] flex-wrap flex gap-4 justify-start mt-8">
             <p class="my-auto text-lg">number of coordinators</p>
             <button 
                 (click)="removeCoordinator()"
@@ -38,7 +42,7 @@
                 +
             </button>
 
-            <div class="w-[1px] h-full bg-black mx-8"></div>
+            <div class="w-[1px] h-full bg-black mx-8 hidden md:block"></div>
 
             <button
                 (click)="isTaskSectionActive = !isTaskSectionActive"
@@ -48,7 +52,7 @@
             </button>
 
             <div
-                class="w-[1px] h-full bg-black mx-8"></div>
+                class="w-[1px] h-full bg-black mx-8 hidden md:block"></div>
 
             <button 
                 class="flex flex-row gap-2 local-button"
@@ -59,9 +63,10 @@
         </div>
 
         <app-customizable-routing 
+            id="customizable-routing"
             [trackTaskProgress]="isTaskSectionActive"
             [numberOfCoordinators]="numberOfCoordinators" #customizableRouting (isInProgress)="this.isRoutingInProgress = $event"
-            class="w-full h-full -mt-20">
+            class="w-full h-full overflow-x-auto z-10 mt-8 md:mt-0">
 
         </app-customizable-routing>
     </section>
@@ -81,7 +86,7 @@
 
     </section>
     <section id="last-section" class="flex flex-col screen-height-section relative mt-[50vh]">
-        <h1 class="mx-auto mt-40">Over 1000 simultaneous users</h1>
+        <h1 class="ml-[var(--title-margin)] md:mx-auto mt-40">Over 1000 concurrent users</h1>
 
         <app-active-users class="h-1/2 w-full mt-24"></app-active-users>
     </section>

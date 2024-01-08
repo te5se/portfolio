@@ -34,6 +34,8 @@ export class CustomizableRoutingComponent implements OnInit {
 
     name : any = {}
 
+    isMobile = false
+
     constructor() { }
     ngOnInit(): void {
         setTimeout(() => {
@@ -43,6 +45,15 @@ export class CustomizableRoutingComponent implements OnInit {
             this.setupOffsets()
         }, 100)
         this.fillArray()
+        setTimeout(()=>{
+            this.onResize()
+        })
+        setInterval(()=>{
+            // if(this.isMobile){
+            //     let scrollerHost = document.getElementById("customizable-routing")
+            //     let movingDocument = document.getElementById("moving-route-document")
+            // }
+        },100)
     }
     ngOnChanges() {
         this.fillArray()
@@ -119,7 +130,12 @@ export class CustomizableRoutingComponent implements OnInit {
                     return false
                 }
                 this.status.next(`Rejected by ${this.getWordForOrder(i + 1)} coordinator <b>(${this.getNameForIndex(i)})</b>`)
-                this.movingDocY = lowestItem.top! + 200
+                // if mobile, go lower to the bottom
+                if(this.isMobile){
+                    this.movingDocY = lowestItem.top!
+                } else{
+                    this.movingDocY = lowestItem.top! + 200
+                }
                 await TimeHelper.delay(500)
                 this.movingDocX = firstItem.left!
                 await TimeHelper.delay(500)
@@ -159,7 +175,7 @@ export class CustomizableRoutingComponent implements OnInit {
     setupOffsets() {
         this.offsets = []
 
-        let secondSection = document.getElementById("second-section")
+        let secondSection = document.getElementById("document-router")
 
         if (secondSection == null) {
             return
@@ -244,6 +260,9 @@ export class CustomizableRoutingComponent implements OnInit {
         this.name[index] = shortName
         return shortName
         
+    }
+    onResize() {
+        this.isMobile = document.body.clientWidth <= 768
     }
 }
 export interface ItemOffset {

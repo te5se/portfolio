@@ -1,11 +1,22 @@
 #wrapper{
-    --title-margin: 176px;
+    --title-margin: 20px;
     --parallax-margin-bottom: 0px;
     --parallax-speed: 1;
 }
+@media (min-width: 768px) {
+    #wrapper{
+        --title-margin: 120px;
+    }
+}
+@media (min-width: 1024px) {
+    #wrapper{
+        --title-margin: 176px;
+    }
+}
+
+
 .screen-height-section{
-    height: 100vh;
-    min-height: 700px;
+    min-height: max(100svh,800px);
 }
 #first-section{
     background: linear-gradient(180deg, #B4D8FF 0%,  #B4D8FF 40%, #E8F3FE 100%);
@@ -14,25 +25,39 @@
     background: linear-gradient(180deg, #E8F3FE 0%, white 100%);
 }
 h1{
-    font-size: 64px;
+    font-size: 42px;
     font-weight: bold;
     letter-spacing: 6px;
 }
-
 h2{
-    font-size: 42px;
+    font-size: 28px;
     font-weight: 300;
+}
+@media (min-width: 1024px) {
+    h1{
+        font-size: 64px;
+        letter-spacing: 6px;
+    }
+    h2{
+        font-size: 42px;
+    }
 }
 #lighthouse{
     position: absolute;
     top: -150px;
     bottom: -250px;
     left: -512px;
-    width: 900px;
+    width: 850px;
     background-repeat:no-repeat;
     background-position: center center;
     background-size: contain;
     opacity: 0.3;
+}
+
+@media (min-width: 1024px) {
+    #lighthouse{
+        width: 900px;
+    }
 }
 .animation-test{
     animation: full-width-animation linear;
@@ -63,5 +88,8 @@ h2{
 }
 .local-button{
     @apply hover:bg-[#00000060] active:bg-black active:text-white duration-150 text-base 
-    relative border-black border-2 rounded-full p-2 px-4 text-left
+    relative border-black border-2 rounded-full p-2 px-4 text-left max-h-[64px]
+}
+*::-webkit-scrollbar {
+    background-color: transparent;
 }
