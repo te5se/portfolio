@@ -10,7 +10,7 @@
     <button id="title" (click)="goToProjectLink()" class="p-default duration-150 border-[var(--divider-color)] border-2 md:border-0 md:border-t-2">
 
         <div id="inner-title-container" class="flex flex-row h-full cursor-pointer justify-between">
-            <div class="h-full w-full font-bold text-2xl sm:text-3xl relative overflow-hidden">
+            <section class="h-full w-full font-bold text-2xl sm:text-3xl relative overflow-hidden">
 
                 <div id="title-caption" class="h-full my-auto absolute flex">
                     <p class="my-auto">
@@ -22,14 +22,14 @@
                         SHOW PROJECT
                     </p>
                 </div>
-            </div>
+            </section>
 
             <i id="rotate-cross" class="fa fa-bars text-5xl my-auto"></i>
 
         </div>
 
     </button>
-    <div id="nav-buttons" class="flex row-start-4 md:col-start-2 md:row-start-2 w-full border-slate-500 border-2">
+    <section id="nav-buttons" class="flex row-start-4 md:col-start-2 md:row-start-2 w-full border-slate-500 border-2">
         <button class="nav-button relative flex basis-1/2 " (click)="buttonClick('left')">
             <div class="left-icon-wrapper">
                 <i id="left-icon" class=" pi pi-arrow-left text-2xl m-auto"></i>
@@ -40,8 +40,13 @@
                 <i id="right-icon" class="pi pi-arrow-right text-2xl m-auto"></i>
             </div>
         </button>
-    </div>
-    <div class="row-start-3 md:row-start-1 md:col-start-2 overflow-hidden p-2 border-slate-500 border-x-2 overflow-y-auto">
-        {{project.shortDescription}}
+    </section>
+    <div class="row-start-3 text-lg md:text-2xl md:row-start-1 md:col-start-2 overflow-hidden p-2 border-slate-500 border-x-2 overflow-y-auto">
+        @for (descriptionBlock of project.shortDescription?.split('\n'); track $index) 
+        {
+            <p>
+                {{descriptionBlock}}
+            </p>
+        }
     </div>
 </main>
