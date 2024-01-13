@@ -6,19 +6,21 @@
         <p class="text-gray-500 m-4 text-[16px]  scroll-hidden">for my home university</p>
     </div>
 </section>
-<section id="mobile-section" class="screen-height-section">
-    <p class="local-title col-start-2 mt-[5%] scroll-hidden  -translate-y-4">MOBILE APP</p>
-    <div class="col-start-2 relative flex">
+<section  class="screen-height-section 
+    px-8 lg:px-0
+    grid lg:grid-cols-[100px_1fr_1fr_0px] xl:grid-cols-[200px_1fr_1fr_200px] grid-rows-[120px_auto_auto_auto]  lg:grid-rows-[120px_1fr_200px] overflow-hidden">
+    <p class="local-title lg:col-start-2 mt-[5%] scroll-hidden  -translate-y-4">MOBILE APP</p>
+    <div class="col-start-1 row-start-2 lg:col-start-2 relative flex">
         <app-schedule-list class="ml-8 my-auto max-w-[300px] h-[calc(100%-60px)] pb-4" [items]="mobileList"></app-schedule-list>
         <div class=" w-[1px] h-full bg-red-300 absolute -left-8 top-0 scroll-hidden"></div>
     </div>
-    <div class="group flex col-start-3 col-span-2 row-span-2 relative overflow-hidden scroll-hidden">
-        <img class="ml-auto mr-[200px] h-[500px] transition-all duration-500 hover:rotate-[3deg] " [src]="baseHref + 'assets/schedule-phone.png'" />
-        <div id="shadow-effect" class="group-hover:scale-[1.5]
-        scroll-hidden  absolute rotate-[-30deg]"></div>
+    <div class="group !scale-90 lg:!scale-125 lg:mt-[124px] mb-auto flex col-start-1 row-start-3 
+        lg:row-start-2 lg:col-start-3 col-span-1 row-span-2 relative scroll-hidden">
+        <img class="lg:ml-auto lg:mr-[200px] h-[500px] transition-all duration-500 hover:rotate-[3deg] " [src]="baseHref + 'assets/schedule-phone.png'" />
+        <div id="shadow-effect" class="scroll-hidden  absolute rotate-[-30deg]"></div>
     </div>
     <app-neon-button 
-        class="col-start-2 mt-auto mb-16 scroll-hidden"
+        class="mt-auto row-start-4 col-start-1 lg:row-start-3 lg:col-start-2 lg:mb-16 scroll-hidden"
         href="https://play.google.com/store/apps/details?id=com.phoenix.schedule&hl=ru">
         phoenix&#64;schedule
     </app-neon-button>

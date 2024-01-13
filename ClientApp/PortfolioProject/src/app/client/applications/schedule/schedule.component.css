@@ -15,13 +15,15 @@ a{
     width: 600px;
     height: 400px;
     background: radial-gradient(white 1%, transparent 50%, transparent) ;
-    @apply  rounded-full bottom-[80px] right-[-100px] -z-10 opacity-20
+    @apply  rounded-full bottom-[-120px] left-[0px] -z-10 opacity-20
 }
-#mobile-section{
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr 200px;
-    grid-template-rows: 120px 1fr  200px;
+@media (min-width:1024px) {
+    #shadow-effect{
+        right: -100px;
+        left: unset;
+    }
 }
+
 #admin-section{
     display: grid;
     grid-template-columns: 200px 1fr 1fr 200px;
