@@ -1,5 +1,7 @@
 <!-- #region first -->
-<section class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [style.width]="leftWidth">
+<section
+    
+class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [style.width]="leftWidth">
     <p *ngIf="videosPlayed == 0 && videoLineOpacity != 0" class="absolute text-white top-0 left-0 whitespace-nowrap">Click on screen to start videos</p>
     <div class="scroll-hidden flex flex-col ">
         <p class="text-white">Make your production line</p>
@@ -92,7 +94,7 @@
     </div>
 </section>
 <!-- #endregion third section -->
-<section class="h-[max(100svh,1000px)] bg-[#f6f6f6] pt-[100px] flex relative overflow-hidden" (click)="hidePopover()">
+<section id="last-section" class="h-[max(100svh,1000px)] bg-[#f6f6f6] pt-[100px] flex relative overflow-hidden" (click)="hidePopover()">
     
     
     <!-- backgroud ellipse -->

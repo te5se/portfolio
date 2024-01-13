@@ -3,7 +3,7 @@
     border-radius: 50%;
     position: absolute;
     left: -100px;
-    height: 140vh;
+    height: calc(120vh + 300px);
     width: calc(150vw + 300px);
     animation: moveY infinite 40s, moveX infinite 60s;
 }

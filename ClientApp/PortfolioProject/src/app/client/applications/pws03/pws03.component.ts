@@ -114,15 +114,23 @@ export class Pws03Component extends BaseComponent {
             if (selectedDTO.equipment == null) {
                 return
             }
+            if(selectedDTO.targetElement == null){
+                return
+            }
+            let lastSection = document.getElementById("last-section")
+            if(lastSection == null){
+                return
+            }
 
+            let offset = this.getOffset(selectedDTO.targetElement, lastSection)
+            console.debug("offset", offset)
 
             let rect = selectedDTO.targetElement?.getBoundingClientRect()
-            this.popoverLeft = `${rect?.x}px`
-            this.popoverTop = `${rect?.y}px`
+            this.popoverLeft = `${offset.left}px`
+            this.popoverTop = `${offset.top}px`
             this.popoverSrcElementWidth = `${rect?.width}px`
             this.popoverSrcElementHeight = `${rect?.height}px`
             this.myPopperContent?.hide()
-            console.debug("selected dto", selectedDTO)
             let i = 0
             
             if(selectedDTO.equipment == this.lastSelectedEquipmentDTO && this.isPopperHidden){
@@ -191,7 +199,6 @@ export class Pws03Component extends BaseComponent {
         this.isPopperHidden = true
        
         this.secondSection?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        console.debug("scroll into view",)
         this.featureSelector?.selectItem("Analytics")
     }
     hidePopover() {
@@ -200,6 +207,14 @@ export class Pws03Component extends BaseComponent {
         
         console.debug("hide popover")
         this.pws03UIService.equipmentSelected.next({})
+    }
+    getOffset(el: HTMLElement, relativeTo: HTMLElement) {
+        const elRect = el.getBoundingClientRect();
+        const relativeToRect = relativeTo.getBoundingClientRect();
+        return {
+            left: elRect.left - relativeToRect.left,
+            top: elRect.top - relativeToRect.top
+        };
     }
 }
 export interface Article {
