@@ -1,9 +1,9 @@
 <!-- #region first -->
 <section class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [style.width]="leftWidth">
     <p *ngIf="videosPlayed == 0 && videoLineOpacity != 0" class="absolute text-white top-0 left-0 whitespace-nowrap">Click on screen to start videos</p>
-    <div class="scroll-hidden flex flex-col">
+    <div class="scroll-hidden flex flex-col ">
         <p class="text-white">Make your production line</p>
-        <div class="flex flex-row mx-auto">
+        <div class="flex flex-row mx-auto ">
             <p class="my-auto text-white">run</p>
             <p class="typed-part text-[#f55049]">faster</p>
         </div>
@@ -40,25 +40,25 @@
 </div>
 <!-- #region second section -->
 <section class="screen-height-section w-full flex" #secondSection>
-    <div class="grid grid-rows-[1fr_2fr] grid-cols-[2fr_1fr] h-full mx-auto min-w-[800px]">
-        <section class="my-auto">
+    <div class=" gap-12 pt-12 grid grid-rows-[auto_auto_1fr] md:grid-rows-[1fr_2fr] md:grid-cols-[2fr_1fr] h-full mx-auto w-[min(768px,90vw)]">
+        <section class="my-auto col-start-1 row-start-1">
             <p class="text-accent underscored after:left-1 after:w-14 text-5xl font-bold my-auto">
                 GLOBE
             </p>
             <p class="text-secondary text-3xl font-bold mt-4">Equipment monitoring</p>
         </section>
 
-        <app-feature-selector #featureSelector (selectedFeatureChanged)="selectedCaption = $event" class="my-auto ml-auto">
+        <app-feature-selector #featureSelector (selectedFeatureChanged)="selectedCaption = $event" class="row-start-2 col-start-1 md:col-start-2 md:row-start-1 my-auto md:ml-auto">
         </app-feature-selector>
 
-        <div class="col-span-2 mx-auto mb-8"  >
-            <video #video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow w-[800px]" autoplay loop muted>
+        <div class="row-start-3 col-start-1 md:row-start-2 md:col-span-2 mx-auto mb-8"  >
+            <video #video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow  w-[min(768px,90vw)]" autoplay loop muted>
                 <source [src]="baseHref + 'assets/GraphicRedactor.mp4'" type="video/mp4" />
             </video>
-            <video #video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow w-[800px]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow  w-[min(768px,90vw)]" autoplay loop muted>
                 <source  [src]="baseHref + 'assets/Analytics.mp4'" type="video/mp4" />
             </video>
-            <video #video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow w-[800px]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow  w-[min(768px,90vw)]" autoplay loop muted>
                 <source [src]="baseHref + 'assets/Users.mp4'" type="video/mp4" />
             </video>
         </div>
@@ -67,17 +67,17 @@
 <!-- #endregion second section -->
 <!-- #region third section -->
 <section class="bg-[#f6f6f6] flex pt-8 ">
-    <div class="flex flex-col  min-w-[800px] mx-auto">
-        <article *ngFor="let article of articles" class="flex flex-row w-full mb-8 justify-between">
-            <div class="mb-auto sticky top-4">
-                <p class="text-accent underscored sticky after:left-0 after:w-8 text-3xl font-bold my-auto">
+    <div class="flex flex-col  md:w-[768px] mx-auto">
+        <article *ngFor="let article of articles" class="flex flex-col gap-4 md:p-4 md:flex-row w-full mb-8 justify-between">
+            <div class="mb-auto md:sticky top-4">
+                <p class="text-accent underscored md:sticky after:left-0 after:w-8 text-3xl font-bold my-auto">
                     {{article.Title}}
                 </p>
                 <p class="text-secondary text-xl font-bold mt-4">{{article.SecondaryTitle}}</p>
             </div>
 
-            <section class="flex flex-col col-start-2 w-[400px]">
-                <video #video class="w-[400px] local-video-shadow" autoplay="true" muted="true" loop="true" data-loaded="true">
+            <section class="flex flex-col col-start-2 w-[min(400px,90vw)]">
+                <video #video class="w-full local-video-shadow" autoplay="true" muted="true" loop="true" data-loaded="true">
                     <source [src]="article.VideoSource" type="video/mp4" />
                 </video>
 
@@ -92,7 +92,7 @@
     </div>
 </section>
 <!-- #endregion third section -->
-<section class="screen-height-section pt-[100px] flex relative overflow-hidden" (click)="hidePopover()">
+<section class="h-[max(100svh,1000px)] bg-[#f6f6f6] pt-[100px] flex relative overflow-hidden" (click)="hidePopover()">
     
     
     <!-- backgroud ellipse -->
@@ -100,18 +100,18 @@
 
     <!-- content -->
     
-    <section class="grid grid-cols-[300px_1fr_2fr_100px] grid-rows-[1fr_auto_1fr_auto] w-full">
-        <article class="col-start-2 row-start-2 flex flex-col justify-around z-10  text-5xl font-bold">
+    <section class="grid gap-8 p-4 lg:grid-cols-[16px_1fr_2fr_16px] xl:grid-cols-[300px_1fr_2fr_100px] grid-rows-[2fr_auto_1fr_auto] w-full">
+        <article class="ml-4 md:ml-0 md:col-start-2 row-start-2 flex flex-col justify-around z-10  text-5xl font-bold">
             <div class="scroll-hidden text-white">TRY</div>
             <div class="scroll-hidden !delay-150 text-white">IT</div>
             <div class="scroll-hidden !delay-300 text-white">YOURSELF</div>
         </article>
-        <div class="col-start-3 row-start-2 ml-auto w-[550px] h-[300px] z-10 ">
+        <div class="md:col-start-3 row-start-3 md:row-start-2 mr-auto md:ml-auto w-[min(550px,90vw)] h-[300px] z-10 ">
             <app-work-center></app-work-center>
         </div>
         <a 
             href="https://github.com/te5se/portfolio/tree/develop/ProjectDescriptions/Equipment%20monitoring"
-            class="scroll-hidden col-start-2 row-start-4 z-10 mb-8 text-white px-4 p-2 
+            class="scroll-hidden md:col-start-2 row-start-4 z-10 mb-8 text-white px-4 p-2 !duration-150
             mr-auto text-xl border-2 border-transparent rounded-full active:bg-white active:text-black transition-all hover:border-white">see the details</a>
     </section>
     

@@ -4,7 +4,7 @@
     position: absolute;
     left: -100px;
     height: 140vh;
-    width: 150vw;
+    width: calc(150vw + 300px);
     animation: moveY infinite 40s, moveX infinite 60s;
 }
 @keyframes moveY {

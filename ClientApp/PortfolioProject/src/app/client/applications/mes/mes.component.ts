@@ -36,8 +36,7 @@ export class MESComponent implements OnInit {
                 return
             }
             let clientWidth = this.wrapper?.nativeElement.clientWidth
-        this.clientWidth.set(clientWidth)
-        console.debug("client width", this.clientWidth())
+            this.clientWidth.set(clientWidth)
         },100)
     }
 

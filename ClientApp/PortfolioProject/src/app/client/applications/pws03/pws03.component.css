@@ -1,24 +1,41 @@
 @tailwind components;
+
 .side {
-  @apply absolute w-full h-[120vh] grid  overflow-hidden transition-all ease-out;
+  @apply absolute w-full h-[120vh] grid overflow-hidden transition-all ease-out;
 }
-.side > div {
-  @apply text-[88px] w-screen text-center  absolute top-[30%] font-medium;
+
+.side>div {
+  @apply text-[40px] w-screen text-center absolute top-[30%] font-medium;
 }
-.video-line {
-  @apply absolute flex flex-row gap-8 z-20 transition-all duration-500 overflow-x-hidden  w-[calc(100vw-4px)];
-}
-.moving-line{
-    animation: scroll 30s
-    forwards linear infinite;
-}
-@keyframes scroll {
-    to {
-      transform: translate(calc(-100% - 2rem));
-    }
+
+@media (min-width:768px) {
+  .side>div {
+    @apply text-[56px];
   }
-  
+}
+
+@media (min-width:1024px) {
+  .side>div {
+    @apply text-[88px];
+  }
+}
+
+.video-line {
+  @apply absolute flex flex-row gap-8 z-20 transition-all duration-500 overflow-x-hidden w-[calc(100vw-4px)];
+}
+
+.moving-line {
+  animation: scroll 30s forwards linear infinite;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-100% - 2rem));
+  }
+}
+
 .typed-part {
+  --typed-part-size: 40px;
   animation:
     typing 2s steps(6),
     blink 0.5s step-end infinite alternate;
@@ -26,7 +43,20 @@
   overflow: hidden;
   border-right: 3px solid;
   font-family: monospace;
-  @apply my-auto text-[88px] ml-4 mt-[8px] inline-block w-[326px] font-bold;
+  width: calc(var(--typed-part-size)*3.68);
+  @apply my-auto ml-4 mt-[8px] inline-block font-bold;
+}
+
+@media (min-width:768px) {
+  .typed-part {
+    --typed-part-size: 56px;
+  }
+}
+
+@media (min-width:1024px) {
+  .typed-part {
+    --typed-part-size: 88px;
+  }
 }
 
 @keyframes typing {
@@ -40,24 +70,30 @@
     border-color: transparent;
   }
 }
+
 ::ng-deep :root {
   --pws03-accent-color: #00b00b;
   --secondary-text-color: #464646;
 }
+
 .screen-height-section {
-  height: 100vh;
+  height: min(100svh, var(--screen-height));
   min-height: 700px;
   background-color: #f6f6f6;
 }
+
 ::ng-deep .text-secondary {
   color: var(--secondary-text-color);
 }
+
 ::ng-deep .text-accent {
   color: var(--pws03-accent-color);
 }
+
 .underscored {
   @apply relative;
 }
+
 .underscored::after {
   content: "";
   @apply absolute -bottom-2 rounded-full h-[6px] bg-[var(--pws03-accent-color)];
@@ -68,6 +104,7 @@
   -moz-box-shadow: 4px 4px 38px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 4px 4px 38px 10px rgba(0, 0, 0, 0.2);
 }
+
 .local-video-shadow {
   -webkit-box-shadow: 4px 4px 24px 10px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 4px 4px 24px 10px rgba(0, 0, 0, 0.2);
