@@ -77,7 +77,7 @@
 }
 
 .screen-height-section {
-  height: min(100svh, var(--screen-height));
+  height: max(100svh, var(--screen-height));
   min-height: 700px;
   background-color: #f6f6f6;
 }

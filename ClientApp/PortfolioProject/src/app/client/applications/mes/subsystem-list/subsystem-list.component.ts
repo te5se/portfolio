@@ -24,7 +24,7 @@ export class SubsystemListComponent extends BaseComponent {
     setupListItems() {
         this.items.push({
             name: "production route",
-            description: "View and maintain the routes that your product takes through the subvisions of your factory"
+            description: "View and maintain the routes that your product takes through the subdivisions of your factory"
         })
         this.items.push({
             name: "configurator",

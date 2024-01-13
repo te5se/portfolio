@@ -42,7 +42,7 @@ class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [
 </div>
 <!-- #region second section -->
 <section class="screen-height-section w-full flex" #secondSection>
-    <div class=" gap-12 pt-12 grid grid-rows-[auto_auto_1fr] md:grid-rows-[1fr_2fr] md:grid-cols-[2fr_1fr] h-full mx-auto w-[min(768px,90vw)]">
+    <div class=" gap-12 pt-12 grid grid-rows-[auto_auto_1fr] lg:grid-rows-[1fr_2fr] lg:grid-cols-[2fr_1fr] h-full mx-auto w-[min(1024px,90vw)]">
         <section class="my-auto col-start-1 row-start-1">
             <p class="text-accent underscored after:left-1 after:w-14 text-5xl font-bold my-auto">
                 GLOBE
@@ -54,13 +54,13 @@ class="side bg-gray-700 z-10" [style.transition-duration]="transitionDuration" [
         </app-feature-selector>
 
         <div class="row-start-3 col-start-1 md:row-start-2 md:col-span-2 mx-auto mb-8"  >
-            <video #video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow  w-[min(768px,90vw)]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Graphic map'" class="hero-video-shadow  w-[min(1024px,90vw)]" autoplay loop muted>
                 <source [src]="baseHref + 'assets/GraphicRedactor.mp4'" type="video/mp4" />
             </video>
-            <video #video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow  w-[min(768px,90vw)]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Analytics'" class="hero-video-shadow  w-[min(1024px,90vw)]" autoplay loop muted>
                 <source  [src]="baseHref + 'assets/Analytics.mp4'" type="video/mp4" />
             </video>
-            <video #video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow  w-[min(768px,90vw)]" autoplay loop muted>
+            <video #video *ngIf="selectedCaption == 'Access control'" class="hero-video-shadow  w-[min(1024px,90vw)]" autoplay loop muted>
                 <source [src]="baseHref + 'assets/Users.mp4'" type="video/mp4" />
             </video>
         </div>
