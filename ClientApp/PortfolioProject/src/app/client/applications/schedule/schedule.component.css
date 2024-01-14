@@ -1,4 +1,6 @@
-
+body{
+    overflow:hidden
+}
 a{
     @apply border-transparent
     hover:border-white focus:border-white rounded-2xl
@@ -24,11 +26,6 @@ a{
     }
 }
 
-#admin-section{
-    display: grid;
-    grid-template-columns: 200px 1fr 1fr 200px;
-    grid-template-rows: 120px 1fr  200px;
-}
 #local-floating-point{
     opacity: 25%;
     position: absolute;
@@ -41,13 +38,9 @@ a{
     will-change: transform; 
     transform-style: preserve-3d;
 }
-#carousel{
-    @apply relative -left-[50%] hover:left-0 transition-all duration-500
-}
-.screen-height-section{
-    height: 100vh;
-    min-height: 700px;
-}
+.screen-height-section {
+    min-height: max(100svh, var(--screen-height),700px);
+  }
 .subtitle{
     @apply text-xl
 }

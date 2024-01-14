@@ -1,14 +1,17 @@
-<div id="local-floating-point" class="absolute -z-10 -top-[1000px] -left-[1000px]">asdf</div>
-<app-home-button class="fixed bottom-6 right-8 z-50"></app-home-button>
-<section class="screen-height-section flex ">
+<div class="h-[200vh] left-0 right-0 absolute -z-10 overflow-hidden">
+    <div id="local-floating-point" class="absolute -z-10 -top-[1000px] -left-[1000px]">asdf</div>
+</div>
+<app-home-button class="fixed md:flex hidden bottom-6 right-8 z-50"></app-home-button>
+<section class="screen-height-section relative overflow-hidden flex ">
     <div class="flex m-auto flex-col text-center">
-        <p class="text-5xl font-bold text-[60px] scroll-hidden">{{'schedule' | uppercase}}</p>
+        <p class="text-5xl font-bold md:text-[60px] scroll-hidden">{{'schedule' | uppercase}}</p>
         <p class="text-gray-500 m-4 text-[16px]  scroll-hidden">for my home university</p>
     </div>
 </section>
-<section  class="screen-height-section 
-    px-8 lg:px-0
-    grid lg:grid-cols-[100px_1fr_1fr_0px] xl:grid-cols-[200px_1fr_1fr_200px] grid-rows-[120px_auto_auto_auto]  lg:grid-rows-[120px_1fr_200px] overflow-hidden">
+<section  
+    class="screen-height-section 
+        px-8 lg:px-0
+        grid lg:grid-cols-[100px_1fr_1fr_0px] xl:grid-cols-[200px_1fr_1fr_200px] grid-rows-[120px_auto_450px_160px]  lg:grid-rows-[120px_1fr_200px] overflow-hidden">
     <p class="local-title lg:col-start-2 mt-[5%] scroll-hidden  -translate-y-4">MOBILE APP</p>
     <div class="col-start-1 row-start-2 lg:col-start-2 relative flex">
         <app-schedule-list class="ml-8 my-auto max-w-[300px] h-[calc(100%-60px)] pb-4" [items]="mobileList"></app-schedule-list>
@@ -20,44 +23,50 @@
         <div id="shadow-effect" class="scroll-hidden  absolute rotate-[-30deg]"></div>
     </div>
     <app-neon-button 
-        class="mt-auto row-start-4 col-start-1 lg:row-start-3 lg:col-start-2 lg:mb-16 scroll-hidden"
+        class="my-auto md:mt-auto row-start-4 col-start-1 lg:row-start-3 lg:col-start-2 lg:mb-16 scroll-hidden"
         href="https://play.google.com/store/apps/details?id=com.phoenix.schedule&hl=ru">
         phoenix&#64;schedule
     </app-neon-button>
 </section>
-<section id="admin-section" class="screen-height-section max-h-screen relative">
-    <p class="local-title col-start-3 mt-[5%] text-right scroll-hidden -translate-y-4">ADMIN APP</p>
-    <div class="col-start-3 relative flex ml-auto">
+<section 
+    class="grid grid-rows-[120px_1fr_auto_90vw] md:grid-rows-[120px_1fr_200px] grid-cols-[1fr] px-4 md:px-0 
+        md:grid-cols-[200px_3fr_2fr_32px] lg:grid-cols-[200px_1fr_1fr_200px] 
+        screen-height-section relative overflow-hidden">
+    <p class="local-title md:col-start-3 mt-[5%] text-right scroll-hidden -translate-y-4">ADMIN APP</p>
+    <div class="row-start-2 md:col-start-3 relative flex ml-auto">
         <app-schedule-list [isLeft]="false" class="my-auto mr-8 max-w-[300px] h-[calc(100%-60px)] pb-4" [items]="adminList"></app-schedule-list>
         <div class=" h-[1px] w-full bg-white opacity-20 absolute -bottom-8 scroll-hidden"></div>
     </div>
     <app-neon-button 
-        class="col-start-3 ml-auto mt-16 scroll-hidden"
+        class="row-start-3 md:col-start-3 ml-auto mt-16 scroll-hidden "
         href="https://github.com/te5se/schedule">
         te5se&#64;github.com
     </app-neon-button>
-    <app-schedule-image-carousel class="row-start-2 col-span-2 h-full scroll-hidden" id="carousel"></app-schedule-image-carousel>
+    <app-schedule-image-carousel class="row-start-4 md:row-start-2 md:col-span-2 h-full scroll-hidden 
+        relative md:-left-[50%] md:hover:left-0 transition-all duration-500"></app-schedule-image-carousel>
 
 </section>
-<footer id="footer-section" class="screen-height-section grid grid-cols-[115px_7fr_5fr_10fr] grid-rows-[50px_auto_80px_1fr_120px]">
-    <p class="local-title col-start-2 row-start-2 mb-4 scroll-hidden  -translate-y-4">THE STORY</p>
+<footer
+    id="footer-section" class="screen-height-section grid grid-cols-[16px_1fr_16px] md:grid-cols-[16px_7fr_5fr_10fr] lg:grid-cols-[116px_7fr_5fr_10fr] 
+    grid-rows-[50px_auto_80px_1fr_80px_80px_auto_auto_120px] md:grid-rows-[50px_auto_80px_1fr_120px]">
+    <p class="local-title col-start-2 row-start-2 mb-4 scroll-hidden ">THE STORY</p>
     
-    <p class="subtitle col-start-2 row-start-3 ml-1 scroll-hidden  -translate-y-4">THE BEGINNING</p>
-    <p class="subtitle col-start-3 row-start-3 scroll-hidden  -translate-y-4">THE RESULTS</p>
+    <p class="subtitle col-start-2 row-start-3 ml-1 scroll-hidden">THE BEGINNING</p>
+    <p class="subtitle col-start-2 md:col-start-3 row-start-6 md:row-start-3 scroll-hidden ">THE RESULTS</p>
 
-    <p class="row-start-4 col-start-2 pr-[25%] scroll-hidden">{{beginningText}}</p>
-    <section class="flex flex-col row-start-4 col-start-3 scroll-hidden">
+    <p class="row-start-4 col-start-2 md:pr-[25%] scroll-hidden">{{beginningText}}</p>
+    <section class="flex flex-col row-start-7 md:row-start-4 col-start-2 md:col-start-3 scroll-hidden">
         <p class="">{{resultsText}}</p>
         <p>During the production phase application:</p>
         <p>- served over 50.000 distinct schedule queries</p>
         <p>- provided over 15 groups and several teachers with schedules on a daily basis</p>
     </section>
 
-    <app-cube class="col-start-4"></app-cube>
+    <app-cube class="row-start-[8] md:row-start-1 col-start-2 md:col-start-4"></app-cube>
 
-    <div id="footers-footer" class="flex  row-start-5 col-span-4 scroll-hidden">
+    <div id="footers-footer" class="flex row-start-[9] md:row-start-[5] col-span-3 md:col-span-4 scroll-hidden">
         <app-neon-button 
-            class="ml-[115px] my-auto"
+            class="ml-[16px] lg:ml-[116px] my-auto"
             href="https://github.com/te5se/portfolio/tree/develop/ProjectDescriptions/Schedule">see the details</app-neon-button>
     </div>
 </footer>
