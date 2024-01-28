@@ -15,15 +15,14 @@ export class MESComponent implements OnInit {
 
     size = signal(2000)
     clientWidth = signal(2000)
+    currentProjectImage = signal('')
 
     gearBottom = computed(() => {
         let value = this.clientWidth() > 600 ? this.size() / 6 - 100 : this.size() / 6 - 150
-        console.debug("bottom value", this.clientWidth(), this.size(),value)
         return value * -1
     })
     gearRight = computed(() => {
         let value = this.clientWidth() > 600 ? this.size() / 3 - 200 : this.size() / 3 - 100
-        console.debug("right value", this.clientWidth(), this.size(),value)
         return value * -1
     })
 
@@ -70,5 +69,15 @@ export class MESComponent implements OnInit {
 
     onResize(event: any) {
         this.calculateGearTitleSize()
+    }
+    selectedModuleChanged(moduleName : string){
+        if (moduleName == "production route"){
+            this.currentProjectImage.set("production-route.PNG")
+        } else if (moduleName == "configurator"){
+            this.currentProjectImage.set("configurator-roles.PNG")
+
+        } else if (moduleName == "integrator"){
+            this.currentProjectImage.set("integrator-links.PNG")
+        }
     }
 }

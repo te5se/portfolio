@@ -35,13 +35,13 @@
         <span class="row-start-2 text-[var(--accent-color)] text-6xl lg:text-7xl font-bold">MES</span>
         <span class="row-start-3 text-[var(--accent-color)] ml-1 text-2xl">manufacturing execution system</span>
 
-        <app-subsystem-list class="row-start-5 mt-8 lg:mt-0">
+        <app-subsystem-list (selectionChanged)="selectedModuleChanged($event)"  class="row-start-5 mt-8 lg:mt-0">
 
         </app-subsystem-list>
     </div>
 
     <div id="image-wrapper" class="mt-16 lg:mt-0 lg:col-start-3 row-start-4 lg:row-span-2 lg:row-start-2">
-        <div id="second-section-image" [style.background-image]="'url(' + this.baseHref + 'assets/example-mes-image.png)'">
+        <div id="second-section-image" [style.background-image]="'url(' + this.baseHref + 'assets/MES/' + currentProjectImage() +')'">
 
         </div>
     </div>

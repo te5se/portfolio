@@ -1,6 +1,7 @@
-import { Component, WritableSignal, signal } from '@angular/core';
+import { Component, Output, WritableSignal, computed, signal } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
-
+import { toObservable } from '@angular/core/rxjs-interop';
 @Component({
     selector: 'app-subsystem-list',
     templateUrl: './subsystem-list.component.html',
@@ -10,15 +11,21 @@ export class SubsystemListComponent extends BaseComponent {
 
     items: ListItem[] = []
     selectedItem: WritableSignal<ListItem> = signal({})
+    @Output() selectionChanged = new BehaviorSubject<string>('')
+
+    selectedItemObservable = toObservable(this.selectedItem)
 
     constructor() {
         super()
 
         this.setupListItems()
 
-        // setInterval(()=>{
-        //     this.selectedItem.
-        // },1000)
+        this.selectedItemObservable.subscribe((selectedItem)=>{
+            if(selectedItem.name == null){
+                return
+            }
+            this.selectionChanged.next(selectedItem.name)
+        })
     }
 
     setupListItems() {
@@ -34,6 +41,11 @@ export class SubsystemListComponent extends BaseComponent {
             name: "integrator",
             description: "Streamline the integration of our software in your architecture"
         })
+
+        this.selectedItem.set(this.items[0])
+    }
+    selectItem(item : ListItem){
+        this.selectedItem.set(item)
     }
 }
 

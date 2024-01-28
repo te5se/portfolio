@@ -5,7 +5,7 @@
             class="grid grid-rows-[auto_1fr] w-full overflow-hidden transition-all duration-1000">
             <button
                 [ngClass]="selectedItem().name == item.name ? 'before:w-[10px] pl-8' : 'before:w-0'"
-                (click)="selectedItem.set(item)" class="text-left flex flex-row">
+                (click)="selectItem(item)" class="text-left flex flex-row">
                 <p 
                     [ngClass]="item.name == selectedItem().name ? '' : 'hover:opacity-100 opacity-30'"
                     class="text-2xl font-bold transition-all">{{item.name | uppercase}}</p>
