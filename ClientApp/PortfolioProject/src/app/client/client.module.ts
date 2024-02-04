@@ -55,38 +55,7 @@ import { SubsystemListComponent } from './applications/mes/subsystem-list/subsys
     declarations: [
         ItemComponent,
         ClientStartingPageComponent,
-        ScheduleComponent,
         NavbarComponent,
-        HomeButtonComponent,
-        ScheduleListComponent,
-        ExternalLinkComponent,
-        ScheduleImageCarouselComponent,
-        ScheduleCubeItemComponent,
-        Pws03Component,
-        CubeComponent,
-        VideoLineComponent,
-        ShadowsForVideoComponent,
-        FeatureSelectorComponent,
-        WorkCenterComponent,
-        EquipmentComponent,
-        EquipmentInfoOverlayComponent,
-        WcTitleComponent,
-        BackgroundBallComponent,
-        NeonButtonComponent,
-        Pad77Component,
-        TestReportComponent,
-        ReportTableComponent,
-        ReportsComponent,
-        GraphicalReportComponent,
-        ReportPieChartComponent,
-        ParallaxDocumentComponent,
-        ActiveUsersComponent,
-        ActiveUserComponent,
-        CustomizableRoutingComponent,
-        MESComponent,
-        D3ExampleComponent,
-        GearsComponent,
-        SubsystemListComponent
     ],
     imports: [
         CommonModule,
@@ -101,10 +70,7 @@ import { SubsystemListComponent } from './applications/mes/subsystem-list/subsys
         DialogModule,
         InputTextareaModule,
         MatTabsModule,
-        OverlayPanelModule,
-        NgxPopperjsModule,
-        TooltipModule
-
+        OverlayPanelModule
     ]
 })
 export class ClientModule { }

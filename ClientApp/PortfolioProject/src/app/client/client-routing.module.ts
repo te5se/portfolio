@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClientStartingPageComponent } from './client-starting-page/client-starting-page.component';
-import { ScheduleComponent } from './applications/schedule/schedule.component';
-import { Pws03Component } from './applications/pws03/pws03.component';
-import { Pad77Component } from './applications/pad77/pad77.component';
-import { MESComponent } from './applications/mes/mes.component';
 
 const routes: Routes = [
     { path: 'projects', component: ClientStartingPageComponent},
-    { path: 'schedule', component: ScheduleComponent},
-    { path: 'pws03', component: Pws03Component},
-    { path: 'pad77', component: Pad77Component},
-    { path: 'mes', component: MESComponent}
+    {   
+      path: 'schedule', 
+      loadChildren: ()=>import('./applications/schedule/schedule.module').then(o=>o.ScheduleModule)
+    },
+    {   
+      path: 'pws03', 
+      loadChildren: ()=>import('./applications/pws03/pws03.module').then(o=>o.Pws03Module)
+    },
+    {   
+      path: 'mes', 
+      loadChildren: ()=>import('./applications/mes/mes.module').then(o=>o.MesModule)
+    },
+    {   
+      path: 'pad77', 
+      loadChildren: ()=>import('./applications/pad77/pad77.module').then(o=>o.Pad77Module)
+    },
 ];
 
 @NgModule({
