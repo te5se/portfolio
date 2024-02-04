@@ -1,4 +1,4 @@
-
+ 
 # Stage 1: Compile and Build angular codebase
 
 # Use official node image as the base image
@@ -15,8 +15,7 @@ RUN npm install
 # Add the source code to app
 COPY ./ /usr/local/app/
 
-RUN npx ng build --configuration=local-docker-test
-#--base-href=/portfolio/front/
+RUN npx ng build --base-href=/portfolio/front/
 
 # Stage 2: Serve app with nginx server
 
