@@ -9,20 +9,10 @@
     border-radius: 999px;
     aspect-ratio: 1;
 }
-.test-rotate {
+.rotate-circle {
     margin: 0 0;
-    animation: rotate 10s linear infinite;
-    transform-origin: 128px 128px; 
-}
-
-@keyframes rotate {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.counter-rotate {
-    animation: counter-rotate 10s linear infinite;
+    margin: 10px 0 0 10px;
+    transform-origin: 118px 118px; 
 }
 
 @keyframes counter-rotate {

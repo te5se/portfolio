@@ -7,7 +7,16 @@
 
     <div class="background-circle w-[calc(var(--base-circle-size)+var(--circle-step)*2)] rounded-full "></div>
 
-    <div class="test-rotate w-8 h-8 bg-red-500">
-
-    </div>
+    @for (item of items(); track $index) {
+        <button 
+            (click)="setActive(item)"
+            [ngClass]="item.currentPosition%3 != 0 ? 'opacity-90' : ''"
+            [style.transform]="'rotate(' + (item.currentPosition * 120 + 45) + 'deg)'"
+            class="rotate-circle absolute rotate transition-all  duration-1000 flex w-20 h-20 rounded-full border-2 border-black bg-white">
+            <p 
+                [style.transform]="'rotate(' + (-item.currentPosition * 120 - 45) + 'deg)'"
+                class="counter-rotate m-auto transition-all duration-1000">{{item.caption}}</p>
+        </button>
+    }
+    
 </section>
