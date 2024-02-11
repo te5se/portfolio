@@ -32,6 +32,7 @@ const routes: Routes = [
             }
         ]
     },
+    { path: '**', redirectTo: 'client/projects' },
 ];
 
 @NgModule({
