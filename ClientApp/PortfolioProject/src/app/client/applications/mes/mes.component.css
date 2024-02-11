@@ -1,18 +1,20 @@
-
-::ng-deep :root{
+::ng-deep :root {
     --left-margin: 20px
 }
+
 @media (min-width: 768px) {
-    ::ng-deep :root{
+    ::ng-deep :root {
         --left-margin: 60px
     }
 }
+
 @media (min-width: 1024px) {
-    ::ng-deep :root{
+    ::ng-deep :root {
         --left-margin: 120px
     }
 }
-#main-title-ellipse{
+
+#main-title-ellipse {
     position: absolute;
     background-color: var(--accent-color);
     width: 170vw;
@@ -22,7 +24,7 @@
     top: -30svh;
 }
 
-#secondary-title-ellipse{
+#secondary-title-ellipse {
     position: absolute;
     background-color: white;
     width: calc(var(--left-margin) + 540px);
@@ -31,8 +33,9 @@
     left: -320px;
     top: -196px;
 }
+
 @media (min-width: 640px) {
-    #secondary-title-ellipse{
+    #secondary-title-ellipse {
         width: calc(var(--left-margin) + 540px);
         height: 332px;
         border-radius: 50%;
@@ -40,8 +43,9 @@
         top: -56px;
     }
 }
+
 @media (min-width: 1024px) {
-    #secondary-title-ellipse{
+    #secondary-title-ellipse {
         position: absolute;
         background-color: white;
         width: calc(var(--left-margin) + 612px);
@@ -51,17 +55,20 @@
         top: -56px;
     }
 }
-body{
+
+body {
     overflow-x: hidden;
 }
-.button{
-    @apply py-2 border-2 border-transparent rounded-full hover:border-white
-      text-white transition-all cursor-pointer active:bg-white active:text-[var(--accent-color)]
+
+.button {
+    @apply py-2 border-2 border-transparent rounded-full hover:border-white text-white transition-all cursor-pointer active:bg-white active:text-[var(--accent-color)]
 }
+
 .screen-height-section {
     min-height: max(100svh, var(--screen-height));
 }
-#second-section-main-ellipse{
+
+#second-section-main-ellipse {
     position: absolute;
     background-color: white;
     width: calc(var(--left-margin) + 600px);
@@ -70,7 +77,8 @@ body{
     left: -438px;
     top: -268px;
 }
-#second-section-underline-ellipse{
+
+#second-section-underline-ellipse {
     position: absolute;
     left: -300px;
     bottom: 100px;
@@ -81,33 +89,34 @@ body{
     opacity: 50%;
 }
 
-#image-wrapper{
-    height: var(--image-width);
+#image-wrapper {
+    height: var(--image-height);
 }
+
 @media (min-width: 1024px) {
-    #image-wrapper{
-        --image-width: 800px;
-        height: var(--image-width);
+    #image-wrapper {
+        --image-height: 702px;
+        height: var(--image-height);
         margin: auto 0 auto 0;
         border-radius: 24px 0 0 24px;
         overflow: hidden;
-    
+
         box-shadow: 0px 0px 24px 20px rgba(34, 60, 80, 0.2);
-    }    
+    }
 }
 
-#second-section-image{
+#second-section-image {
     aspect-ratio: 16/9;
     border-radius: 24px;
     background-image: contain;
-    background-size:     cover;                      
-    background-repeat:   no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center center;
-}  
-@media (min-width: 1024px) {
-    #second-section-image{
-        height: var(--image-width);
-    }  
 }
 
- 
+@media (min-width: 1024px) {
+    #second-section-image {
+        --image-height: 702px;
+        height: var(--image-height);
+    }
+}

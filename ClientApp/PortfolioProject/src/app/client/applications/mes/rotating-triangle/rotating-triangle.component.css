@@ -1,0 +1,33 @@
+::ng-deep .wrapper{
+    --circle-step: 28px;
+    --base-circle-size: 200px;
+}
+.background-circle {
+    position: absolute;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 999px;
+    aspect-ratio: 1;
+}
+.test-rotate {
+    margin: 0 0;
+    animation: rotate 10s linear infinite;
+    transform-origin: 128px 128px; 
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.counter-rotate {
+    animation: counter-rotate 10s linear infinite;
+}
+
+@keyframes counter-rotate {
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
