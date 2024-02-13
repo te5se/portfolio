@@ -10,10 +10,11 @@
     @for (item of items(); track $index) {
         <button 
             (click)="setActive(item)"
-            [ngClass]="item.currentPosition%3 != 0 ? 'opacity-90' : ''"
+            [ngClass]="item.currentPosition%3 != 0 ? 'opacity-90 bg-white' : 'bg-[var(--accent-color)]'"
             [style.transform]="'rotate(' + (item.currentPosition * 120 + 45) + 'deg)'"
-            class="rotate-circle absolute rotate transition-all  duration-1000 flex w-20 h-20 rounded-full border-2 border-black bg-white">
+            class="rotate-circle absolute rotate transition-all  duration-1000 flex w-20 h-20 rounded-full border-2 border-black">
             <p 
+                [ngClass]="item.currentPosition%3 != 0 ? '' : 'text-[var(--accent-font)]'"
                 [style.transform]="'rotate(' + (-item.currentPosition * 120 - 45) + 'deg)'"
                 class="counter-rotate m-auto transition-all duration-1000">{{item.caption}}</p>
         </button>

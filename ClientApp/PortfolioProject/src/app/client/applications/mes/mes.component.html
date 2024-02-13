@@ -50,16 +50,16 @@
 </section>
 
 <section class="screen-height-section relative mt-8
-    grid grid-cols-[55%_44%] grid-rows-[auto_auto]
-    ml-[var(--left-margin)]" >
+    flex flex-col lg:grid grid-cols-[55%_44%] grid-rows-[auto_auto]
+    ml-[var(--left-margin)] mr-[var(--left-margin)] lg:mr-0" >
 
     
-    <section class="flex flex-col mt-8">
-        <p class="text-[var(--accent-color)] text-4xl lg:text-5xl font-bold">ARCHITECTURE</p>
+    <section class="flex flex-col">
+        <p class="text-[var(--accent-color)] text-4xl lg:text-5xl font-bold mt-8 lg:mt-24">ARCHITECTURE</p>
 
-        <p class="mt-16 text-xl">The demands for this project can be summarised in a version of the project triangle: choose two. </p>
-        <p class="mt-4 text-xl">But we always want all three, don't we? This time it was possible to get everything </p>
-        <div class="flex flex-row gap-2 mt-4">
+        <p class="mt-24 lg:mt-48 text-xl">The demands for this project can be summarised in a version of the project triangle: <span class="font-bold text-[var(--accent-color)]">choose two.</span> </p>
+        <p class="mt-4 text-xl">But we always want all three, don't we? In this project everyone got what they wanted</p>
+        <div class="flex flex-row gap-2 mt-6">
             <i class="material-symbols-outlined my-auto">add</i>
             <p class=" text-xl my-auto">Agility and speed of document based databases</p>
         </div>
@@ -68,7 +68,7 @@
             <p class=" text-xl my-auto">Reliability and relational information of relational databases</p>
         </div>
     </section>
-    <section class="col-start-2 row-span-2 flex">
+    <section class="col-start-2 row-span-2 flex mt-24 lg:mt-0">
         <app-rotating-triangle class="m-auto"></app-rotating-triangle>    
     </section>
 
