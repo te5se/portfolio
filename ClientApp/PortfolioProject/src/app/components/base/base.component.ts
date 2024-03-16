@@ -8,7 +8,6 @@ import { Subscribable, Subscription } from 'rxjs';
 })
 export class BaseComponent implements OnInit {
 
-    timeouts : NodeJS.Timeout[] = []
     subscriptions: Array<Subscription> = []
     constructor() { }
 
@@ -20,9 +19,6 @@ export class BaseComponent implements OnInit {
     ngOnDestroy() {
         this.subscriptions.forEach((subscription) => {
             subscription.unsubscribe();
-        })
-        this.timeouts.forEach((timeout) => {
-            timeout.unref()
         })
     }
     setupAnimateOnScrollMechanics() {

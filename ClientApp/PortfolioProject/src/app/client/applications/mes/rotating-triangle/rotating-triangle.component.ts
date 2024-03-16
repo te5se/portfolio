@@ -1,4 +1,5 @@
 import { Component, WritableSignal, signal } from '@angular/core';
+import { interval } from 'rxjs';
 import { BaseComponent } from 'src/app/components/base/base.component';
 
 @Component({
@@ -36,9 +37,9 @@ export class RotatingTriangleComponent extends BaseComponent {
     override ngOnInit() {
         super.ngOnInit()
 
-        this.timeouts.push(setInterval(() => {
+        this.subscriptions.push(interval(5000).subscribe(() => {
             this.updateItem()
-        }, 5000))
+        }))
     }
     setActive(item : MovingItem){
         if(item.currentPosition % 3 == 0){
