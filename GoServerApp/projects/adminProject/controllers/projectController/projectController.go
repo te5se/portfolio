@@ -61,6 +61,7 @@ func addProject(c *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
+	defer nstmt.Close()
 	err = nstmt.Get(&id, arg)
 	if err != nil {
 		panic(err)
@@ -78,6 +79,7 @@ func addProject(c *gin.Context) {
 		if err != nil {
 			panic(err)
 		}
+		defer nstmt.Close()
 		err = nstmt.Get(&variableID, arg)
 		if err != nil {
 			panic(err)
@@ -121,7 +123,9 @@ func updateProject(c *gin.Context) {
 	}
 	session := factory.GetConnection()
 	tx, err := session.Beginx()
-
+	if err != nil {
+		panic(err)
+	}
 	arg := map[string]interface{}{
 		"name":             project.Name,
 		"linkLocation":     project.LinkLocation,
@@ -135,6 +139,7 @@ func updateProject(c *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
+	defer nstmt.Close()
 	_, err = nstmt.Exec(arg)
 	if err != nil {
 		panic(err)
